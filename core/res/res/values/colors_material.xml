@@ -53,6 +53,12 @@
     <color name="switch_thumb_disabled_material_dark">#ff616161</color>
     <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
 
+    <!-- Switch track color specific to /e/ -->
+    <eat-comment/>
+
+    <color name="e_switch_enable">#ff38D874</color>
+    <color name="e_switch_disable">#ffC8CED0</color>
+
     <!-- Text & foreground colors -->
     <eat-comment />
 

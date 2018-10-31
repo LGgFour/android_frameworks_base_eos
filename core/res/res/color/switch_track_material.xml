@@ -16,9 +16,9 @@
 
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_enabled="false"
-          android:color="#C8CED0"
-          android:alpha="0.75" />
+          android:color="@color/e_switch_disable"
+          android:alpha="?attr/disabledAlpha" />
     <item android:state_checked="true"
-          android:color="#ff38D874" />
-    <item android:color="#C8CED0" />
+          android:color="@color/e_switch_enable" />
+    <item android:color="@color/e_switch_disable" />
 </selector>
