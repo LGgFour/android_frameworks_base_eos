@@ -401,9 +401,9 @@ final class DefaultPermissionGrantPolicy {
             // NlpMozillaBackend
             PackageParser.Package mozillaNlpBackendPackage = getSystemPackageLPr("org.microg.nlp.backend.ichnaea");
             if(mozillaNlpBackendPackage != null
-            		&& doesPackageSupportRuntimePermissions(launcherPackage)){
+            		&& doesPackageSupportRuntimePermissions(mozillaNlpBackendPackage)){
             	grantRuntimePermissionsLPw(mozillaNlpBackendPackage, PHONE_PERMISSIONS, userId);
-              grantRuntimePermissionsLPw(mozillaNlpBackendPackage, LOCATION_PERMISSIONS, userId);
+                grantRuntimePermissionsLPw(mozillaNlpBackendPackage, LOCATION_PERMISSIONS, userId);
             }
 
             // Sim call manager
