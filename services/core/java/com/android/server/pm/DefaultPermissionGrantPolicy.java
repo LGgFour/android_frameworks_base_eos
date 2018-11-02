@@ -391,6 +391,21 @@ final class DefaultPermissionGrantPolicy {
                 }
             }
 
+            // Launcher
+            PackageParser.Package launcherPackage = getSystemPackageLPr("org.indin.blisslaunchero");
+            if(launcherPackage != null
+            		&& doesPackageSupportRuntimePermissions(launcherPackage)){
+            	grantRuntimePermissionsLPw(launcherPackage, LOCATION_PERMISSIONS, userId);
+            }
+
+            // NlpMozillaBackend
+            PackageParser.Package mozillaNlpBackendPackage = getSystemPackageLPr("org.microg.nlp.backend.ichnaea");
+            if(mozillaNlpBackendPackage != null
+            		&& doesPackageSupportRuntimePermissions(launcherPackage)){
+            	grantRuntimePermissionsLPw(mozillaNlpBackendPackage, PHONE_PERMISSIONS, userId);
+              grantRuntimePermissionsLPw(mozillaNlpBackendPackage, LOCATION_PERMISSIONS, userId);
+            }
+
             // Sim call manager
             if (simCallManagerPackageNames != null) {
                 for (String simCallManagerPackageName : simCallManagerPackageNames) {
