@@ -1320,6 +1320,12 @@ message MetricsEvent {
     // OS: 6.0
     ABOUT_LEGAL_SETTINGS = 225;
 
+    // OPEN: Settings > About phone
+    // CATEGORY: SETTINGS
+    // OS: 6.0
+    CONTRIBUTORS = 2000;
+
+
     // OPEN: Settings > Search > Perform search
     // CATEGORY: SETTINGS
     // OS: 6.0
