@@ -184,6 +184,11 @@
     <allow-in-power-save package="com.android.cellbroadcastreceiver" />
     <allow-in-power-save package="com.android.shell" />
 
+    <!-- /e/ default app -->
+    <allow-in-power-save package="com.google.android.gms" />
+    <allow-in-power-save package="at.bitfire.davdroid" />
+    <allow-in-power-save package="io.eelo.mail" />
+
     <!-- These are the packages that are white-listed to be able to run as system user -->
     <system-user-whitelisted-app package="com.android.settings" />
 
