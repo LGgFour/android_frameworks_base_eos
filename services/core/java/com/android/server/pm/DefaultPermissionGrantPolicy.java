@@ -392,7 +392,7 @@ final class DefaultPermissionGrantPolicy {
             }
 
             // Launcher
-            PackageParser.Package launcherPackage = getSystemPackageLPr("org.indin.blisslaunchero");
+            PackageParser.Package launcherPackage = getSystemPackageLPr("foundation.e.blisslauncher");
             if(launcherPackage != null
             		&& doesPackageSupportRuntimePermissions(launcherPackage)){
             	grantRuntimePermissionsLPw(launcherPackage, LOCATION_PERMISSIONS, userId);
