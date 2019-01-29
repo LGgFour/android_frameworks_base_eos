@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2008 The Android Open Source Project
+ * Copyright (C) 2019 e.foundation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -182,7 +183,7 @@ public class ConnectivityService extends IConnectivityManager.Stub
     public static final String SHORT_ARG = "--short";
     public static final String TETHERING_ARG = "tethering";
 
-    private static final boolean DBG = true;
+    private static final boolean DBG = false;
     private static final boolean VDBG = false;
 
     private static final boolean LOGD_RULES = false;
@@ -4609,7 +4610,27 @@ public class ConnectivityService extends IConnectivityManager.Stub
             return;  // no updating necessary
         }
 
-        Collection<InetAddress> dnses = newLp.getDnsServers();
+		Collection<InetAddress> dnses = null;//newLp.getDnsServers();
+
+        int useNwDNS = android.provider.Settings.System.getInt(mContext.getContentResolver(), "USE_NETWORK_DNS", 1);
+		if (DBG) log("useNwDNS>"+useNwDNS+"<");
+		
+		if ( 0 != useNwDNS ) {
+			dnses = newLp.getDnsServers();
+		} else {
+			dnses = new ArrayList<InetAddress>();
+			try {
+				String s = android.provider.Settings.System.getString(mContext.getContentResolver(), "OVERRIDE_DNS_IP_V4");
+				if (s == null) s = "9.9.9.9"; 
+				if (DBG) log("Override dnses>"+s+"<");
+
+				InetAddress addr = InetAddress.getByName(s);			
+				dnses.add(addr);
+			} catch (Exception e) {
+				loge("Cannot set custom DNS: " + e);
+			}
+		}	
+
         if (DBG) log("Setting DNS servers for network " + netId + " to " + dnses);
         try {
             mNetd.setDnsConfigurationForNetwork(
@@ -4617,6 +4638,7 @@ public class ConnectivityService extends IConnectivityManager.Stub
         } catch (Exception e) {
             loge("Exception in setDnsConfigurationForNetwork: " + e);
         }
+		if (DBG) log("Setting DNS servers for network (2)" + netId + " to " + dnses);
         final NetworkAgentInfo defaultNai = getDefaultNetwork();
         if (defaultNai != null && defaultNai.network.netId == netId) {
             setDefaultDnsSystemProperties(dnses);
@@ -4893,7 +4915,28 @@ public class ConnectivityService extends IConnectivityManager.Stub
         handleApplyDefaultProxy(newNetwork.linkProperties.getHttpProxy());
         updateTcpBufferSizes(newNetwork);
         updateTcpDelayedAck(newNetwork);
-        setDefaultDnsSystemProperties(newNetwork.linkProperties.getDnsServers());
+
+		Collection<InetAddress> dnses = null;
+		int useNwDNS = android.provider.Settings.System.getInt(mContext.getContentResolver(), "USE_NETWORK_DNS", 1);
+		if (DBG) log("useNwDNS>"+useNwDNS+"<");
+		
+		if ( 0 != useNwDNS ) {
+			dnses = newNetwork.linkProperties.getDnsServers();
+		} else {
+			dnses = new ArrayList<InetAddress>();
+			try {
+				String s = android.provider.Settings.System.getString(mContext.getContentResolver(), "OVERRIDE_DNS_IP_V4");
+				if (s == null) s = "9.9.9.9"; 
+				if (DBG) log("Override dnses>"+s+"<");
+
+				InetAddress addr = InetAddress.getByName(s);			
+				dnses.add(addr);
+			} catch (Exception e) {
+				loge("Cannot set custom DNS: " + e);
+			}
+		}
+
+        setDefaultDnsSystemProperties(dnses);
     }
 
     private void processListenRequests(NetworkAgentInfo nai, boolean capabilitiesChanged) {
