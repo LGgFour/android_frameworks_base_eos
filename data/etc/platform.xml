@@ -244,6 +244,11 @@
     <!-- Whitelist system providers -->
     <allow-in-power-save-except-idle package="com.android.providers.calendar" />
     <allow-in-power-save-except-idle package="com.android.providers.contacts" />
+    
+    <!-- /e/ default apps -->
+    <allow-in-power-save package="com.google.android.gms" />
+    <allow-in-power-save package="foundation.e.accountmanager" />
+    <allow-in-power-save package="foundation.e.mail" />
 
     <!-- The PAC proxy process must have network access, otherwise no app will
          be able to connect to the internet when such a proxy is in use, since
