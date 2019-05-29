@@ -152,6 +152,12 @@ final class DefaultPermissionGrantPolicy {
         STORAGE_PERMISSIONS.add(Manifest.permission.READ_EXTERNAL_STORAGE);
         STORAGE_PERMISSIONS.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
     }
+    
+    private static final Set<String> TASKS_PERMISSIONS = new ArraySet<>();
+    static {
+        TASKS_PERMISSIONS.add("org.dmfs.permission.READ_TASKS");
+        TASKS_PERMISSIONS.add("org.dmfs.permission.WRITE_TASKS");
+    }
 
     private static final int MSG_READ_DEFAULT_PERMISSION_EXCEPTIONS = 1;
 
@@ -752,6 +758,16 @@ final class DefaultPermissionGrantPolicy {
                     && doesPackageSupportRuntimePermissions(ringtonePickerPackage)) {
                 grantRuntimePermissionsLPw(ringtonePickerPackage,
                         STORAGE_PERMISSIONS, true, userId);
+            }
+            
+            // Account Manager
+            PackageParser.Package accountManagerPackage = getSystemPackageLPr("foundation.e.accountmanager");
+            if (accountManagerPackage != null
+                            && doesPackageSupportRuntimePermissions(accountManagerPackage)) {
+                grantRuntimePermissionsLPw(accountManagerPackage, CONTACTS_PERMISSIONS, userId);
+                grantRuntimePermissionsLPw(accountManagerPackage, CALENDAR_PERMISSIONS, userId);
+                grantRuntimePermissionsLPw(accountManagerPackage, LOCATION_PERMISSIONS, userId);
+                grantRuntimePermissionsLPw(accountManagerPackage, TASKS_PERMISSIONS, userId);
             }
 
             mService.mSettings.onDefaultRuntimePermissionsGrantedLPr(userId);
