@@ -769,6 +769,13 @@ final class DefaultPermissionGrantPolicy {
                 grantRuntimePermissionsLPw(accountManagerPackage, LOCATION_PERMISSIONS, userId);
                 grantRuntimePermissionsLPw(accountManagerPackage, TASKS_PERMISSIONS, userId);
             }
+            
+            // Apps
+            PackageParser.Package appsPackage = getSystemPackageLPr("foundation.e.apps");
+            if (appsPackage != null
+                            && doesPackageSupportRuntimePermissions(appsPackage)) {
+                grantRuntimePermissionsLPw(appsPackage, STORAGE_PERMISSIONS, userId);
+            }
 
             mService.mSettings.onDefaultRuntimePermissionsGrantedLPr(userId);
         }
