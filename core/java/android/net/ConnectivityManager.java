@@ -760,11 +760,27 @@ public class ConnectivityManager {
     /**
      * @hide
      */
+    public static final String PRIVATE_DNS_MODE_QUADNINE = "quadnine";
+    /**
+     * @hide
+     */
     public static final String PRIVATE_DNS_MODE_OPPORTUNISTIC = "opportunistic";
     /**
      * @hide
      */
     public static final String PRIVATE_DNS_MODE_PROVIDER_HOSTNAME = "hostname";
+    /**
+     * @hide
+     */
+    public static final String PRIVATE_DNS_SPECIFIER_QUADNINE = "dns.quad9.net";
+    /**
+     * @hide
+     */
+    public static final String DNS_QUADNINE_IP1 = "9.9.9.9";
+    /**
+     * @hide
+     */
+    public static final String DNS_QUADNINE_IP2 = "9.9.9.10";
     /**
      * The default Private DNS mode.
      *
