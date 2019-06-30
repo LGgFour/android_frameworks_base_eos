@@ -267,14 +267,14 @@ public class NetworkAgentInfo implements Comparable<NetworkAgentInfo> {
         network = net;
         networkInfo = info;
 
-        int useNwDNS = android.provider.Settings.System.getInt(mContext.getContentResolver(), "USE_NETWORK_DNS", 1);
+        int useNwDNS = android.provider.Settings.System.getInt(context.getContentResolver(), "USE_NETWORK_DNS", 1);
 
         if ( 0 != useNwDNS ) {
 
         } else {
             java.util.Collection<InetAddress> dnses = new java.util.ArrayList<InetAddress>();
             try {
-                String s = android.provider.Settings.System.getString(mContext.getContentResolver(), "OVERRIDE_DNS_IP_V4");
+                String s = android.provider.Settings.System.getString(context.getContentResolver(), "OVERRIDE_DNS_IP_V4");
                 if (s == null) s = "9.9.9.9";
                 //if (DBG) log("Override dnses>"+s+"<");
 
