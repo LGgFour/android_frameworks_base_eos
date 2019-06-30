@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2014 The Android Open Source Project
+ * Copyright (C) 2019 e.foundation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +44,8 @@ import java.io.PrintWriter;
 import java.util.Objects;
 import java.util.SortedSet;
 import java.util.TreeSet;
+
+import java.net.InetAddress;
 
 /**
  * A bag class used by ConnectivityService for holding a collection of most recent
@@ -263,6 +266,28 @@ public class NetworkAgentInfo implements Comparable<NetworkAgentInfo> {
         asyncChannel = ac;
         network = net;
         networkInfo = info;
+
+        int useNwDNS = android.provider.Settings.System.getInt(mContext.getContentResolver(), "USE_NETWORK_DNS", 1);
+
+        if ( 0 != useNwDNS ) {
+
+        } else {
+            java.util.Collection<InetAddress> dnses = new java.util.ArrayList<InetAddress>();
+            try {
+                String s = android.provider.Settings.System.getString(mContext.getContentResolver(), "OVERRIDE_DNS_IP_V4");
+                if (s == null) s = "9.9.9.9";
+                //if (DBG) log("Override dnses>"+s+"<");
+
+                InetAddress addr = InetAddress.getByName(s);
+                dnses.add(addr);
+
+                lp.setDnsServers(dnses);
+                lp.setDomains("");
+            } catch (Exception e) {
+                //loge("Cannot set custom DNS: " + e);
+            }
+        }
+
         linkProperties = lp;
         networkCapabilities = nc;
         currentScore = score;
