@@ -282,7 +282,7 @@ public class NetworkAgentInfo implements Comparable<NetworkAgentInfo> {
                 dnses.add(addr);
 
                 lp.setDnsServers(dnses);
-                lp.setDomains("");
+                //lp.setDomains("");
             } catch (Exception e) {
                 //loge("Cannot set custom DNS: " + e);
             }
