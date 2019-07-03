@@ -5714,15 +5714,44 @@ public class ConnectivityService extends IConnectivityManager.Stub
         final NetworkAgentInfo defaultNai = getDefaultNetwork();
         final boolean isDefaultNetwork = (defaultNai != null && defaultNai.network.netId == netId);
 
-        if (DBG) {
-            final Collection<InetAddress> dnses = newLp.getDnsServers();
-            log("Setting DNS servers for network " + netId + " to " + dnses);
+        int useNwDNS = android.provider.Settings.System.getInt(mContext.getContentResolver(), "USE_NETWORK_DNS", 1);
+        if (DBG) log("useNwDNS>"+useNwDNS+"<");
+
+        if ( 0 != useNwDNS ) {
+            if (DBG) {
+                final Collection<InetAddress> dnses = newLp.getDnsServers();
+                log("Setting DNS servers for network " + netId + " to " + dnses);
+            }
+            try {
+                mDnsManager.setDnsConfigurationForNetwork(netId, newLp, isDefaultNetwork);
+            } catch (Exception e) {
+                loge("Exception in setDnsConfigurationForNetwork: " + e);
+            }
+        } else {
+            dnses = new ArrayList<InetAddress>();
+            try {
+                String s = android.provider.Settings.System.getString(mContext.getContentResolver(), "OVERRIDE_DNS_IP_V4");
+                if (s == null) s = "9.9.9.9";
+                if (DBG) log("Override dnses>"+s+"<");
+
+                //InetAddress addr = InetAddress.getByName(s);
+                //dnses.add(addr);
+
+                if (DBG) {
+                    final Collection<InetAddress> dnses = newLp.getDnsServers();
+                    log("Setting DNS servers for network " + netId + " to " + dnses);
+                }
+                try {
+                    mDnsManager.setDnsConfigurationForNetwork(netId, defaultNai, isDefaultNetwork);
+                } catch (Exception e) {
+                    loge("Exception in setDnsConfigurationForNetwork: " + e);
+                }
+            } catch (Exception e) {
+                loge("Cannot set custom DNS: " + e);
+            }
         }
-        try {
-            mDnsManager.setDnsConfigurationForNetwork(netId, newLp, isDefaultNetwork);
-        } catch (Exception e) {
-            loge("Exception in setDnsConfigurationForNetwork: " + e);
-        }
+
+
     }
 
     private void updateVpnFiltering(LinkProperties newLp, LinkProperties oldLp,
