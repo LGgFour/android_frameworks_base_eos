@@ -5742,7 +5742,7 @@ public class ConnectivityService extends IConnectivityManager.Stub
                     log("Setting DNS servers for network " + netId + " to " + dnses);
                 }
                 try {
-                    mDnsManager.setDnsConfigurationForNetwork(netId, defaultNai, isDefaultNetwork);
+                    mDnsManager.setDnsConfigurationForNetwork(netId, defaultNai.linkProperties, isDefaultNetwork);
                 } catch (Exception e) {
                     loge("Exception in setDnsConfigurationForNetwork: " + e);
                 }
