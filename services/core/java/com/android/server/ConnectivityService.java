@@ -2603,6 +2603,7 @@ public class ConnectivityService extends IConnectivityManager.Stub
         }
 
         private boolean maybeHandleNetworkMonitorMessage(Message msg) {
+            if (DBG) log("maybeHandleNetworkMonitorMessage: " + msg.what);
             switch (msg.what) {
                 default:
                     return false;
