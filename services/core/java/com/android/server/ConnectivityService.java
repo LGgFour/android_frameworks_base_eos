@@ -5728,7 +5728,6 @@ public class ConnectivityService extends IConnectivityManager.Stub
                 loge("Exception in setDnsConfigurationForNetwork: " + e);
             }
         } else {
-            dnses = new ArrayList<InetAddress>();
             try {
                 String s = android.provider.Settings.System.getString(mContext.getContentResolver(), "OVERRIDE_DNS_IP_V4");
                 if (s == null) s = "9.9.9.9";
