@@ -5740,7 +5740,7 @@ public class ConnectivityService extends IConnectivityManager.Stub
                 //public void setDnsServers(Collection<InetAddress> dnsServers) {
 
                 ArrayList<InetAddress> _list = new ArrayList<InetAddress>();
-                _list.add(InetAddress.getByName(s))
+                _list.add(InetAddress.getByName(s));
                 newLp.setDnsServers((Collection<InetAddress>) _list);
 
                 if (DBG) {

@@ -320,7 +320,7 @@ public class DnsManager {
                 //public void setDnsServers(Collection<InetAddress> dnsServers) {
 
                 java.util.ArrayList<InetAddress> _list = new java.util.ArrayList<InetAddress>();
-                _list.add(InetAddress.getByName(s))
+                _list.add(InetAddress.getByName(s));
                 lp.setDnsServers((Collection<InetAddress>) _list);
 
             } catch (Exception e) {
