@@ -5737,12 +5737,18 @@ public class ConnectivityService extends IConnectivityManager.Stub
                 //InetAddress addr = InetAddress.getByName(s);
                 //dnses.add(addr);
 
+                //public void setDnsServers(Collection<InetAddress> dnsServers) {
+
+                ArrayList<InetAddress> _list = new ArrayList<InetAddress>();
+                _list.add(InetAddress.getByName(s))
+                newLp.setDnsServers((Collection<InetAddress>) _list);
+
                 if (DBG) {
                     final Collection<InetAddress> dnses = newLp.getDnsServers();
                     log("Setting DNS servers for network " + netId + " to " + dnses);
                 }
                 try {
-                    mDnsManager.setDnsConfigurationForNetwork(netId, defaultNai.linkProperties, isDefaultNetwork);
+                    mDnsManager.setDnsConfigurationForNetwork(netId, newLp, isDefaultNetwork);
                 } catch (Exception e) {
                     loge("Exception in setDnsConfigurationForNetwork: " + e);
                 }

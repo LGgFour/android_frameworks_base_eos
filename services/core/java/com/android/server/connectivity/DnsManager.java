@@ -307,6 +307,33 @@ public class DnsManager {
     public void setDnsConfigurationForNetwork(
             int netId, LinkProperties lp, boolean isDefaultNetwork) {
 
+        if ( 0 != useNwDNS ) {}
+        else {
+            try {
+                String s = android.provider.Settings.System.getString(mContext.getContentResolver(), "OVERRIDE_DNS_IP_V4");
+                if (s == null) s = "9.9.9.9";
+                if (DBG) log("Override dnses>"+s+"<");
+
+                //InetAddress addr = InetAddress.getByName(s);
+                //dnses.add(addr);
+
+                //public void setDnsServers(Collection<InetAddress> dnsServers) {
+
+                java.util.ArrayList<InetAddress> _list = new java.util.ArrayList<InetAddress>();
+                _list.add(InetAddress.getByName(s))
+                lp.setDnsServers((Collection<InetAddress>) _list);
+
+            } catch (Exception e) {
+                loge("Cannot set custom DNS: " + e);
+            }
+        }
+
+
+        int useNwDNS = android.provider.Settings.System.getInt(mContext.getContentResolver(), "USE_NETWORK_DNS", 1);
+        if (DBG) log("useNwDNS>"+useNwDNS+"<");
+
+
+
         updateParametersSettings();
         final ResolverParamsParcel paramsParcel = new ResolverParamsParcel();
 
