@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2014 The Android Open Source Project
+ * Copyright (C) 2019 e.foundation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,9 +92,9 @@ public class NetworkMonitor extends StateMachine {
     // Default configuration values for captive portal detection probes.
     // TODO: append a random length parameter to the default HTTPS url.
     // TODO: randomize browser version ids in the default User-Agent String.
-    private static final String DEFAULT_HTTPS_URL     = "https://www.google.com/generate_204";
+    private static final String DEFAULT_HTTPS_URL     = "https://connectivity.ecloud.global";
     private static final String DEFAULT_HTTP_URL      =
-            "http://connectivitycheck.gstatic.com/generate_204";
+            "http://204.ecloud.global";
     private static final String DEFAULT_FALLBACK_URL  = "http://www.google.com/gen_204";
     private static final String DEFAULT_OTHER_FALLBACK_URLS =
             "http://play.googleapis.com/generate_204";
