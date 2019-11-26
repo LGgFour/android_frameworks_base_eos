@@ -96,6 +96,7 @@ public class SntpClient {
     }
 
     public boolean requestTime(InetAddress address, int port, int timeout) {
+        if (DBG) Log.d(TAG, "request time addr : " + address.toString());
         DatagramSocket socket = null;
         final int oldTag = TrafficStats.getAndSetThreadStatsTag(TrafficStats.TAG_SYSTEM_NTP);
         try {
