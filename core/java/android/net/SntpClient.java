@@ -83,6 +83,7 @@ public class SntpClient {
      * @return true if the transaction was successful.
      */
     public boolean requestTime(String host, int timeout) {
+        if (DBG) Log.d(TAG, "request time : " + host);
         InetAddress address = null;
         try {
             address = InetAddress.getByName(host);
