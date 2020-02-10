@@ -152,7 +152,7 @@ final class DefaultPermissionGrantPolicy {
         STORAGE_PERMISSIONS.add(Manifest.permission.READ_EXTERNAL_STORAGE);
         STORAGE_PERMISSIONS.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
     }
-    
+
     private static final Set<String> TASKS_PERMISSIONS = new ArraySet<>();
     static {
         TASKS_PERMISSIONS.add("org.dmfs.permission.READ_TASKS");
@@ -402,6 +402,7 @@ final class DefaultPermissionGrantPolicy {
             if(launcherPackage != null
             		&& doesPackageSupportRuntimePermissions(launcherPackage)){
             	grantRuntimePermissionsLPw(launcherPackage, LOCATION_PERMISSIONS, userId);
+              grantRuntimePermissions(launcherPackage, STORAGE_PERMISSIONS, userId);
             }
 
             // NlpMozillaBackend
@@ -759,7 +760,7 @@ final class DefaultPermissionGrantPolicy {
                 grantRuntimePermissionsLPw(ringtonePickerPackage,
                         STORAGE_PERMISSIONS, true, userId);
             }
-            
+
             // Account Manager
             PackageParser.Package accountManagerPackage = getSystemPackageLPr("foundation.e.accountmanager");
             if (accountManagerPackage != null
@@ -769,7 +770,7 @@ final class DefaultPermissionGrantPolicy {
                 grantRuntimePermissionsLPw(accountManagerPackage, LOCATION_PERMISSIONS, userId);
                 grantRuntimePermissionsLPw(accountManagerPackage, TASKS_PERMISSIONS, userId);
             }
-            
+
             // Apps
             PackageParser.Package appsPackage = getSystemPackageLPr("foundation.e.apps");
             if (appsPackage != null

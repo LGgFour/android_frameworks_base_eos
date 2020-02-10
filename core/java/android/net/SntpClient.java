@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2008 The Android Open Source Project
+ * Copyright (C) 2019 e.foundation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +39,7 @@ import java.util.Arrays;
  */
 public class SntpClient {
     private static final String TAG = "SntpClient";
-    private static final boolean DBG = true;
+    private static final boolean DBG = false;
 
     private static final int REFERENCE_TIME_OFFSET = 16;
     private static final int ORIGINATE_TIME_OFFSET = 24;
@@ -83,6 +84,7 @@ public class SntpClient {
      * @return true if the transaction was successful.
      */
     public boolean requestTime(String host, int timeout) {
+        if (DBG) Log.d(TAG, "request time : " + host);
         InetAddress address = null;
         try {
             address = InetAddress.getByName(host);
@@ -95,6 +97,7 @@ public class SntpClient {
     }
 
     public boolean requestTime(InetAddress address, int port, int timeout) {
+        if (DBG) Log.d(TAG, "request time addr : " + address.toString());
         DatagramSocket socket = null;
         final int oldTag = TrafficStats.getAndSetThreadStatsTag(TrafficStats.TAG_SYSTEM_NTP);
         try {
