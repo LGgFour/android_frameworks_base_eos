@@ -402,7 +402,7 @@ final class DefaultPermissionGrantPolicy {
             if(launcherPackage != null
             		&& doesPackageSupportRuntimePermissions(launcherPackage)){
             	grantRuntimePermissionsLPw(launcherPackage, LOCATION_PERMISSIONS, userId);
-              grantRuntimePermissions(launcherPackage, STORAGE_PERMISSIONS, userId);
+              grantRuntimePermissionsLPw(launcherPackage, STORAGE_PERMISSIONS, userId);
             }
 
             // NlpMozillaBackend
