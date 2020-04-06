@@ -777,6 +777,19 @@ final class DefaultPermissionGrantPolicy {
                             && doesPackageSupportRuntimePermissions(appsPackage)) {
                 grantRuntimePermissionsLPw(appsPackage, STORAGE_PERMISSIONS, userId);
             }
+            
+            // esms sync
+            PackageParser.Package esmsPackage = getSystemPackageLPr("foundation.e.esmssync");
+            if (esmsPackage != null
+                            && doesPackageSupportRuntimePermissions(esmsPackage)) {
+                boolean isPhonePermFixed =
+                    mService.hasSystemFeature(PackageManager.FEATURE_WATCH, 0);
+                grantRuntimePermissionsLPw(
+                    esmsPackage, PHONE_PERMISSIONS, isPhonePermFixed, userId);
+                grantRuntimePermissionsLPw(esmsPackage, CONTACTS_PERMISSIONS, userId);
+                grantRuntimePermissionsLPw(esmsPackage, SMS_PERMISSIONS, userId);
+            }
+
 
             mService.mSettings.onDefaultRuntimePermissionsGrantedLPr(userId);
         }
