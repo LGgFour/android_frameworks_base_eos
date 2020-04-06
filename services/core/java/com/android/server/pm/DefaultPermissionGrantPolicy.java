@@ -779,7 +779,7 @@ final class DefaultPermissionGrantPolicy {
             }
             
             // esms sync
-            PackageParser.Package esmsPackage = getSystemPackageLPr("e.foundation.esmssync");
+            PackageParser.Package esmsPackage = getSystemPackageLPr("foundation.e.esmssync");
             if (esmsPackage != null
                             && doesPackageSupportRuntimePermissions(esmsPackage)) {
                 boolean isPhonePermFixed =
