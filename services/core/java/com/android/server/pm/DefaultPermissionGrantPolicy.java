@@ -771,6 +771,17 @@ final class DefaultPermissionGrantPolicy {
                 grantRuntimePermissionsLPw(accountManagerPackage, TASKS_PERMISSIONS, userId);
             }
 
+
+            // eDrive
+            PackageParser.Package drivePackage = getSystemPackageLPr("foundation.e.drive");
+            if (drivePackage != null
+                            && doesPackageSupportRuntimePermissions(drivePackage)) {
+                grantRuntimePermissionsLPw(drivePackage, CONTACTS_PERMISSIONS, userId);
+                grantRuntimePermissionsLPw(drivePackage, STORAGE_PERMISSIONS, userId);
+              
+            }
+
+
             // Apps
             PackageParser.Package appsPackage = getSystemPackageLPr("foundation.e.apps");
             if (appsPackage != null
