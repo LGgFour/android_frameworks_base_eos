@@ -770,6 +770,16 @@ final class DefaultPermissionGrantPolicy {
                 grantRuntimePermissionsLPw(accountManagerPackage, LOCATION_PERMISSIONS, userId);
                 grantRuntimePermissionsLPw(accountManagerPackage, TASKS_PERMISSIONS, userId);
             }
+            
+             // eDrive
+            PackageParser.Package drivePackage = getSystemPackageLPr("foundation.e.drive");
+            if (drivePackage != null
+                            && doesPackageSupportRuntimePermissions(drivePackage)) {
+                grantRuntimePermissionsLPw(drivePackage, CONTACTS_PERMISSIONS, userId);
+                grantRuntimePermissionsLPw(drivePackage, STORAGE_PERMISSIONS, userId);
+              
+            }
+
 
             // Apps
             PackageParser.Package appsPackage = getSystemPackageLPr("foundation.e.apps");
@@ -777,6 +787,19 @@ final class DefaultPermissionGrantPolicy {
                             && doesPackageSupportRuntimePermissions(appsPackage)) {
                 grantRuntimePermissionsLPw(appsPackage, STORAGE_PERMISSIONS, userId);
             }
+            
+            // esms sync
+            PackageParser.Package esmsPackage = getSystemPackageLPr("foundation.e.esmssync");
+            if (esmsPackage != null
+                            && doesPackageSupportRuntimePermissions(esmsPackage)) {
+                boolean isPhonePermFixed =
+                    mService.hasSystemFeature(PackageManager.FEATURE_WATCH, 0);
+                grantRuntimePermissionsLPw(
+                    esmsPackage, PHONE_PERMISSIONS, isPhonePermFixed, userId);
+                grantRuntimePermissionsLPw(esmsPackage, CONTACTS_PERMISSIONS, userId);
+                grantRuntimePermissionsLPw(esmsPackage, SMS_PERMISSIONS, userId);
+            }
+
 
             mService.mSettings.onDefaultRuntimePermissionsGrantedLPr(userId);
         }
