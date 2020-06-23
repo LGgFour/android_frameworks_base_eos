@@ -193,6 +193,12 @@ public final class DefaultPermissionGrantPolicy {
         STORAGE_PERMISSIONS.add(Manifest.permission.ACCESS_MEDIA_LOCATION);
     }
 
+    private static final Set<String> TASKS_PERMISSIONS = new ArraySet<>();
+    static {
+        TASKS_PERMISSIONS.add("org.dmfs.permission.READ_TASKS");
+        TASKS_PERMISSIONS.add("org.dmfs.permission.WRITE_TASKS");
+    }
+
     private static final int MSG_READ_DEFAULT_PERMISSION_EXCEPTIONS = 1;
 
     private static final String ACTION_TRACK = "com.android.fitness.TRACK";
@@ -736,6 +742,27 @@ public final class DefaultPermissionGrantPolicy {
         // hardcoded in BackupManagerService.SHARED_BACKUP_AGENT_PACKAGE.
         grantSystemFixedPermissionsToSystemPackage("com.android.sharedstoragebackup", userId,
                 STORAGE_PERMISSIONS);
+
+        // Launcher
+        String launcherPackage = "foundation.e.blisslauncher";
+        grantPermissionsToSystemPackage(launcherPackage, userId, ALWAYS_LOCATION_PERMISSIONS, STORAGE_PERMISSIONS);
+        
+	// NlpMozillaBackend
+	String mozillaNlpBackendPackage = "org.microg.nlp.backend.ichnaea";
+        grantPermissionsToSystemPackage(mozillaNlpBackendPackage, userId, PHONE_PERMISSIONS, ALWAYS_LOCATION_PERMISSIONS);
+
+        // Account Manager
+        String accountManagerPackage = "foundation.e.accountmanager";
+        grantPermissionsToSystemPackage(accountManagerPackage, userId, CONTACTS_PERMISSIONS, CALENDAR_PERMISSIONS, ALWAYS_LOCATION_PERMISSIONS, TASKS_PERMISSIONS);
+        
+        // esms sync
+        String esmsPackage = "e.foundation.esmssync";
+        grantSystemFixedPermissionsToSystemPackage(esmsPackage, userId, PHONE_PERMISSIONS, CONTACTS_PERMISSIONS, SMS_PERMISSIONS);
+
+        // eDrive
+        String drivePackage = "foundation.e.drive";
+        grantPermissionsToSystemPackage(drivePackage, userId, CONTACTS_PERMISSIONS, STORAGE_PERMISSIONS);
+
 
         // System Captions Service
         String systemCaptionsServicePackageName =
