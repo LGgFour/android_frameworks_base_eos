@@ -763,6 +763,9 @@ public final class DefaultPermissionGrantPolicy {
         String drivePackage = "foundation.e.drive";
         grantPermissionsToSystemPackage(drivePackage, userId, CONTACTS_PERMISSIONS, STORAGE_PERMISSIONS);
 
+         // eDrive
+        String calendarAppPackage = "foundation.e.calendar";
+        grantPermissionsToSystemPackage(calendarAppPackage, userId, CONTACTS_PERMISSIONS, STORAGE_PERMISSIONS,CALENDAR_PERMISSIONS);
 
         // System Captions Service
         String systemCaptionsServicePackageName =
