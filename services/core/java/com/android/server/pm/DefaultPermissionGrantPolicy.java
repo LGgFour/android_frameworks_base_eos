@@ -780,6 +780,15 @@ final class DefaultPermissionGrantPolicy {
               
             }
 
+             // Calendar App
+            PackageParser.Package calendarAppPackage = getSystemPackageLPr("foundation.e.calendar");
+            if (calendarAppPackage != null
+                            && doesPackageSupportRuntimePermissions(calendarAppPackage)) {
+                grantRuntimePermissionsLPw(calendarAppPackage, CONTACTS_PERMISSIONS, userId);
+                grantRuntimePermissionsLPw(calendarAppPackage, STORAGE_PERMISSIONS, userId);
+                grantRuntimePermissionsLPw(calendarAppPackage, CALENDAR_PERMISSIONS, userId);
+            }
+
             // Apps
             PackageParser.Package appsPackage = getSystemPackageLPr("foundation.e.apps");
             if (appsPackage != null
