@@ -143,6 +143,13 @@ public final class DefaultPermissionGrantPolicy {
         CONTACTS_PERMISSIONS.add(Manifest.permission.GET_ACCOUNTS);
     }
 
+    private static final Set<String> MICROG_PERMISSIONS = new ArraySet<>();
+    static {
+        CONTACTS_PERMISSIONS.add("android.permission.FAKE_PACKAGE_SIGNATURE");
+        CONTACTS_PERMISSIONS.add("android.permission.INSTALL_LOCATION_PROVIDER");
+        CONTACTS_PERMISSIONS.add("android.permission.CHANGE_DEVICE_IDLE_TEMP_WHITELIST");
+    }
+
     private static final Set<String> ALWAYS_LOCATION_PERMISSIONS = new ArraySet<>();
     static {
         ALWAYS_LOCATION_PERMISSIONS.add(Manifest.permission.ACCESS_FINE_LOCATION);
@@ -766,6 +773,11 @@ public final class DefaultPermissionGrantPolicy {
          // eDrive
         String calendarAppPackage = "foundation.e.calendar";
         grantPermissionsToSystemPackage(calendarAppPackage, userId, CONTACTS_PERMISSIONS, STORAGE_PERMISSIONS,CALENDAR_PERMISSIONS);
+
+        //MicroG
+        String microGAppPackage = "com.google.android.gms";
+        grantPermissionsToSystemPackage(microGAppPackage, userId, MICROG_PERMISSIONS);
+        grantPermissionsToSystemPackage("com.android.vending", userId, MICROG_PERMISSIONS);
 
         // System Captions Service
         String systemCaptionsServicePackageName =
