@@ -145,9 +145,14 @@ public final class DefaultPermissionGrantPolicy {
 
     private static final Set<String> MICROG_PERMISSIONS = new ArraySet<>();
     static {
-        CONTACTS_PERMISSIONS.add("android.permission.FAKE_PACKAGE_SIGNATURE");
-        CONTACTS_PERMISSIONS.add("android.permission.INSTALL_LOCATION_PROVIDER");
-        CONTACTS_PERMISSIONS.add("android.permission.CHANGE_DEVICE_IDLE_TEMP_WHITELIST");
+        MICROG_PERMISSIONS.add("android.permission.FAKE_PACKAGE_SIGNATURE");
+        MICROG_PERMISSIONS.add("android.permission.INSTALL_LOCATION_PROVIDER");
+        MICROG_PERMISSIONS.add("android.permission.CHANGE_DEVICE_IDLE_TEMP_WHITELIST");
+    }
+
+    private static final Set<String> FAKE_PACKAGE_SIGNATURE_PERMISSIONS = new ArraySet<>();
+    static {
+        FAKE_PACKAGE_SIGNATURE_PERMISSIONS.add("android.permission.FAKE_PACKAGE_SIGNATURE");
     }
 
     private static final Set<String> ALWAYS_LOCATION_PERMISSIONS = new ArraySet<>();
@@ -777,7 +782,7 @@ public final class DefaultPermissionGrantPolicy {
         //MicroG
         String microGAppPackage = "com.google.android.gms";
         grantPermissionsToSystemPackage(microGAppPackage, userId, MICROG_PERMISSIONS);
-        grantPermissionsToSystemPackage("com.android.vending", userId, MICROG_PERMISSIONS);
+        grantPermissionsToSystemPackage("com.android.vending", userId, FAKE_PACKAGE_SIGNATURE_PERMISSIONS);
 
         // System Captions Service
         String systemCaptionsServicePackageName =
