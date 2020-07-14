@@ -768,7 +768,7 @@ public final class DefaultPermissionGrantPolicy {
         grantPermissionsToSystemPackage(accountManagerPackage, userId, CONTACTS_PERMISSIONS, CALENDAR_PERMISSIONS, ALWAYS_LOCATION_PERMISSIONS, TASKS_PERMISSIONS);
         
         // esms sync
-        String esmsPackage = "e.foundation.esmssync";
+        String esmsPackage = "foundation.e.esmssync";
         grantSystemFixedPermissionsToSystemPackage(esmsPackage, userId, PHONE_PERMISSIONS, CONTACTS_PERMISSIONS, SMS_PERMISSIONS);
 
         // eDrive
