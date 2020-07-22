@@ -211,6 +211,13 @@ public final class DefaultPermissionGrantPolicy {
         TASKS_PERMISSIONS.add("org.dmfs.permission.WRITE_TASKS");
     }
 
+    private static final Set<String> EMAIL_PERMISSIONS = new ArraySet<>();
+    static {
+        EMAIL_PERMISSIONS.add("foundation.e.mail.permission.READ_MESSAGES");
+        EMAIL_PERMISSIONS.add("foundation.e.mail.permission.DELETE_MESSAGES");
+        EMAIL_PERMISSIONS.add("foundation.e.mail.permission.REMOTE_CONTROL");
+    }
+
     private static final int MSG_READ_DEFAULT_PERMISSION_EXCEPTIONS = 1;
 
     private static final String ACTION_TRACK = "com.android.fitness.TRACK";
@@ -612,6 +619,12 @@ public final class DefaultPermissionGrantPolicy {
                 getDefaultSystemHandlerActivityPackageForCategory(
                         Intent.CATEGORY_APP_EMAIL, userId),
                 userId, CONTACTS_PERMISSIONS, CALENDAR_PERMISSIONS);
+
+	// /e/ Mail
+
+	grantPermissionsToSystemPackage(
+                "foundation.e.mail",
+                userId, CONTACTS_PERMISSIONS, CALENDAR_PERMISSIONS, STORAGE_PERMISSIONS, EMAIL_PERMISSIONS);
 
         // Browser
         String browserPackage = getKnownPackage(PackageManagerInternal.PACKAGE_BROWSER, userId);
