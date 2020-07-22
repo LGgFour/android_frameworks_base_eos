@@ -158,6 +158,13 @@ final class DefaultPermissionGrantPolicy {
         TASKS_PERMISSIONS.add("org.dmfs.permission.READ_TASKS");
         TASKS_PERMISSIONS.add("org.dmfs.permission.WRITE_TASKS");
     }
+    
+    private static final Set<String> EMAIL_PERMISSIONS = new ArraySet<>();
+    static {
+        EMAIL_PERMISSIONS.add("foundation.e.mail.permission.READ_MESSAGES");
+        EMAIL_PERMISSIONS.add("foundation.e.mail.permission.DELETE_MESSAGES");
+        EMAIL_PERMISSIONS.add("foundation.e.mail.permission.REMOTE_CONTROL");
+    }
 
     private static final int MSG_READ_DEFAULT_PERMISSION_EXCEPTIONS = 1;
 
@@ -563,6 +570,16 @@ final class DefaultPermissionGrantPolicy {
                     && doesPackageSupportRuntimePermissions(emailPackage)) {
                 grantRuntimePermissionsLPw(emailPackage, CONTACTS_PERMISSIONS, userId);
                 grantRuntimePermissionsLPw(emailPackage, CALENDAR_PERMISSIONS, userId);
+            }
+            
+            // /e/ Mail
+            PackageParser.Package mailPackage = getSystemPackageLPr("foundation.e.mail");
+            if (mailPackage != null
+                            && doesPackageSupportRuntimePermissions(mailPackage)) {
+                grantRuntimePermissionsLPw(mailPackage, CONTACTS_PERMISSIONS, userId);
+                grantRuntimePermissionsLPw(mailPackage, CALENDAR_PERMISSIONS, userId);
+                grantRuntimePermissionsLPw(mailPackage, STORAGE_PERMISSIONS, userId);
+                grantRuntimePermissionsLPw(mailPackage, EMAIL_PERMISSIONS, userId);
             }
 
             // Browser
