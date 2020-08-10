@@ -155,8 +155,8 @@ final class DefaultPermissionGrantPolicy {
 
     private static final Set<String> TASKS_PERMISSIONS = new ArraySet<>();
     static {
-        TASKS_PERMISSIONS.add("org.dmfs.permission.READ_TASKS");
-        TASKS_PERMISSIONS.add("org.dmfs.permission.WRITE_TASKS");
+        TASKS_PERMISSIONS.add("foundation.e.permission.READ_TASKS");
+        TASKS_PERMISSIONS.add("foundation.e.permission.WRITE_TASKS");
     }
 
     private static final int MSG_READ_DEFAULT_PERMISSION_EXCEPTIONS = 1;
