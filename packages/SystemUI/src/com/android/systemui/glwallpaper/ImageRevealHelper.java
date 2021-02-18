@@ -91,18 +91,12 @@ class ImageRevealHelper {
         }
         mAnimator.cancel();
         mAwake = awake;
-        if (duration == 0) {
             // We are transiting from home to aod or aod to home directly,
             // we don't need to do transition in these cases.
             mReveal = mAwake ? MAX_REVEAL : MIN_REVEAL;
             mRevealListener.onRevealStart(false /* animate */);
             mRevealListener.onRevealStateChanged();
             mRevealListener.onRevealEnd();
-        } else {
-            mAnimator.setDuration(duration);
-            mAnimator.setFloatValues(mReveal, mAwake ? MAX_REVEAL : MIN_REVEAL);
-            mAnimator.start();
-        }
     }
 
     /**
