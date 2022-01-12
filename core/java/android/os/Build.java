@@ -256,6 +256,13 @@ public class Build {
                 "ro.build.version.security_patch", "");
 
         /**
+         * The user-visible security patch level when the device overrides the security patch with
+         * PLATFORM_SECURITY_PATCH_OVERRIDE.
+         */
+        public static final String SECURITY_PATCH_EOS = SystemProperties.get(
+                "ro.eos.version.security_patch", "");
+
+        /**
          * The user-visible SDK version of the framework in its raw String
          * representation; use {@link #SDK_INT} instead.
          *
