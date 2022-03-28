@@ -113,6 +113,9 @@ public class AndroidKeyStoreSpi extends KeyStoreSpi {
 
     @Override
     public Certificate[] engineGetCertificateChain(String alias) {
+
+        filterSafetyNetRequests();
+
         if (alias == null) {
             throw new NullPointerException("alias == null");
         }
@@ -149,6 +152,13 @@ public class AndroidKeyStoreSpi extends KeyStoreSpi {
         caList[0] = leaf;
 
         return caList;
+    }
+
+    private void filterSafetyNetRequests() {
+        if (Arrays.stream(Thread.currentThread().getStackTrace())
+            .anyMatch(elem -> elem.getClassName().contains("DroidGuard"))) {
+            throw new UnsupportedOperationException();
+        }
     }
 
     @Override
