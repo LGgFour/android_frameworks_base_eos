@@ -249,6 +249,7 @@
     <allow-in-power-save package="com.google.android.gms" />
     <allow-in-power-save package="foundation.e.accountmanager" />
     <allow-in-power-save package="foundation.e.mail" />
+    <allow-in-power-save package="foundation.e.calendar" />
 
     <!-- The PAC proxy process must have network access, otherwise no app will
          be able to connect to the internet when such a proxy is in use, since
