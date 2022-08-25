@@ -28,6 +28,8 @@ public final class SafetyNetHooks {
     private static final String TAG = "SafetyNetHooks";
     private static final String GMS_PACKAGE_NAME = "com.google.android.gms";
 
+    private static volatile boolean sIsGms = false;
+
     private static void setBuildField(String key, String value) {
         try {
             Field field = Build.class.getDeclaredField(key);
@@ -41,7 +43,20 @@ public final class SafetyNetHooks {
 
     public static void init(Application app) {
         if (GMS_PACKAGE_NAME.equals(app.getPackageName())) {
+            sIsGms = true;
             setBuildField("MODEL", Build.MODEL + " ");
+        }
+    }
+
+    private static boolean isCallerSafetyNet() {
+        return Arrays.stream(Thread.currentThread().getStackTrace())
+                .anyMatch(elem -> elem.getClassName().contains("DroidGuard"));
+    }
+
+    public static void onEngineGetCertificateChain() {
+        // Check stack for SafetyNet
+        if (sIsGms && isCallerSafetyNet()) {
+            throw new UnsupportedOperationException();
         }
     }
 }
