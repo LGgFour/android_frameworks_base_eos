@@ -147,7 +147,7 @@
                 android:layout_width="@dimen/qs_seamless_icon_size"
                 android:layout_height="@dimen/qs_seamless_icon_size"
                 android:layout_gravity="center"
-                android:tint="?android:attr/textColorPrimary"
+                android:tint="@android:color/white"
                 android:src="@*android:drawable/ic_media_seamless" />
             <TextView
                 android:id="@+id/media_seamless_text"
@@ -157,6 +157,7 @@
                 android:layout_marginStart="4dp"
                 android:fontFamily="@*android:string/config_headlineFontFamilyMedium"
                 android:singleLine="true"
+                android:textColor="@android:color/white"
                 android:text="@*android:string/ext_media_seamless_action"
                 android:textDirection="locale"
                 android:textSize="12sp"

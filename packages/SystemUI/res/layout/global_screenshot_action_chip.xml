@@ -32,7 +32,7 @@
         android:gravity="center">
         <ImageView
             android:id="@+id/screenshot_action_chip_icon"
-            android:tint="?android:attr/textColorPrimary"
+            android:tint="?android:attr/colorBackground"
             android:layout_width="@dimen/screenshot_action_chip_icon_size"
             android:layout_height="@dimen/screenshot_action_chip_icon_size"/>
         <TextView
@@ -41,6 +41,6 @@
             android:layout_height="wrap_content"
             android:fontFamily="@*android:string/config_headlineFontFamilyMedium"
             android:textSize="@dimen/screenshot_action_chip_text_size"
-            android:textColor="?android:attr/textColorPrimary"/>
+            android:textColor="?android:attr/colorBackground"/>
     </LinearLayout>
 </com.android.systemui.screenshot.ScreenshotActionChip>

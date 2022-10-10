@@ -1024,7 +1024,7 @@ public class Switch extends CompoundButton {
         }
 
         final int switchWidth = Math.max(mSwitchMinWidth,
-                2 * mThumbWidth + paddingLeft + paddingRight);
+                (int) (1.8 * mThumbWidth) + paddingLeft + paddingRight);
         final int switchHeight = Math.max(trackHeight, thumbHeight);
         mSwitchWidth = switchWidth;
         mSwitchHeight = switchHeight;
