@@ -234,6 +234,7 @@ class SaveImageInBackgroundTask extends AsyncTask<String, Void, Void> {
             // launch that directly
             Intent viewIntent = new Intent(Intent.ACTION_VIEW);
             viewIntent.setDataAndType(uri, "image/png");
+            viewIntent.putExtra("from-snapcam", true);
             viewIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             viewIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
