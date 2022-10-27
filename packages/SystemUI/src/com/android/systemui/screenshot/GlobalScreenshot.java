@@ -526,6 +526,7 @@ class SaveImageInBackgroundTask extends AsyncTask<Void, Void, Void> {
             // Create the intent to show the screenshot in gallery
             Intent launchIntent = new Intent(Intent.ACTION_VIEW);
             launchIntent.setDataAndType(mParams.imageUri, "image/png");
+            launchIntent.putExtra("from-snapcam", true);
             launchIntent.setFlags(
                     Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_GRANT_READ_URI_PERMISSION);
 
