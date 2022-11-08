@@ -215,4 +215,17 @@
     <color name="settingslib_track_off_color">@color/settingslib_track_off</color>
     <color name="connected_network_primary_color">#191C18</color>
     <color name="connected_network_secondary_color">#41493D</color>
+
+    <!-- /e/ QS media player additions -->
+    <color name="qs_media_background">#FFFFFF</color>
+    <color name="qs_media_title">#000000</color>
+    <color name="qs_media_subtitle">#99000000</color>
+    <color name="qs_media_buttons">#000000</color>
+    <color name="qs_media_source_switcher_background">#0086FF</color>
+    <color name="qs_media_source_switcher_foreground">#FFFFFF</color>
+    <color name="qs_media_default_app_icon_background">#F42E47</color>
+    <color name="qs_media_default_app_icon_foreground">#FFFFFF</color>
+    <color name="qs_media_progress">#0086FF</color>
+    <color name="qs_media_progress_background">#3D0086FF</color>
+    <color name="qs_media_button_outline">#D6D6D9</color>
 </resources>

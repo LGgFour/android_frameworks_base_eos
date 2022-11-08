@@ -104,4 +104,16 @@
     <color name="accessibility_floating_menu_background">#B3000000</color> <!-- 70% -->
 
     <color name="people_tile_background">@android:color/system_accent2_800</color>
+
+
+    <!-- /e/ QS media player additions -->
+    <color name="qs_media_background">#2F3034</color>
+    <color name="qs_media_title">#FFFFFF</color>
+    <color name="qs_media_subtitle">#99FFFFFF</color>
+    <color name="qs_media_buttons">#FFFFFF</color>
+    <color name="qs_media_source_switcher_background">#5DB2FF</color>
+    <color name="qs_media_source_switcher_foreground">#2F3034</color>
+    <color name="qs_media_progress">#5DB2FF</color>
+    <color name="qs_media_progress_background">#3D5DB2FF</color>
+    <color name="qs_media_button_outline">#262626</color>
 </resources>
