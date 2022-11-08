@@ -363,7 +363,7 @@ public class MediaControlPanel {
         appIconView.clearColorFilter();
         if (data.getAppIcon() != null && !data.getResumption()) {
             appIconView.setImageIcon(data.getAppIcon());
-            int color = mContext.getColor(android.R.color.white);
+            int color = mContext.getColor(R.color.qs_media_default_app_icon_foreground);
             appIconView.setColorFilter(color);
         } else {
             appIconView.setColorFilter(getGrayscaleFilter());

@@ -56,7 +56,8 @@
             android:layout_alignParentStart="true"
             android:fontFamily="@*android:string/config_bodyFontFamily"
             android:gravity="start"
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            android:textColor="@color/qs_media_title" />
 
         <TextView
             android:id="@+id/media_total_time"
@@ -65,7 +66,8 @@
             android:layout_alignParentEnd="true"
             android:fontFamily="@*android:string/config_bodyFontFamily"
             android:gravity="end"
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            android:textColor="@color/qs_media_title" />
     </FrameLayout>
 
     <!--  Actions must be ordered left-to-right even in RTL layout.  However, they appear in a chain
@@ -147,7 +149,7 @@
                 android:layout_width="@dimen/qs_seamless_icon_size"
                 android:layout_height="@dimen/qs_seamless_icon_size"
                 android:layout_gravity="center"
-                android:tint="@android:color/white"
+                android:tint="@color/qs_media_source_switcher_foreground"
                 android:src="@*android:drawable/ic_media_seamless" />
             <TextView
                 android:id="@+id/media_seamless_text"
@@ -157,7 +159,7 @@
                 android:layout_marginStart="4dp"
                 android:fontFamily="@*android:string/config_headlineFontFamilyMedium"
                 android:singleLine="true"
-                android:textColor="@android:color/white"
+                android:textColor="@color/qs_media_source_switcher_foreground"
                 android:text="@*android:string/ext_media_seamless_action"
                 android:textDirection="locale"
                 android:textSize="12sp"
@@ -185,6 +187,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@*android:string/config_headlineFontFamilyMedium"
         android:singleLine="true"
+        android:textColor="@color/qs_media_title"
         android:textSize="16sp" />
 
     <!-- Artist name -->
@@ -195,6 +198,7 @@
         android:fontFamily="@*android:string/config_headlineFontFamily"
         android:singleLine="true"
         style="@style/MediaPlayer.Subtitle"
+        android:textColor="@color/qs_media_subtitle"
         android:textSize="14sp" />
 
     <com.android.internal.widget.CachingIconView
@@ -216,6 +220,7 @@
         android:ellipsize="marquee"
         android:marqueeRepeatLimit="marquee_forever"
         android:text="@string/controls_media_close_session"
+        android:textColor="@color/qs_media_title"
         android:gravity="center_horizontal|top"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
