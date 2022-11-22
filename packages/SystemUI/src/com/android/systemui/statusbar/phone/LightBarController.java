@@ -81,7 +81,8 @@ public class LightBarController implements BatteryController.BatteryStateChangeC
      */
     private boolean mForceDarkForScrim;
 
-    private boolean mQsCustomizing;
+    private boolean mQsCustomizing = false;
+    private boolean mQsExpanded = false;
 
     private boolean mDirectReplying;
     private boolean mNavbarColorManagedByIme;
@@ -143,9 +144,9 @@ public class LightBarController implements BatteryController.BatteryStateChangeC
             mHasLightNavigationBar = isLight(appearance, navigationBarMode,
                     APPEARANCE_LIGHT_NAVIGATION_BARS);
             mNavigationLight = mHasLightNavigationBar
-                    && (mDirectReplying && mNavbarColorManagedByIme || !mForceDarkForScrim)
-                    && !mQsCustomizing;
+                    && (mDirectReplying && mNavbarColorManagedByIme || !mForceDarkForScrim);
             if (mNavigationLight != last) {
+                mQsExpanded = false;
                 updateNavigation();
             }
         }
@@ -168,7 +169,19 @@ public class LightBarController implements BatteryController.BatteryStateChangeC
     public void setQsCustomizing(boolean customizing) {
         if (mQsCustomizing == customizing) return;
         mQsCustomizing = customizing;
-        reevaluate();
+        if (mQsCustomizing) {
+            setQsExpanded(true);
+        }
+    }
+
+    public void setQsExpanded(boolean expanded) {
+        if (mQsExpanded == expanded) return;
+        mQsExpanded = expanded;
+
+        if (mNavigationBarController != null
+                && mNavigationBarController.supportsIconTintForNavMode(mNavigationMode)) {
+            mNavigationBarController.setIconsDark(mQsExpanded, animateChange());
+        }
     }
 
     /**
