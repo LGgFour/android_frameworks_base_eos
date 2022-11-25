@@ -175,6 +175,7 @@ import com.android.systemui.statusbar.notification.stack.MediaHeaderView;
 import com.android.systemui.statusbar.notification.stack.NotificationStackScrollLayout;
 import com.android.systemui.statusbar.notification.stack.NotificationStackScrollLayoutController;
 import com.android.systemui.statusbar.notification.stack.StackStateAnimator;
+import com.android.systemui.statusbar.phone.LightBarController;
 import com.android.systemui.statusbar.phone.LockscreenGestureLogger.LockscreenUiEvent;
 import com.android.systemui.statusbar.phone.dagger.StatusBarComponent;
 import com.android.systemui.statusbar.phone.fragment.CollapsedStatusBarFragment;
@@ -296,6 +297,7 @@ public class NotificationPanelViewController extends PanelViewController {
     private final PulseExpansionHandler mPulseExpansionHandler;
     private final KeyguardBypassController mKeyguardBypassController;
     private final KeyguardUpdateMonitor mUpdateMonitor;
+    private final LightBarController mLightBarController;
     private final ConversationNotificationManager mConversationNotificationManager;
     private final AuthController mAuthController;
     private final MediaHierarchyManager mMediaHierarchyManager;
@@ -834,6 +836,7 @@ public class NotificationPanelViewController extends PanelViewController {
                 return true;
             }
         });
+        mLightBarController = Dependency.get(LightBarController.class);
         mLockscreenUserManager = notificationLockscreenUserManager;
         mEntryManager = notificationEntryManager;
         mConversationNotificationManager = conversationNotificationManager;
@@ -2942,6 +2945,15 @@ public class NotificationPanelViewController extends PanelViewController {
         }
     }
 
+    private void updateNavColors(boolean expanded) {
+        mLightBarController.setQsExpanded(expanded && !isNightMode());
+    }
+
+    private boolean isNightMode() {
+        return (mView.getContext().getResources().getConfiguration().uiMode
+                & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
+    }
+
     private int calculatePanelHeightShade() {
         int emptyBottomMargin = mNotificationStackScrollLayoutController.getEmptyBottomMargin();
         int maxHeight = mNotificationStackScrollLayoutController.getHeight() - emptyBottomMargin;
@@ -4805,6 +4817,9 @@ public class NotificationPanelViewController extends PanelViewController {
         if (state == STATE_OPEN && mCurrentPanelState != state) {
             mView.sendAccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED);
         }
+        if ((state == STATE_OPEN && mCurrentPanelState != state) || state == STATE_OPENING) {
+            updateNavColors(true);
+        }
         if (state == STATE_OPENING) {
             mStatusBar.makeExpandedVisible(false);
         }
@@ -4812,6 +4827,7 @@ public class NotificationPanelViewController extends PanelViewController {
             // Close the status bar in the next frame so we can show the end of the
             // animation.
             mView.post(mMaybeHideExpandedRunnable);
+            updateNavColors(false);
         }
         mCurrentPanelState = state;
     }
