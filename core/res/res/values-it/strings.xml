@@ -2282,7 +2282,6 @@
     <string name="PERSOSUBSTATE_SIM_ICCID_SUCCESS" msgid="8058678548991999545">"Sblocco ICCID riuscito."</string>
     <string name="PERSOSUBSTATE_SIM_IMPI_SUCCESS" msgid="2545608067978550571">"Sblocco IMPI riuscito."</string>
     <string name="PERSOSUBSTATE_SIM_NS_SP_SUCCESS" msgid="4352382949744625007">"Sblocco fornitore di servizi sottoinsieme rete riuscito."</string>
-    <string name="config_pdp_reject_multi_conn_to_same_pdn_not_allowed" msgid="6024904218067254186"/>
     <string name="window_magnification_prompt_title" msgid="2876703640772778215">"Nuove impostazioni per l\'ingrandimento"</string>
     <string name="window_magnification_prompt_content" msgid="8159173903032344891">"Ora puoi ingrandire parte dello schermo"</string>
     <string name="turn_on_magnification_settings_action" msgid="8521433346684847700">"Attiva in Impostazioni"</string>
