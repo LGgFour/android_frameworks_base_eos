@@ -1229,7 +1229,6 @@
     <string name="aerr_mute" msgid="2304972923480211376">"Bis zum Neustart des Geräts ausblenden"</string>
     <string name="aerr_wait" msgid="3198677780474548217">"Warten"</string>
     <string name="aerr_close_app" msgid="8318883106083050970">"App schließen"</string>
-    <string name="anr_title" msgid="7290329487067300120"/>
     <string name="anr_activity_application" msgid="8121716632960340680">"<xliff:g id="APPLICATION">%2$s</xliff:g> reagiert nicht"</string>
     <string name="anr_activity_process" msgid="3477362583767128667">"<xliff:g id="ACTIVITY">%1$s</xliff:g> reagiert nicht"</string>
     <string name="anr_application_process" msgid="4978772139461676184">"<xliff:g id="APPLICATION">%1$s</xliff:g> reagiert nicht"</string>
@@ -2060,7 +2059,6 @@
     <string name="etws_primary_default_message_earthquake_and_tsunami" msgid="4888224011071875068">"Bleibe ruhig und suche in der Nähe Schutz."</string>
     <string name="etws_primary_default_message_test" msgid="4583367373909549421">"Test der Notfallwarnungen"</string>
     <string name="notification_reply_button_accessibility" msgid="5235776156579456126">"Antworten"</string>
-    <string name="etws_primary_default_message_others" msgid="7958161706019130739"/>
     <string name="mmcc_authentication_reject" msgid="4891965994643876369">"SIM unterstützt die Sprachfunktion nicht"</string>
     <string name="mmcc_imsi_unknown_in_hlr" msgid="227760698553988751">"SIM nicht für Sprachfunktion eingerichtet"</string>
     <string name="mmcc_illegal_ms" msgid="7509650265233909445">"SIM unterstützt die Sprachfunktion nicht"</string>
@@ -2284,9 +2282,7 @@
     <string name="PERSOSUBSTATE_SIM_ICCID_SUCCESS" msgid="8058678548991999545">"ICCID-Entsperrung war erfolgreich."</string>
     <string name="PERSOSUBSTATE_SIM_IMPI_SUCCESS" msgid="2545608067978550571">"IMPI-Entsperrung war erfolgreich."</string>
     <string name="PERSOSUBSTATE_SIM_NS_SP_SUCCESS" msgid="4352382949744625007">"Entsperrung des subnetz- und mobilfunkanbietergebundenen Geräts war erfolgreich."</string>
-    <string name="config_pdp_reject_dialog_title" msgid="4072057179246785727"/>
     <string name="config_pdp_reject_user_authentication_failed" msgid="4531693033885744689"/>
-    <string name="config_pdp_reject_service_not_subscribed" msgid="8190338397128671588"/>
     <string name="config_pdp_reject_multi_conn_to_same_pdn_not_allowed" msgid="6024904218067254186"/>
     <string name="window_magnification_prompt_title" msgid="2876703640772778215">"Neue Vergrößerungseinstellungen"</string>
     <string name="window_magnification_prompt_content" msgid="8159173903032344891">"Du kannst das Display teilweise vergrößern"</string>
