@@ -2282,7 +2282,6 @@
     <string name="PERSOSUBSTATE_SIM_ICCID_SUCCESS" msgid="8058678548991999545">"ICCID-Entsperrung war erfolgreich."</string>
     <string name="PERSOSUBSTATE_SIM_IMPI_SUCCESS" msgid="2545608067978550571">"IMPI-Entsperrung war erfolgreich."</string>
     <string name="PERSOSUBSTATE_SIM_NS_SP_SUCCESS" msgid="4352382949744625007">"Entsperrung des subnetz- und mobilfunkanbietergebundenen Geräts war erfolgreich."</string>
-    <string name="config_pdp_reject_user_authentication_failed" msgid="4531693033885744689"/>
     <string name="config_pdp_reject_multi_conn_to_same_pdn_not_allowed" msgid="6024904218067254186"/>
     <string name="window_magnification_prompt_title" msgid="2876703640772778215">"Neue Vergrößerungseinstellungen"</string>
     <string name="window_magnification_prompt_content" msgid="8159173903032344891">"Du kannst das Display teilweise vergrößern"</string>
