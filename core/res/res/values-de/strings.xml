@@ -23,7 +23,7 @@
     <string name="gigabyteShort" msgid="7515809460261287991">"GB"</string>
     <string name="terabyteShort" msgid="1822367128583886496">"TB"</string>
     <string name="petabyteShort" msgid="5651571254228534832">"PB"</string>
-    <string name="fileSizeSuffix" msgid="4233671691980131257">"<xliff:g id="NUMBER">%1$s</xliff:g> <xliff:g id="UNIT">%2$s</xliff:g>"</string>
+    <string name="fileSizeSuffix" msgid="4233671691980131257"><xliff:g id="number" example="123">%1$s</xliff:g> <xliff:g id="unit" example="MB">%2$s</xliff:g></string>
     <string name="untitled" msgid="3381766946944136678">"&lt;Unbenannt&gt;"</string>
     <string name="emptyPhoneNumber" msgid="5812172618020360048">"(Keine Telefonnummer)"</string>
     <string name="unknownName" msgid="7078697621109055330">"Unbekannt"</string>
@@ -79,7 +79,7 @@
     <string name="RestrictedOnNormalTitle" msgid="7009474589746551737">"Keine Anrufe"</string>
     <string name="RestrictedOnAllVoiceTitle" msgid="3982069078579103087">"Keine Anrufe oder Notrufe"</string>
     <string name="RestrictedStateContent" msgid="7693575344608618926">"Vorübergehend von deinem Mobilfunkanbieter deaktiviert"</string>
-    <string name="RestrictedStateContentMsimTemplate" msgid="5228235722511044687">"Von deinem Mobilfunkanbieter für SIM <xliff:g id="SIMNUMBER">%d</xliff:g> vorübergehend deaktiviert"</string>
+    <string name="RestrictedStateContentMsimTemplate" msgid="5228235722511044687">Von deinem Mobilfunkanbieter für SIM <xliff:g id="simNumber" example="1">%d</xliff:g> vorübergehend deaktiviert</string>
     <string name="NetworkPreferenceSwitchTitle" msgid="1008329951315753038">"Mobilfunknetz nicht erreichbar"</string>
     <string name="NetworkPreferenceSwitchSummary" msgid="2086506181486324860">"Versuche, das bevorzugte Netzwerk zu ändern. Tippe, um ein anderes auszuwählen."</string>
     <string name="EmergencyCallWarningTitle" msgid="1615688002899152860">"Notrufe nicht möglich"</string>
@@ -128,13 +128,13 @@
     </string-array>
     <!-- no translation found for wfcSpnFormat_spn (2982505428519096311) -->
     <skip/>
-    <string name="wfcSpnFormat_spn_wifi_calling" msgid="3165949348000906194">"<xliff:g id="SPN">%s</xliff:g> WLAN-Telefonie"</string>
-    <string name="wfcSpnFormat_spn_wifi_calling_vo_hyphen" msgid="3836827895369365298">"<xliff:g id="SPN">%s</xliff:g> WLAN-Telefonie"</string>
+    <string name="wfcSpnFormat_spn_wifi_calling" msgid="3165949348000906194"><xliff:g id="spn" example="Operator">%s</xliff:g> WLAN-Telefonie</string>
+    <string name="wfcSpnFormat_spn_wifi_calling_vo_hyphen" msgid="3836827895369365298"><xliff:g id="spn" example="Operator">%s</xliff:g> WLAN-Telefonie</string>
     <string name="wfcSpnFormat_wlan_call" msgid="4895315549916165700">"WLAN-Anruf"</string>
-    <string name="wfcSpnFormat_spn_wlan_call" msgid="255919245825481510">"<xliff:g id="SPN">%s</xliff:g> WLAN-Anruf"</string>
-    <string name="wfcSpnFormat_spn_wifi" msgid="7232899594327126970">"<xliff:g id="SPN">%s</xliff:g> WLAN"</string>
-    <string name="wfcSpnFormat_wifi_calling_bar_spn" msgid="8383917598312067365">"WLAN-Telefonie | <xliff:g id="SPN">%s</xliff:g>"</string>
-    <string name="wfcSpnFormat_spn_vowifi" msgid="6865214948822061486">"<xliff:g id="SPN">%s</xliff:g> VoWLAN"</string>
+    <string name="wfcSpnFormat_spn_wlan_call" msgid="255919245825481510"><xliff:g id="spn" example="Operator">%s</xliff:g> WLAN-Anruf</string>
+    <string name="wfcSpnFormat_spn_wifi" msgid="7232899594327126970"><xliff:g id="spn" example="Operator">%s</xliff:g> WLAN</string>
+    <string name="wfcSpnFormat_wifi_calling_bar_spn" msgid="8383917598312067365">WLAN-Telefonie | <xliff:g id="spn" example="Operator">%s</xliff:g></string>
+    <string name="wfcSpnFormat_spn_vowifi" msgid="6865214948822061486"><xliff:g id="spn" example="Operator">%s</xliff:g> VoWLAN</string>
     <string name="wfcSpnFormat_wifi_calling" msgid="6178935388378661755">"WLAN-Telefonie"</string>
     <string name="wfcSpnFormat_wifi" msgid="1376356951297043426">"WLAN"</string>
     <string name="wfcSpnFormat_wifi_calling_wo_hyphen" msgid="7178561009225028264">"WLAN-Telefonie"</string>
@@ -145,7 +145,7 @@
     <string name="wfc_mode_wifi_only_summary" msgid="104951993894678665">"Nur WLAN"</string>
     <!-- no translation found for crossSimFormat_spn (9125246077491634262) -->
     <skip/>
-    <string name="crossSimFormat_spn_cross_sim_calling" msgid="5620807020002879057">"<xliff:g id="SPN">%s</xliff:g>-Anruf über Ersatz-SIM"</string>
+    <string name="crossSimFormat_spn_cross_sim_calling" msgid="5620807020002879057"><xliff:g id="spn" example="Operator">%s</xliff:g> -Anruf über Ersatz-SIM</string>
     <string name="cfTemplateNotForwarded" msgid="862202427794270501">"<xliff:g id="BEARER_SERVICE_CODE">{0}</xliff:g>: Nicht weitergeleitet"</string>
     <string name="cfTemplateForwarded" msgid="9132506315842157860">"<xliff:g id="BEARER_SERVICE_CODE">{0}</xliff:g>: <xliff:g id="DIALING_NUMBER">{1}</xliff:g>"</string>
     <string name="cfTemplateForwardedTime" msgid="735042369233323609">"<xliff:g id="BEARER_SERVICE_CODE">{0}</xliff:g><xliff:g id="DIALING_NUMBER">{1}</xliff:g> nach <xliff:g id="TIME_DELAY">{2}</xliff:g> Sekunden."</string>
@@ -169,7 +169,7 @@
     <string name="httpErrorFile" msgid="3400658466057744084">"Auf die Datei konnte nicht zugegriffen werden."</string>
     <string name="httpErrorFileNotFound" msgid="5191433324871147386">"Die angeforderte Datei wurde nicht gefunden."</string>
     <string name="httpErrorTooManyRequests" msgid="2149677715552037198">"Es werden zurzeit zu viele Anfragen verarbeitet. Bitte versuche es später noch einmal."</string>
-    <string name="notification_title" msgid="5783748077084481121">"Fehler bei Anmeldung für <xliff:g id="ACCOUNT">%1$s</xliff:g>"</string>
+    <string name="notification_title" msgid="5783748077084481121">Fehler bei Anmeldung für <xliff:g id="account" example="foo@gmail.com">%1$s</xliff:g></string>
     <string name="contentServiceSync" msgid="2341041749565687871">"Synchronisierung"</string>
     <string name="contentServiceSyncNotificationTitle" msgid="5766411446676388623">"Synchronisierung nicht möglich"</string>
     <string name="contentServiceTooManyDeletesNotificationDesc" msgid="4562226280528716090">"Es wurde versucht, zu viele <xliff:g id="CONTENT_TYPE">%s</xliff:g> zu löschen."</string>
@@ -206,7 +206,7 @@
     <string name="printing_disabled_by" msgid="3517499806528864633">"Drucken wurde von <xliff:g id="OWNER_APP">%s</xliff:g> deaktiviert."</string>
     <string name="personal_apps_suspension_title" msgid="7561416677884286600">"Arbeitsprofil aktivieren"</string>
     <string name="personal_apps_suspension_text" msgid="6115455688932935597">"Deine privaten Apps werden blockiert, bis du dein Arbeitsprofil aktivierst"</string>
-    <string name="personal_apps_suspension_soon_text" msgid="8123898693479590">"Private Apps werden am <xliff:g id="DATE">%1$s</xliff:g> um <xliff:g id="TIME">%2$s</xliff:g> blockiert. Dein IT-Administrator hat festgelegt, dass dein Arbeitsprofil nicht länger als <xliff:g id="NUMBER">%3$d</xliff:g> Tage pausiert werden darf."</string>
+    <string name="personal_apps_suspension_soon_text" msgid="8123898693479590"> Private Apps werden am <xliff:g id="date" example="May 29">%1$s</xliff:g> um <xliff:g id="time" example="5:20 PM">%2$s</xliff:g> blockiert. Dein IT-Administrator hat festgelegt, dass dein Arbeitsprofil nicht länger als <xliff:g id="number" example="3">%3$d</xliff:g> Tage pausiert werden darf. </string>
     <string name="personal_apps_suspended_turn_profile_on" msgid="2758012869627513689">"Aktivieren"</string>
     <string name="me" msgid="6207584824693813140">"Eigene"</string>
     <string name="power_dialog" product="tablet" msgid="8333207765671417261">"Tablet-Optionen"</string>
@@ -599,7 +599,7 @@
     <string name="fingerprint_error_hw_not_present" msgid="578914350967423382">"Dieses Gerät hat keinen Fingerabdrucksensor."</string>
     <string name="fingerprint_error_security_update_required" msgid="7750187320640856433">"Der Sensor ist vorübergehend deaktiviert."</string>
     <string name="fingerprint_error_bad_calibration" msgid="4385512597740168120">"Der Fingerabdrucksensor kann nicht verwendet werden. Suche einen Reparaturdienstleister auf."</string>
-    <string name="fingerprint_name_template" msgid="8941662088160289778">"Finger <xliff:g id="FINGERID">%d</xliff:g>"</string>
+    <string name="fingerprint_name_template" msgid="8941662088160289778">Finger <xliff:g id="fingerId" example="1">%d</xliff:g></string>
     <string name="fingerprint_app_setting_name" msgid="4253767877095495844">"Fingerabdruck verwenden"</string>
     <string name="fingerprint_or_screen_lock_app_setting_name" msgid="3501743523487644907">"Fingerabdruck oder Displaysperre verwenden"</string>
     <string name="fingerprint_dialog_default_subtitle" msgid="3879832845486835905">"Mithilfe deines Fingerabdrucks fortfahren"</string>
@@ -653,7 +653,7 @@
     <string name="face_error_not_enrolled" msgid="1134739108536328412">"Entsperrung per Gesichtserkennung ist nicht eingerichtet"</string>
     <string name="face_error_hw_not_present" msgid="7940978724978763011">"Gesichtsentsperrung wird auf diesem Gerät nicht unterstützt"</string>
     <string name="face_error_security_update_required" msgid="5076017208528750161">"Der Sensor ist vorübergehend deaktiviert."</string>
-    <string name="face_name_template" msgid="3877037340223318119">"Gesicht <xliff:g id="FACEID">%d</xliff:g>"</string>
+    <string name="face_name_template" msgid="3877037340223318119">Gesicht <xliff:g id="faceId" example="1">%d</xliff:g></string>
     <string name="face_app_setting_name" msgid="5854024256907828015">"Gesichtsentsperrung verwenden"</string>
     <string name="face_or_screen_lock_app_setting_name" msgid="1603149075605709106">"Entsperrung per Gesichtserkennung oder Displaysperre verwenden"</string>
     <string name="face_dialog_default_subtitle" msgid="6620492813371195429">"Gesichtserkennung verwenden, um fortzufahren"</string>
@@ -944,7 +944,7 @@
     <string name="lockscreen_access_pattern_start" msgid="3778502525702613399">"Muster gestartet"</string>
     <string name="lockscreen_access_pattern_cleared" msgid="7493849102641167049">"Muster gelöscht"</string>
     <string name="lockscreen_access_pattern_cell_added" msgid="6746676335293144163">"Zelle hinzugefügt"</string>
-    <string name="lockscreen_access_pattern_cell_added_verbose" msgid="2931364927622563465">"Punkt <xliff:g id="CELL_INDEX">%1$s</xliff:g> hinzugefügt"</string>
+    <string name="lockscreen_access_pattern_cell_added_verbose" msgid="2931364927622563465"> Punkt<xliff:g id="cell_index" example="3">%1$s</xliff:g> hinzugefügt</string>
     <string name="lockscreen_access_pattern_detected" msgid="3931150554035194012">"Muster abgeschlossen"</string>
     <string name="lockscreen_access_pattern_area" msgid="1288780416685002841">"Bereich für Muster"</string>
     <string name="keyguard_accessibility_widget_changed" msgid="7298011259508200234">"%1$s. Widget %2$d von %3$d."</string>
@@ -991,7 +991,7 @@
     <string name="double_tap_toast" msgid="7065519579174882778">"Tipp: Zum Vergrößern und Verkleinern doppeltippen"</string>
     <string name="autofill_this_form" msgid="3187132440451621492">"Automatisches Ausfüllen"</string>
     <string name="setup_autofill" msgid="5431369130866618567">"Autom.Ausfüll.konf."</string>
-    <string name="autofill_window_title" msgid="4379134104008111961">"Mit <xliff:g id="SERVICENAME">%1$s</xliff:g> automatisch ausfüllen"</string>
+    <string name="autofill_window_title" msgid="4379134104008111961">Mit <xliff:g id="serviceName" example="MyPass">%1$s</xliff:g> automatisch ausfüllen</string>
     <string name="autofill_address_name_separator" msgid="8190155636149596125">" "</string>
     <string name="autofill_address_summary_name_format" msgid="3402882515222673691">"$1$2$3"</string>
     <string name="autofill_address_summary_separator" msgid="760522655085707045">", "</string>
@@ -1027,11 +1027,11 @@
     <string name="open_permission_deny" msgid="5136793905306987251">"Du bist nicht zum Öffnen dieser Seite berechtigt."</string>
     <string name="text_copied" msgid="2531420577879738860">"Text in Zwischenablage kopiert."</string>
     <string name="copied" msgid="4675902854553014676">"Kopiert"</string>
-    <string name="pasted_from_app" msgid="5627698450808256545">"<xliff:g id="PASTING_APP_NAME">%1$s</xliff:g> hat etwas von <xliff:g id="SOURCE_APP_NAME">%2$s</xliff:g> eingefügt"</string>
-    <string name="pasted_from_clipboard" msgid="7355790625710831847">"<xliff:g id="PASTING_APP_NAME">%1$s</xliff:g> hat Informationen aus der Zwischenablage eingefügt"</string>
-    <string name="pasted_text" msgid="4298871641549173733">"<xliff:g id="PASTING_APP_NAME">%1$s</xliff:g> hat einen von dir kopierten Text eingefügt"</string>
-    <string name="pasted_image" msgid="4729097394781491022">"<xliff:g id="PASTING_APP_NAME">%1$s</xliff:g> hat ein von dir kopiertes Bild eingefügt"</string>
-    <string name="pasted_content" msgid="646276353060777131">"<xliff:g id="PASTING_APP_NAME">%1$s</xliff:g> hat den von dir kopierten Inhalt eingefügt"</string>
+    <string name="pasted_from_app" msgid="5627698450808256545"><xliff:g id="pasting_app_name" example="Gmail">%1$s</xliff:g> hat etwas von <xliff:g id="source_app_name" example="Chrome">%2$s</xliff:g> eingefügt</string>
+    <string name="pasted_from_clipboard" msgid="7355790625710831847"><xliff:g id="pasting_app_name" example="Gmail">%1$s</xliff:g> hat Informationen aus der Zwischenablage eingefügt</string>
+    <string name="pasted_text" msgid="4298871641549173733"><xliff:g id="pasting_app_name" example="Gmail">%1$s</xliff:g> hat einen von dir kopierten Text eingefügt</string>
+    <string name="pasted_image" msgid="4729097394781491022"><xliff:g id="pasting_app_name" example="Gmail">%1$s</xliff:g> hat ein von dir kopiertes Bild eingefügt</string>
+    <string name="pasted_content" msgid="646276353060777131"><xliff:g id="pasting_app_name" example="Gmail">%1$s</xliff:g> hat den von dir kopierten Inhalt eingefügt</string>
     <string name="more_item_label" msgid="7419249600215749115">"Mehr"</string>
     <string name="prepend_shortcut_label" msgid="1743716737502867951">"Menü+"</string>
     <string name="menu_meta_shortcut_label" msgid="1623390163674762478">"Meta-Taste +"</string>
@@ -1061,9 +1061,9 @@
     </plurals>
     <string name="last_month" msgid="1528906781083518683">"Letzter Monat"</string>
     <string name="older" msgid="1645159827884647400">"Älter"</string>
-    <string name="preposition_for_date" msgid="2780767868832729599">"am <xliff:g id="DATE">%s</xliff:g>"</string>
-    <string name="preposition_for_time" msgid="4336835286453822053">"um <xliff:g id="TIME">%s</xliff:g>"</string>
-    <string name="preposition_for_year" msgid="3149809685340130039">"im Jahr <xliff:g id="YEAR">%s</xliff:g>"</string>
+    <string name="preposition_for_date" msgid="2780767868832729599">am <xliff:g id="date" example="May 29">%s</xliff:g></string>
+    <string name="preposition_for_time" msgid="4336835286453822053">um <xliff:g id="time" example="2:33 am">%s</xliff:g></string>
+    <string name="preposition_for_year" msgid="3149809685340130039">in <xliff:g id="year" example="2003">%s</xliff:g></string>
     <string name="day" msgid="8394717255950176156">"Tag"</string>
     <string name="days" msgid="4570879797423034973">"Tage"</string>
     <string name="hour" msgid="7796325297097314653">"Stunde"</string>
@@ -1078,80 +1078,80 @@
     <string name="years" msgid="5797714729103773425">"Jahre"</string>
     <string name="now_string_shortest" msgid="3684914126941650330">"Jetzt"</string>
     <plurals name="duration_minutes_shortest" formatted="false" msgid="7519574894537185135">
-        <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> Min.</item>
-        <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> Min.</item>
+        <item quantity="one"><xliff:g example="1" id="count">%d</xliff:g>m</item>
+        <item quantity="other"><xliff:g example="2" id="count">%d</xliff:g>m</item>
     </plurals>
     <plurals name="duration_hours_shortest" formatted="false" msgid="2838655994500499651">
-        <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> h</item>
-        <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> h</item>
+        <item quantity="one"><xliff:g example="1" id="count">%d</xliff:g>h</item>
+        <item quantity="other"><xliff:g example="2" id="count">%d</xliff:g>h</item>
     </plurals>
     <plurals name="duration_days_shortest" formatted="false" msgid="3686058472983158496">
-        <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> T.</item>
-        <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> T.</item>
+        <item quantity="one"><xliff:g example="1" id="count">%d</xliff:g> T.</item>
+        <item quantity="other"><xliff:g example="2" id="count">%d</xliff:g> T.</item>
     </plurals>
     <plurals name="duration_years_shortest" formatted="false" msgid="8299112348723640338">
-        <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> J.</item>
-        <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> J.</item>
+        <item quantity="one"><xliff:g example="1" id="count">%d</xliff:g> J.</item>
+        <item quantity="other"><xliff:g example="2" id="count">&gt;%d</xliff:g> J.</item>
     </plurals>
     <plurals name="duration_minutes_shortest_future" formatted="false" msgid="849196137176399440">
-        <item quantity="other">in <xliff:g id="COUNT_1">%d</xliff:g> Min.</item>
-        <item quantity="one">in <xliff:g id="COUNT_0">%d</xliff:g> Min.</item>
+        <item quantity="one">in <xliff:g example="1" id="count">%d</xliff:g>m</item>
+        <item quantity="other">in <xliff:g example="2" id="count">%d</xliff:g>m</item>
     </plurals>
     <plurals name="duration_hours_shortest_future" formatted="false" msgid="5386373597343170388">
-        <item quantity="other">in <xliff:g id="COUNT_1">%d</xliff:g> h</item>
-        <item quantity="one">in <xliff:g id="COUNT_0">%d</xliff:g> h</item>
+        <item quantity="one">in <xliff:g example="1" id="count">%d</xliff:g>h</item>
+        <item quantity="other">in <xliff:g example="2" id="count">%d</xliff:g>h</item>
     </plurals>
     <plurals name="duration_days_shortest_future" formatted="false" msgid="814754627092787227">
-        <item quantity="other">in <xliff:g id="COUNT_1">%d</xliff:g> T.</item>
-        <item quantity="one">in <xliff:g id="COUNT_0">%d</xliff:g> T.</item>
+        <item quantity="one">in <xliff:g example="1" id="count">%d</xliff:g>T</item>
+        <item quantity="other">in <xliff:g example="2" id="count">%d</xliff:g>T</item>
     </plurals>
     <plurals name="duration_years_shortest_future" formatted="false" msgid="7683731800140202145">
-        <item quantity="other">in <xliff:g id="COUNT_1">%d</xliff:g> J.</item>
-        <item quantity="one">in <xliff:g id="COUNT_0">%d</xliff:g> J.</item>
+        <item quantity="one">in <xliff:g example="1" id="count">%d</xliff:g>J</item>
+        <item quantity="other">in <xliff:g example="2" id="count">%d</xliff:g>J</item>
     </plurals>
     <plurals name="duration_minutes_relative" formatted="false" msgid="6569851308583028344">
-        <item quantity="other">vor <xliff:g id="COUNT_1">%d</xliff:g> Minuten</item>
-        <item quantity="one">vor <xliff:g id="COUNT_0">%d</xliff:g> Minute</item>
+        <item quantity="one">vor <xliff:g example="1" id="count">%d</xliff:g> Minute</item>
+        <item quantity="other">vor <xliff:g example="2" id="count">%d</xliff:g> Minuten</item>
     </plurals>
     <plurals name="duration_hours_relative" formatted="false" msgid="420434788589102019">
-        <item quantity="other">vor <xliff:g id="COUNT_1">%d</xliff:g> Stunden</item>
-        <item quantity="one">vor <xliff:g id="COUNT_0">%d</xliff:g> Stunde</item>
+        <item quantity="one">vor <xliff:g example="1" id="count">%d</xliff:g> Stunde</item>
+        <item quantity="other">vor <xliff:g example="2" id="count">%d</xliff:g> Stunden</item>
     </plurals>
     <plurals name="duration_days_relative" formatted="false" msgid="6056425878237482431">
-        <item quantity="other">vor <xliff:g id="COUNT_1">%d</xliff:g> Tagen</item>
-        <item quantity="one">vor <xliff:g id="COUNT_0">%d</xliff:g> Tag</item>
+        <item quantity="one">vor <xliff:g example="1" id="count">%d</xliff:g> Tag</item>
+        <item quantity="other">vor <xliff:g example="2" id="count">%d</xliff:g> Tagen</item>
     </plurals>
     <plurals name="duration_years_relative" formatted="false" msgid="2179998228861172159">
-        <item quantity="other">vor <xliff:g id="COUNT_1">%d</xliff:g> Jahren</item>
-        <item quantity="one">vor <xliff:g id="COUNT_0">%d</xliff:g> Jahr</item>
+        <item quantity="one">vor <xliff:g example="1" id="count">%d</xliff:g> Jahr</item>
+        <item quantity="other">vor <xliff:g example="2" id="count">%d</xliff:g> Jahren</item>
     </plurals>
     <plurals name="duration_minutes_relative_future" formatted="false" msgid="5759885720917567723">
-        <item quantity="other">in <xliff:g id="COUNT_1">%d</xliff:g> Minuten</item>
-        <item quantity="one">in <xliff:g id="COUNT_0">%d</xliff:g> Minute</item>
+        <item quantity="one">in <xliff:g example="1" id="count">%d</xliff:g> Minute</item>
+        <item quantity="other">in <xliff:g example="2" id="count">%d</xliff:g> Minuten</item>
     </plurals>
     <plurals name="duration_hours_relative_future" formatted="false" msgid="8963511608507707959">
-        <item quantity="other">in <xliff:g id="COUNT_1">%d</xliff:g> Stunden</item>
-        <item quantity="one">in <xliff:g id="COUNT_0">%d</xliff:g> Stunde</item>
+        <item quantity="one">in <xliff:g example="1" id="count">%d</xliff:g> Stunde</item>
+        <item quantity="other">in <xliff:g example="2" id="count">%d</xliff:g> Stunden</item>
     </plurals>
     <plurals name="duration_days_relative_future" formatted="false" msgid="1964709470979250702">
-        <item quantity="other">in <xliff:g id="COUNT_1">%d</xliff:g> Tagen</item>
-        <item quantity="one">in <xliff:g id="COUNT_0">%d</xliff:g> Tag</item>
+        <item quantity="one">in <xliff:g example="1" id="count">%d</xliff:g> Tag</item>
+        <item quantity="other">in <xliff:g example="2" id="count">&gt;%d</xliff:g> Tagen</item>
     </plurals>
     <plurals name="duration_years_relative_future" formatted="false" msgid="3985129025134896371">
-        <item quantity="other">in <xliff:g id="COUNT_1">%d</xliff:g> Jahren</item>
-        <item quantity="one">in <xliff:g id="COUNT_0">%d</xliff:g> Jahr</item>
+        <item quantity="one">in <xliff:g example="1" id="count">%d</xliff:g> Jahr</item>
+        <item quantity="other">in <xliff:g example="2" id="count">%d</xliff:g> Jahren</item>
     </plurals>
     <string name="VideoView_error_title" msgid="5750686717225068016">"Videoprobleme"</string>
     <string name="VideoView_error_text_invalid_progressive_playback" msgid="3782449246085134720">"Dieses Video ist nicht für Streaming auf diesem Gerät gültig."</string>
     <string name="VideoView_error_text_unknown" msgid="7658683339707607138">"Video kann nicht wiedergegeben werden."</string>
     <string name="VideoView_error_button" msgid="5138809446603764272">"Ok"</string>
-    <string name="relative_time" msgid="8572030016028033243">"<xliff:g id="DATE">%1$s</xliff:g>, <xliff:g id="TIME">%2$s</xliff:g>"</string>
+    <string name="relative_time" msgid="8572030016028033243"><xliff:g id="date" example="4 hours ago">%1$s</xliff:g>, <xliff:g id="time" example="11:00 am">%2$s</xliff:g></string>
     <string name="noon" msgid="8365974533050605886">"Mittag"</string>
     <string name="Noon" msgid="6902418443846838189">"Mittag"</string>
     <string name="midnight" msgid="3646671134282785114">"Mitternacht"</string>
     <string name="Midnight" msgid="8176019203622191377">"Mitternacht"</string>
-    <string name="elapsed_time_short_format_mm_ss" msgid="8689459651807876423">"<xliff:g id="MINUTES">%1$02d</xliff:g>:<xliff:g id="SECONDS">%2$02d</xliff:g>"</string>
-    <string name="elapsed_time_short_format_h_mm_ss" msgid="2302144714803345056">"<xliff:g id="HOURS">%1$d</xliff:g>:<xliff:g id="MINUTES">%2$02d</xliff:g>:<xliff:g id="SECONDS">%3$02d</xliff:g>"</string>
+    <string name="elapsed_time_short_format_mm_ss" msgid="8689459651807876423"><xliff:g id="minutes" example="1">%1$02d</xliff:g>:<xliff:g id="seconds" example="23">%2$02d</xliff:g></string>
+    <string name="elapsed_time_short_format_h_mm_ss" msgid="2302144714803345056"><xliff:g id="hours" example="1">%1$d</xliff:g>:<xliff:g id="minutes" example="43">%2$02d</xliff:g>:<xliff:g id="seconds" example="33">%3$02d</xliff:g></string>
     <string name="selectAll" msgid="1532369154488982046">"Alles auswählen"</string>
     <string name="cut" msgid="2561199725874745819">"Ausschneiden"</string>
     <string name="copy" msgid="5472512047143665218">"Kopieren"</string>
@@ -1193,10 +1193,10 @@
     <string name="whichViewApplication" msgid="5733194231473132945">"Öffnen mit"</string>
     <string name="whichViewApplicationNamed" msgid="415164730629690105">"Mit %1$s öffnen"</string>
     <string name="whichViewApplicationLabel" msgid="7367556735684742409">"Öffnen"</string>
-    <string name="whichOpenHostLinksWith" msgid="7645631470199397485">"Links von <xliff:g id="HOST">%1$s</xliff:g> öffnen mit"</string>
+    <string name="whichOpenHostLinksWith" msgid="7645631470199397485">Links von <xliff:g id="host" example="mail.google.com">%1$s</xliff:g> öffnen mit</string>
     <string name="whichOpenLinksWith" msgid="1120936181362907258">"Links öffnen mit"</string>
-    <string name="whichOpenLinksWithApp" msgid="6917864367861910086">"Links mit <xliff:g id="APPLICATION">%1$s</xliff:g> öffnen"</string>
-    <string name="whichOpenHostLinksWithApp" msgid="2401668560768463004">"Links von <xliff:g id="HOST">%1$s</xliff:g> mit <xliff:g id="APPLICATION">%2$s</xliff:g> öffnen"</string>
+    <string name="whichOpenLinksWithApp" msgid="6917864367861910086">Links mit <xliff:g id="application" example="Chrome">%1$s</xliff:g> öffnen</string>
+    <string name="whichOpenHostLinksWithApp" msgid="2401668560768463004">Links von <xliff:g id="host" example="mail.google.com">%1$s</xliff:g> mit <xliff:g id="application" example="Chrome">%2$s</xliff:g> öffnen</string>
     <string name="whichGiveAccessToApplicationLabel" msgid="7805857277166106236">"Zugriff erlauben"</string>
     <string name="whichEditApplication" msgid="6191568491456092812">"Bearbeiten mit"</string>
     <string name="whichEditApplicationNamed" msgid="8096494987978521514">"Mit %1$s bearbeiten"</string>
@@ -1724,8 +1724,8 @@
     <string name="one_handed_mode_feature_name" msgid="2334330034828094891">"Einhandmodus"</string>
     <string name="reduce_bright_colors_feature_name" msgid="3222994553174604132">"Extradunkel"</string>
     <string name="accessibility_shortcut_enabling_service" msgid="5473495203759847687">"Lautstärketasten wurden gedrückt gehalten. <xliff:g id="SERVICE_NAME">%1$s</xliff:g> ist aktiviert."</string>
-    <string name="accessibility_shortcut_disabling_service" msgid="8675244165062700619">"Lautstärketasten wurden gedrückt gehalten. <xliff:g id="SERVICE_NAME">%1$s</xliff:g> ist deaktiviert."</string>
-    <string name="accessibility_shortcut_spoken_feedback" msgid="4228997042855695090">"Halten Sie beide Lautstärketasten drei Sekunden lang gedrückt, um <xliff:g id="SERVICE_NAME">%1$s</xliff:g> zu verwenden"</string>
+    <string name="accessibility_shortcut_disabling_service" msgid="8675244165062700619">Lautstärketasten wurden gedrückt gehalten. <xliff:g id="service_name" example="TalkBack">%1$s</xliff:g> ist deaktiviert.</string>
+    <string name="accessibility_shortcut_spoken_feedback" msgid="4228997042855695090">Halten Sie beide Lautstärketasten drei Sekunden lang gedrückt, um <xliff:g id="service_name" example="TalkBack">%1$s</xliff:g> zu verwenden</string>
     <string name="accessibility_button_prompt_text" msgid="8343213623338605305">"Wähle eine Funktion aus, die verwendet wird, wenn du auf die Schaltfläche \"Bedienungshilfen\" tippst:"</string>
     <string name="accessibility_gesture_prompt_text" msgid="8742535972130563952">"Wähle die Funktion aus, die mit der Touch-Geste für die Bedienungshilfen verwendet werden soll (mit zwei Fingern vom unteren Bildschirmrand nach oben wischen):"</string>
     <string name="accessibility_gesture_3finger_prompt_text" msgid="5211827854510660203">"Wähle eine Funktion aus, die mit der Touch-Geste für die Bedienungshilfen verwendet werden soll (mit drei Fingern vom unteren Bildschirmrand nach oben wischen):"</string>
@@ -1733,9 +1733,9 @@
     <string name="accessibility_gesture_instructional_text" msgid="9196230728837090497">"Wenn du zwischen den Funktionen wechseln möchtest, wische mit zwei Fingern nach oben und halte."</string>
     <string name="accessibility_gesture_3finger_instructional_text" msgid="3425123684990193765">"Wenn du zwischen den Funktionen wechseln möchtest, wische mit drei Fingern nach oben und halte."</string>
     <string name="accessibility_magnification_chooser_text" msgid="1502075582164931596">"Vergrößerung"</string>
-    <string name="user_switched" msgid="7249833311585228097">"Aktueller Nutzer <xliff:g id="NAME">%1$s</xliff:g>"</string>
-    <string name="user_switching_message" msgid="1912993630661332336">"Wechseln zu <xliff:g id="NAME">%1$s</xliff:g>…"</string>
-    <string name="user_logging_out_message" msgid="7216437629179710359">"<xliff:g id="NAME">%1$s</xliff:g> wird abgemeldet…"</string>
+    <string name="user_switched" msgid="7249833311585228097">Aktueller Nutzer <xliff:g id="name" example="Bob">%1$s</xliff:g></string>
+    <string name="user_switching_message" msgid="1912993630661332336">Wechseln zu <xliff:g id="name" example="Bob">%1$s</xliff:g> …</string>
+    <string name="user_logging_out_message" msgid="7216437629179710359"><xliff:g id="name" example="Bob">%1$s</xliff:g> wird abgemeldet …</string>
     <string name="owner_name" msgid="8713560351570795743">"Eigentümer"</string>
     <string name="error_message_title" msgid="4082495589294631966">"Fehler"</string>
     <string name="error_message_change_not_allowed" msgid="843159705042381454">"Dein Administrator lässt diese Änderung nicht zu"</string>
@@ -1840,7 +1840,7 @@
     <string name="write_fail_reason_cannot_write" msgid="432118118378451508">"Fehler beim Schreiben von Inhalten"</string>
     <string name="reason_unknown" msgid="5599739807581133337">"Unbekannt"</string>
     <string name="reason_service_unavailable" msgid="5288405248063804713">"Druckdienst nicht aktiviert"</string>
-    <string name="print_service_installed_title" msgid="6134880817336942482">"Dienst <xliff:g id="NAME">%s</xliff:g> installiert"</string>
+    <string name="print_service_installed_title" msgid="6134880817336942482">Dienst <xliff:g id="name" example="Cloud Print">%s</xliff:g> installiert</string>
     <string name="print_service_installed_message" msgid="7005672469916968131">"Zum Aktivieren tippen"</string>
     <string name="restr_pin_enter_admin_pin" msgid="1199419462726962697">"Administrator-PIN eingeben"</string>
     <string name="restr_pin_enter_pin" msgid="373139384161304555">"PIN eingeben"</string>
@@ -1866,10 +1866,10 @@
     <string name="select_minutes" msgid="9157401137441014032">"Minuten auswählen"</string>
     <string name="select_day" msgid="2060371240117403147">"Monat und Tag auswählen"</string>
     <string name="select_year" msgid="1868350712095595393">"Jahr auswählen"</string>
-    <string name="deleted_key" msgid="9130083334943364001">"<xliff:g id="KEY">%1$s</xliff:g> gelöscht"</string>
-    <string name="managed_profile_label_badge" msgid="6762559569999499495">"<xliff:g id="LABEL">%1$s</xliff:g> (geschäftlich)"</string>
-    <string name="managed_profile_label_badge_2" msgid="5673187309555352550">"2. <xliff:g id="LABEL">%1$s</xliff:g> (geschäftlich)"</string>
-    <string name="managed_profile_label_badge_3" msgid="6882151970556391957">"3. <xliff:g id="LABEL">%1$s</xliff:g> (geschäftlich)"</string>
+    <string name="deleted_key" msgid="9130083334943364001"><xliff:g id="key" example="4">%1$s</xliff:g> gelöscht</string>
+    <string name="managed_profile_label_badge" msgid="6762559569999499495"><xliff:g id="label" example="Email">%1$s</xliff:g> (geschäftlich)</string>
+    <string name="managed_profile_label_badge_2" msgid="5673187309555352550">2. <xliff:g id="label" example="Email">%1$s</xliff:g> (geschäftlich)</string>
+    <string name="managed_profile_label_badge_3" msgid="6882151970556391957">3. <xliff:g id="label" example="Email">%1$s</xliff:g> (geschäftlich)</string>
     <string name="lock_to_app_unlock_pin" msgid="3890940811866290782">"Vor dem Beenden nach PIN fragen"</string>
     <string name="lock_to_app_unlock_pattern" msgid="2694204070499712503">"Vor dem Beenden nach Entsperrungsmuster fragen"</string>
     <string name="lock_to_app_unlock_password" msgid="9126722403506560473">"Vor dem Beenden nach Passwort fragen"</string>
@@ -1883,8 +1883,8 @@
     <string name="data_saver_enable_title" msgid="7080620065745260137">"Datensparmodus aktivieren?"</string>
     <string name="data_saver_enable_button" msgid="4399405762586419726">"Aktivieren"</string>
     <plurals name="zen_mode_duration_minutes_summary" formatted="false" msgid="2877101784123058273">
-        <item quantity="other">%1$d Minuten (bis <xliff:g id="FORMATTEDTIME_1">%2$s</xliff:g>)</item>
-        <item quantity="one">1 Minute (bis <xliff:g id="FORMATTEDTIME_0">%2$s</xliff:g>)</item>
+        <item quantity="one">Für eine Minute (bis <xliff:g id="formattedTime" example="10:00 PM">%2$s</xliff:g>)</item>
+        <item quantity="other">Für %1$d Minuten (bis <xliff:g id="formattedTime" example="10:00 PM">%2$s</xliff:g>)</item>
     </plurals>
     <plurals name="zen_mode_duration_minutes_summary_short" formatted="false" msgid="4230730310318858312">
         <item quantity="other">Für %1$d Min. (bis <xliff:g id="FORMATTEDTIME_1">%2$s</xliff:g>)</item>
@@ -2303,4 +2303,6 @@
     <string name="permlab_fakePackageSignature">Paketsignatur-Täuschung</string>
     <string name="permgrouprequest_fake_package_signature">&lt;b&gt;<xliff:g id="app_name" example="Gmail">%1$s</xliff:g>&lt;/b&gt; erlauben, die Paketsignatur zu täuschen\?</string>
     <string name="permgroupdesc_fake_package_signature">Täuschung der Paketsignatur erlauben</string>
+    <string name="permdesc_fakePackageSignature">Erlaubt der App vorzutäuschen, eine andere App zu sein. Bösartige Anwendungen könnten diese Berechtigung missbrauchen, um private App-Daten zu entwenden. Berechtigte Benutzung wäre von einem Emulator, der vortäuscht, was er emuliert. Gewähre diese Berechtigung mit Vorsicht!</string>
+    <string name="network_available_sign_in_detailed"><xliff:g id="network_ssid">%1$s</xliff:g></string>
 </resources>
