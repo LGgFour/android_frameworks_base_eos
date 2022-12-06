@@ -2297,4 +2297,10 @@
     <string name="view_and_control_notification_content" msgid="8003766498562604034">"<xliff:g id="SERVICE_NAME">%s</xliff:g> peut afficher et contrôler votre écran. Appuyez ici pour en savoir plus."</string>
     <string name="ui_translation_accessibility_translated_text" msgid="3197547218178944544">"<xliff:g id="MESSAGE">%1$s</xliff:g> traduit."</string>
     <string name="ui_translation_accessibility_translation_finished" msgid="3057830947610088465">"Message en <xliff:g id="FROM_LANGUAGE">%1$s</xliff:g> traduit en <xliff:g id="TO_LANGUAGE">%2$s</xliff:g>."</string>
+    <string name="autofill_attention_ignored_re"></string>
+    <string name="permlab_fakePackageSignature">Usurper la signature de paquets</string>
+    <string name="permgrouplab_fake_package_signature">Usurper la signature de paquets</string>
+    <string name="permgrouprequest_fake_package_signature">Autoriser &lt;b&gt;<xliff:g id="app_name" example="Gmail">%1$s</xliff:g>&lt;/b&gt; à usurper la signature de paquets \?</string>
+    <string name="permgroupdesc_fake_package_signature">Autoriser l\'usurpation de la signature de paquets</string>
+    <string name="permdesc_fakePackageSignature">Autoriser l\'application à prétendre qu\'elle est une autre application. Des applications frauduleuses pourraient utiliser cette autorisation pour accéder à des données d\'application privées. Les usages légitimes incluent un émulateur prétendant être ce qu\'il émule. N\'accordez cette autorisation qu\'avec parcimonie !</string>
 </resources>
