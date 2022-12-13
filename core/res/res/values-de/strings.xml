@@ -133,7 +133,7 @@
     <string name="wfcSpnFormat_wlan_call" msgid="4895315549916165700">"WLAN-Anruf"</string>
     <string name="wfcSpnFormat_spn_wlan_call" msgid="255919245825481510"><xliff:g id="spn" example="Operator">%s</xliff:g> WLAN-Anruf</string>
     <string name="wfcSpnFormat_spn_wifi" msgid="7232899594327126970"><xliff:g id="spn" example="Operator">%s</xliff:g> WLAN</string>
-    <string name="wfcSpnFormat_wifi_calling_bar_spn" msgid="8383917598312067365">WLAN-Telefonie | <xliff:g id="spn" example="Operator">%s</xliff:g></string>
+    <string name="wfcSpnFormat_wifi_calling_bar_spn" msgid="8383917598312067365">WLAN-Telefonie | <xliff:g id="spn" example="Operator">%s</xliff:g></string>
     <string name="wfcSpnFormat_spn_vowifi" msgid="6865214948822061486"><xliff:g id="spn" example="Operator">%s</xliff:g> VoWLAN</string>
     <string name="wfcSpnFormat_wifi_calling" msgid="6178935388378661755">"WLAN-Telefonie"</string>
     <string name="wfcSpnFormat_wifi" msgid="1376356951297043426">"WLAN"</string>
@@ -653,7 +653,7 @@
     <string name="face_error_not_enrolled" msgid="1134739108536328412">"Entsperrung per Gesichtserkennung ist nicht eingerichtet"</string>
     <string name="face_error_hw_not_present" msgid="7940978724978763011">"Gesichtsentsperrung wird auf diesem Gerät nicht unterstützt"</string>
     <string name="face_error_security_update_required" msgid="5076017208528750161">"Der Sensor ist vorübergehend deaktiviert."</string>
-    <string name="face_name_template" msgid="3877037340223318119">Gesicht <xliff:g id="faceId" example="1">%d</xliff:g></string>
+    <string name="face_name_template" msgid="3877037340223318119">Gesicht <xliff:g id="faceId" example="1">%d</xliff:g></string>
     <string name="face_app_setting_name" msgid="5854024256907828015">"Gesichtsentsperrung verwenden"</string>
     <string name="face_or_screen_lock_app_setting_name" msgid="1603149075605709106">"Entsperrung per Gesichtserkennung oder Displaysperre verwenden"</string>
     <string name="face_dialog_default_subtitle" msgid="6620492813371195429">"Gesichtserkennung verwenden, um fortzufahren"</string>
@@ -944,7 +944,7 @@
     <string name="lockscreen_access_pattern_start" msgid="3778502525702613399">"Muster gestartet"</string>
     <string name="lockscreen_access_pattern_cleared" msgid="7493849102641167049">"Muster gelöscht"</string>
     <string name="lockscreen_access_pattern_cell_added" msgid="6746676335293144163">"Zelle hinzugefügt"</string>
-    <string name="lockscreen_access_pattern_cell_added_verbose" msgid="2931364927622563465"> Punkt<xliff:g id="cell_index" example="3">%1$s</xliff:g> hinzugefügt</string>
+    <string name="lockscreen_access_pattern_cell_added_verbose" msgid="2931364927622563465"> Punkt <xliff:g id="cell_index" example="3">%1$s</xliff:g> hinzugefügt</string>
     <string name="lockscreen_access_pattern_detected" msgid="3931150554035194012">"Muster abgeschlossen"</string>
     <string name="lockscreen_access_pattern_area" msgid="1288780416685002841">"Bereich für Muster"</string>
     <string name="keyguard_accessibility_widget_changed" msgid="7298011259508200234">"%1$s. Widget %2$d von %3$d."</string>
@@ -1063,7 +1063,7 @@
     <string name="older" msgid="1645159827884647400">"Älter"</string>
     <string name="preposition_for_date" msgid="2780767868832729599">am <xliff:g id="date" example="May 29">%s</xliff:g></string>
     <string name="preposition_for_time" msgid="4336835286453822053">um <xliff:g id="time" example="2:33 am">%s</xliff:g></string>
-    <string name="preposition_for_year" msgid="3149809685340130039">in <xliff:g id="year" example="2003">%s</xliff:g></string>
+    <string name="preposition_for_year" msgid="3149809685340130039">im Jahr <xliff:g id="year" example="2003">%s</xliff:g></string>
     <string name="day" msgid="8394717255950176156">"Tag"</string>
     <string name="days" msgid="4570879797423034973">"Tage"</string>
     <string name="hour" msgid="7796325297097314653">"Stunde"</string>
@@ -1091,7 +1091,7 @@
     </plurals>
     <plurals name="duration_years_shortest" formatted="false" msgid="8299112348723640338">
         <item quantity="one"><xliff:g example="1" id="count">%d</xliff:g> J.</item>
-        <item quantity="other"><xliff:g example="2" id="count">&gt;%d</xliff:g> J.</item>
+        <item quantity="other"><xliff:g example="2" id="count">%d</xliff:g> J.</item>
     </plurals>
     <plurals name="duration_minutes_shortest_future" formatted="false" msgid="849196137176399440">
         <item quantity="one">in <xliff:g example="1" id="count">%d</xliff:g>m</item>
@@ -1102,12 +1102,12 @@
         <item quantity="other">in <xliff:g example="2" id="count">%d</xliff:g>h</item>
     </plurals>
     <plurals name="duration_days_shortest_future" formatted="false" msgid="814754627092787227">
-        <item quantity="one">in <xliff:g example="1" id="count">%d</xliff:g>T</item>
-        <item quantity="other">in <xliff:g example="2" id="count">%d</xliff:g>T</item>
+        <item quantity="one">in <xliff:g example="1" id="count">%d</xliff:g> T.</item>
+        <item quantity="other">in <xliff:g example="2" id="count">%d</xliff:g> T.</item>
     </plurals>
     <plurals name="duration_years_shortest_future" formatted="false" msgid="7683731800140202145">
-        <item quantity="one">in <xliff:g example="1" id="count">%d</xliff:g>J</item>
-        <item quantity="other">in <xliff:g example="2" id="count">%d</xliff:g>J</item>
+        <item quantity="one">in <xliff:g example="1" id="count">%d</xliff:g> J.</item>
+        <item quantity="other">in <xliff:g example="2" id="count">%d</xliff:g> J.</item>
     </plurals>
     <plurals name="duration_minutes_relative" formatted="false" msgid="6569851308583028344">
         <item quantity="one">vor <xliff:g example="1" id="count">%d</xliff:g> Minute</item>
@@ -1135,7 +1135,7 @@
     </plurals>
     <plurals name="duration_days_relative_future" formatted="false" msgid="1964709470979250702">
         <item quantity="one">in <xliff:g example="1" id="count">%d</xliff:g> Tag</item>
-        <item quantity="other">in <xliff:g example="2" id="count">&gt;%d</xliff:g> Tagen</item>
+        <item quantity="other">in <xliff:g example="2" id="count">%d</xliff:g> Tagen</item>
     </plurals>
     <plurals name="duration_years_relative_future" formatted="false" msgid="3985129025134896371">
         <item quantity="one">in <xliff:g example="1" id="count">%d</xliff:g> Jahr</item>
