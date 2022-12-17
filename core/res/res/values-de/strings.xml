@@ -1260,7 +1260,7 @@
     <string name="android_upgrading_fstrim" msgid="3259087575528515329">"Speicher wird optimiert"</string>
     <string name="android_upgrading_notification_title" product="default" msgid="3509927005342279257">"Systemupdate wird beendet…"</string>
     <string name="app_upgrading_toast" msgid="1016267296049455585">"Für <xliff:g id="APPLICATION">%1$s</xliff:g> wird gerade ein Upgrade ausgeführt…"</string>
-    <string name="android_upgrading_apk" msgid="1339564803894466737">"App <xliff:g id="NUMBER_0">%1$d</xliff:g> von <xliff:g id="NUMBER_1">%2$d</xliff:g> wird optimiert..."</string>
+    <string name="android_upgrading_apk" msgid="1339564803894466737">App <xliff:g id="number" example="123">%1$d</xliff:g> von <xliff:g id="number" example="123">%2$d</xliff:g> wird optimiert …</string>
     <string name="android_preparing_apk" msgid="589736917792300956">"<xliff:g id="APPNAME">%1$s</xliff:g> wird vorbereitet"</string>
     <string name="android_upgrading_starting_apps" msgid="6206161195076057075">"Apps werden gestartet..."</string>
     <string name="android_upgrading_complete" msgid="409800058018374746">"Start wird abgeschlossen..."</string>
@@ -1276,11 +1276,11 @@
     <string name="new_app_action" msgid="547772182913269801">"<xliff:g id="NEW_APP">%1$s</xliff:g> öffnen"</string>
     <string name="new_app_description" msgid="1958903080400806644">"<xliff:g id="OLD_APP">%1$s</xliff:g> wird ohne Speichern geschlossen"</string>
     <string name="dump_heap_notification" msgid="5316644945404825032">"Speicherlimit für \"<xliff:g id="PROC">%1$s</xliff:g>\" überschritten"</string>
-    <string name="dump_heap_ready_notification" msgid="2302452262927390268">"<xliff:g id="PROC">%1$s</xliff:g>-Heap-Dump bereit"</string>
+    <string name="dump_heap_ready_notification" msgid="2302452262927390268"> <xliff:g id="proc" example="com.android.example">%1$s</xliff:g>-Heap-Dump bereit</string>
     <string name="dump_heap_notification_detail" msgid="8431586843001054050">"Heap-Dump wurde erfasst. Tippe, um ihn zu teilen."</string>
     <string name="dump_heap_title" msgid="4367128917229233901">"Heap-Dump teilen?"</string>
-    <string name="dump_heap_text" msgid="1692649033835719336">"Für den Prozess \"<xliff:g id="PROC">%1$s</xliff:g>\" wurde das Speicherlimit von <xliff:g id="SIZE">%2$s</xliff:g> überschritten. Es steht ein Heap-Dump zur Verfügung, den du mit dem Entwickler teilen kannst. Beachte jedoch unbedingt, dass der Heap-Dump personenbezogene Daten von dir enthalten kann, auf die die App zugreifen kann."</string>
-    <string name="dump_heap_system_text" msgid="6805155514925350849">"Für den Prozess \"<xliff:g id="PROC">%1$s</xliff:g>\" wurde das Prozessspeicherlimit von <xliff:g id="SIZE">%2$s</xliff:g> überschritten. Es gibt einen Heap-Dump, den du teilen kannst. Beachte jedoch unbedingt, dass der Heap-Dump vertrauliche personenbezogene Daten von dir enthalten kann, auf die der Prozess Zugriff hat, einschließlich der von dir eingegebenen Informationen."</string>
+    <string name="dump_heap_text" msgid="1692649033835719336">Für den Prozess <xliff:g id="proc" example="com.android.example">%1$s</xliff:g> wurde das Speicherlimit von <xliff:g id="size" example="350MB">%2$s</xliff:g> überschritten. Es steht ein Heap-Dump zur Verfügung, den du mit dem Entwickler teilen kannst. Beachte jedoch unbedingt, dass der Heap-Dump personenbezogene Daten von dir enthalten kann, auf die die App zugreifen kann.</string>
+    <string name="dump_heap_system_text" msgid="6805155514925350849">Für den Prozess <xliff:g id="proc" example="Android System">%1$s</xliff:g> wurde das Prozessspeicherlimit von <xliff:g id="size" example="350MB">%2$s</xliff:g> überschritten. Es gibt einen Heap-Dump, den du teilen kannst. Beachte jedoch unbedingt, dass der Heap-Dump vertrauliche personenbezogene Daten von dir enthalten kann, auf die der Prozess Zugriff hat, einschließlich der von dir eingegebenen Informationen.</string>
     <string name="dump_heap_ready_text" msgid="5849618132123045516">"Es gibt einen Heap-Dump des Prozesses \"<xliff:g id="PROC">%1$s</xliff:g>\", den du teilen kannst. Beachte jedoch unbedingt, dass der Heap-Dump vertrauliche personenbezogene Daten von dir enthalten kann, auf die der Prozess Zugriff hat, einschließlich der von dir eingegebenen Informationen."</string>
     <string name="sendText" msgid="493003724401350724">"Aktion für Text auswählen"</string>
     <string name="volume_ringtone" msgid="134784084629229029">"Klingeltonlautstärke"</string>
