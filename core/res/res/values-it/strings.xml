@@ -1524,7 +1524,7 @@
     </plurals>
     <string name="action_mode_done" msgid="2536182504764803222">"Fine"</string>
     <string name="progress_erasing" msgid="6891435992721028004">"Cancellazione archivio condiviso…"</string>
-    <string name="share" msgid="4157615043345227321">"Condividi"</string>
+    <string name="share" msgid="4157615043345227321">Condividi</string>
     <string name="find" msgid="5015737188624767706">"Trova"</string>
     <string name="websearch" msgid="5624340204512793290">"Ricerca Web"</string>
     <string name="find_next" msgid="5341217051549648153">"Trova successivo"</string>
