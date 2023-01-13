@@ -1524,7 +1524,7 @@
     </plurals>
     <string name="action_mode_done" msgid="2536182504764803222">"OK"</string>
     <string name="progress_erasing" msgid="6891435992721028004">"Suppression de l\'espace de stockage partagé…"</string>
-    <string name="share" msgid="4157615043345227321">"Partager"</string>
+    <string name="share" msgid="4157615043345227321">Partager</string>
     <string name="find" msgid="5015737188624767706">"Rechercher"</string>
     <string name="websearch" msgid="5624340204512793290">"Recherche Web"</string>
     <string name="find_next" msgid="5341217051549648153">"Rechercher suivant"</string>
