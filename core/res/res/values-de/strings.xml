@@ -1180,7 +1180,7 @@
     <string name="yes" msgid="9069828999585032361">"Ok"</string>
     <string name="no" msgid="5122037903299899715">"Abbrechen"</string>
     <string name="dialog_alert_title" msgid="651856561974090712">"Achtung"</string>
-    <string name="loading" msgid="3138021523725055037">"Wird geladen…"</string>
+    <string name="loading" msgid="3138021523725055037">Wird geladen …</string>
     <string name="capital_on" msgid="2770685323900821829">"AN"</string>
     <string name="capital_off" msgid="7443704171014626777">"AUS"</string>
     <string name="checked" msgid="9179896827054513119">"aktiviert"</string>
