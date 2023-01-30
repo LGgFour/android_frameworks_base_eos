@@ -194,11 +194,11 @@
     <string name="location_changed_notification_title" msgid="3620158742816699316">"Apps können auf deinen Standort zugreifen"</string>
     <string name="location_changed_notification_text" msgid="7158423339982706912">"Für Infos wende dich an deinen IT-Administrator"</string>
     <string name="geofencing_service" msgid="3826902410740315456">"Geofencing-Service"</string>
-    <string name="country_detector" msgid="7023275114706088854">"Country Detector"</string>
+    <string name="country_detector" msgid="7023275114706088854">Länder-Detektor</string>
     <string name="location_service" msgid="2439187616018455546">"Standortdienst"</string>
     <string name="gnss_service" msgid="8907781262179951385">"GNSS-Dienst"</string>
-    <string name="sensor_notification_service" msgid="7474531979178682676">"Sensor Notification Service"</string>
-    <string name="twilight_service" msgid="8964898045693187224">"Twilight Service"</string>
+    <string name="sensor_notification_service" msgid="7474531979178682676">Sensor-Benachrichtigungsdienst</string>
+    <string name="twilight_service" msgid="8964898045693187224">Twilight-Dienst</string>
     <string name="gnss_time_update_service" msgid="9039489496037616095">"GNSS-Zeitaktualisierungsdienst"</string>
     <string name="music_recognition_manager_service" msgid="7481956037950276359">"Musikerkennungsverwaltung"</string>
     <string name="factory_reset_warning" msgid="6858705527798047809">"Die Daten auf deinem Gerät werden gelöscht."</string>
@@ -226,7 +226,7 @@
     <string name="reboot_to_update_reboot" msgid="4474726009984452312">"Neustart…"</string>
     <string name="reboot_to_reset_title" msgid="2226229680017882787">"Auf Werkseinstellungen zurücksetzen"</string>
     <string name="reboot_to_reset_message" msgid="3347690497972074356">"Neustart…"</string>
-    <string name="shutdown_progress" msgid="5017145516412657345">"Wird heruntergefahren..."</string>
+    <string name="shutdown_progress" msgid="5017145516412657345">Wird heruntergefahren …</string>
     <string name="shutdown_confirm" product="tablet" msgid="2872769463279602432">"Dein Tablet wird heruntergefahren."</string>
     <string name="shutdown_confirm" product="tv" msgid="7975942887313518330">"Das Android TV-Gerät wird heruntergefahren."</string>
     <string name="shutdown_confirm" product="watch" msgid="2977299851200240146">"Deine Uhr wird heruntergefahren."</string>
@@ -278,7 +278,7 @@
     <string name="notification_channel_account" msgid="6436294521740148173">"Kontostatus"</string>
     <string name="notification_channel_developer" msgid="1691059964407549150">"Nachrichten für Entwickler"</string>
     <string name="notification_channel_developer_important" msgid="7197281908918789589">"Wichtige Nachrichten für Entwickler"</string>
-    <string name="notification_channel_updates" msgid="7907863984825495278">"Updates"</string>
+    <string name="notification_channel_updates" msgid="7907863984825495278">Aktualisierungen</string>
     <string name="notification_channel_network_status" msgid="2127687368725272809">"Netzwerkstatus"</string>
     <string name="notification_channel_network_alerts" msgid="6312366315654526528">"Netzwerkwarnungen"</string>
     <string name="notification_channel_network_available" msgid="6083697929214165169">"Netzwerk verfügbar"</string>
@@ -307,7 +307,7 @@
     <string name="permgroupdesc_calendar" msgid="6762751063361489379">"auf deinen Kalender zugreifen"</string>
     <string name="permgrouplab_sms" msgid="795737735126084874">"SMS"</string>
     <string name="permgroupdesc_sms" msgid="5726462398070064542">"SMS senden und abrufen"</string>
-    <string name="permgrouplab_storage" msgid="1938416135375282333">"Dateien und Medien"</string>
+    <string name="permgrouplab_storage" msgid="1938416135375282333">Dateien und Medien</string>
     <string name="permgroupdesc_storage" msgid="6351503740613026600">"auf Fotos, Medien und Dateien auf deinem Gerät zugreifen"</string>
     <string name="permgrouplab_microphone" msgid="2480597427667420076">"Mikrofon"</string>
     <string name="permgroupdesc_microphone" msgid="1047786732792487722">"Audio aufnehmen"</string>
@@ -816,7 +816,7 @@
     <string name="phoneTypeMain" msgid="5199722006991000111">"Hauptnummer"</string>
     <string name="phoneTypeOtherFax" msgid="3037145630364770357">"Weitere Faxnummer"</string>
     <string name="phoneTypeRadio" msgid="2637819130239264771">"Funktelefon"</string>
-    <string name="phoneTypeTelex" msgid="2558783611711876562">"Telex"</string>
+    <string name="phoneTypeTelex" msgid="2558783611711876562">Telex</string>
     <string name="phoneTypeTtyTdd" msgid="532038552105328779">"TTY/TDD"</string>
     <string name="phoneTypeWorkMobile" msgid="7522314392003565121">"Handy (geschäftl.)"</string>
     <string name="phoneTypeWorkPager" msgid="3748332310638505234">"Pager (geschäftl.)"</string>
@@ -841,14 +841,14 @@
     <string name="imTypeOther" msgid="8068447383276219810">"Sonstige"</string>
     <string name="imProtocolCustom" msgid="4437878287653764692">"Benutzerdefiniert"</string>
     <string name="imProtocolAim" msgid="4050198236506604378">"AIM"</string>
-    <string name="imProtocolMsn" msgid="2257148557766499232">"Windows Live"</string>
+    <string name="imProtocolMsn" msgid="2257148557766499232">Windows Live</string>
     <string name="imProtocolYahoo" msgid="5373338758093392231">"Yahoo!"</string>
     <string name="imProtocolSkype" msgid="1486297589164830043">"Skype"</string>
     <string name="imProtocolQq" msgid="7254708777029006592">"QQ"</string>
-    <string name="imProtocolGoogleTalk" msgid="9194016024343166782">"Hangouts"</string>
+    <string name="imProtocolGoogleTalk" msgid="9194016024343166782">Hangouts</string>
     <string name="imProtocolIcq" msgid="2410325380427389521">"ICQ"</string>
     <string name="imProtocolJabber" msgid="7919269388889582015">"Jabber"</string>
-    <string name="imProtocolNetMeeting" msgid="4985002408136148256">"NetMeeting"</string>
+    <string name="imProtocolNetMeeting" msgid="4985002408136148256">NetMeeting</string>
     <string name="orgTypeWork" msgid="8684458700669564172">"Geschäftlich"</string>
     <string name="orgTypeOther" msgid="5450675258408005553">"Sonstige"</string>
     <string name="orgTypeCustom" msgid="1126322047677329218">"Benutzerdefiniert"</string>
@@ -862,7 +862,7 @@
     <string name="relationTypeManager" msgid="2272860813153171857">"Chef"</string>
     <string name="relationTypeMother" msgid="2331762740982699460">"Mutter"</string>
     <string name="relationTypeParent" msgid="4177920938333039882">"Elternteil"</string>
-    <string name="relationTypePartner" msgid="4018017075116766194">"Partner"</string>
+    <string name="relationTypePartner" msgid="4018017075116766194">Partner</string>
     <string name="relationTypeReferredBy" msgid="5285082289602849400">"Empfehlung von"</string>
     <string name="relationTypeRelative" msgid="3396498519818009134">"Verwandter"</string>
     <string name="relationTypeSister" msgid="3721676005094140671">"Schwester"</string>
@@ -914,7 +914,7 @@
     <string name="lockscreen_sim_puk_locked_message" msgid="6618356415831082174">"PUK-Sperre auf SIM"</string>
     <string name="lockscreen_sim_puk_locked_instructions" msgid="5307979043730860995">"Weitere Informationen erhältst du im Nutzerhandbuch oder beim Kundendienst."</string>
     <string name="lockscreen_sim_locked_message" msgid="3160196135801185938">"PIN eingeben"</string>
-    <string name="lockscreen_sim_unlock_progress_dialog_message" msgid="2286497117428409709">"SIM-Karte wird entsperrt..."</string>
+    <string name="lockscreen_sim_unlock_progress_dialog_message" msgid="2286497117428409709">SIM-Karte wird entsperrt …</string>
     <string name="lockscreen_too_many_failed_attempts_dialog_message" msgid="6458790975898594240">"Du hast dein Entsperrungsmuster <xliff:g id="NUMBER_0">%1$d</xliff:g>-mal falsch gezeichnet. \n\nBitte versuche es in <xliff:g id="NUMBER_1">%2$d</xliff:g> Sekunden noch einmal."</string>
     <string name="lockscreen_too_many_failed_password_attempts_dialog_message" msgid="3118353451602377380">"Du hast dein Passwort <xliff:g id="NUMBER_0">%1$d</xliff:g>-mal falsch eingegeben.\n\nBitte versuche es in <xliff:g id="NUMBER_1">%2$d</xliff:g> Sekunden noch einmal."</string>
     <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" msgid="2874278239714821984">"Du hast dein Passwort <xliff:g id="NUMBER_0">%1$d</xliff:g>-mal falsch eingegeben.\n\nBitte versuche es in <xliff:g id="NUMBER_1">%2$d</xliff:g> Sekunden noch einmal."</string>
@@ -935,9 +935,9 @@
     <string name="lockscreen_glogin_username_hint" msgid="6916101478673157045">"Nutzername (E-Mail)"</string>
     <string name="lockscreen_glogin_password_hint" msgid="3031027901286812848">"Passwort"</string>
     <string name="lockscreen_glogin_submit_button" msgid="3590556636347843733">"Anmelden"</string>
-    <string name="lockscreen_glogin_invalid_input" msgid="4369219936865697679">"Ungültiger  Nutzername oder ungültiges Passwort."</string>
+    <string name="lockscreen_glogin_invalid_input" msgid="4369219936865697679">Ungültiger Nutzername oder ungültiges Passwort.</string>
     <string name="lockscreen_glogin_account_recovery_hint" msgid="1683405808525090649">"Nutzernamen oder Passwort vergessen?\nBesuche "<b>"google.com/accounts/recovery"</b>"."</string>
-    <string name="lockscreen_glogin_checking_password" msgid="2607271802803381645">"Überprüfung..."</string>
+    <string name="lockscreen_glogin_checking_password" msgid="2607271802803381645">Überprüfung …</string>
     <string name="lockscreen_unlock_label" msgid="4648257878373307582">"Entsperren"</string>
     <string name="lockscreen_sound_on_label" msgid="1660281470535492430">"Ton ein"</string>
     <string name="lockscreen_sound_off_label" msgid="2331496559245450053">"Ton aus"</string>
@@ -1158,7 +1158,7 @@
     <string name="failed_to_copy_to_clipboard" msgid="725919885138539875">"Fehler beim Kopieren in die Zwischenablage"</string>
     <string name="paste" msgid="461843306215520225">"Einfügen"</string>
     <string name="paste_as_plain_text" msgid="7664800665823182587">"Nur Text einfügen"</string>
-    <string name="replace" msgid="7842675434546657444">"Ersetzen..."</string>
+    <string name="replace" msgid="7842675434546657444">Ersetzen …</string>
     <string name="delete" msgid="1514113991712129054">"Löschen"</string>
     <string name="copyUrl" msgid="6229645005987260230">"URL kopieren"</string>
     <string name="selectTextMode" msgid="3225108910999318778">"Text auswählen"</string>
@@ -1260,7 +1260,7 @@
     <string name="android_upgrading_fstrim" msgid="3259087575528515329">"Speicher wird optimiert"</string>
     <string name="android_upgrading_notification_title" product="default" msgid="3509927005342279257">"Systemupdate wird beendet…"</string>
     <string name="app_upgrading_toast" msgid="1016267296049455585">"Für <xliff:g id="APPLICATION">%1$s</xliff:g> wird gerade ein Upgrade ausgeführt…"</string>
-    <string name="android_upgrading_apk" msgid="1339564803894466737">App <xliff:g id="number" example="123">%1$d</xliff:g> von <xliff:g id="number" example="123">%2$d</xliff:g> wird optimiert …</string>
+    <string name="android_upgrading_apk" msgid="1339564803894466737">App <xliff:g id="number" example="123">%1$d</xliff:g> von <xliff:g id="number" example="123">%2$d</xliff:g> wird optimiert.</string>
     <string name="android_preparing_apk" msgid="589736917792300956">"<xliff:g id="APPNAME">%1$s</xliff:g> wird vorbereitet"</string>
     <string name="android_upgrading_starting_apps" msgid="6206161195076057075">"Apps werden gestartet..."</string>
     <string name="android_upgrading_complete" msgid="409800058018374746">"Start wird abgeschlossen..."</string>
@@ -1453,7 +1453,7 @@
     <string name="ext_media_status_unmountable" msgid="7043574843541087748">"Beschädigt"</string>
     <string name="ext_media_status_unsupported" msgid="5460509911660539317">"Nicht unterstützt"</string>
     <string name="ext_media_status_ejecting" msgid="7532403368044013797">"Wird ausgeworfen…"</string>
-    <string name="ext_media_status_formatting" msgid="774148701503179906">"Wird formatiert..."</string>
+    <string name="ext_media_status_formatting" msgid="774148701503179906">Wird formatiert …</string>
     <string name="ext_media_status_missing" msgid="6520746443048867314">"Nicht eingelegt"</string>
     <string name="activity_list_empty" msgid="4219430010716034252">"Keine passenden Aktivitäten gefunden"</string>
     <string name="permlab_route_media_output" msgid="8048124531439513118">"Medienausgabe umleiten"</string>
@@ -1619,7 +1619,7 @@
     <string name="activity_chooser_view_see_all" msgid="3917045206812726099">"Alle anzeigen"</string>
     <string name="activity_chooser_view_dialog_title_default" msgid="8880731437191978314">"Aktivität wählen"</string>
     <string name="share_action_provider_share_with" msgid="1904096863622941880">"Teilen mit"</string>
-    <string name="sending" msgid="206925243621664438">"Wird gesendet..."</string>
+    <string name="sending" msgid="206925243621664438">Wird gesendet …</string>
     <string name="launchBrowserDefault" msgid="6328349989932924119">"Browser starten?"</string>
     <string name="SetupCallDefault" msgid="5581740063237175247">"Anruf annehmen?"</string>
     <string name="activity_resolver_use_always" msgid="5575222334666843269">"Immer"</string>
@@ -1698,16 +1698,22 @@
     <string name="accessibility_shortcut_warning_dialog_title" msgid="4017995837692622933">"Verknüpfung für Bedienungshilfen verwenden?"</string>
     <string name="accessibility_shortcut_toogle_warning" msgid="4161716521310929544">"Wenn die Verknüpfung aktiviert ist, kannst du die beiden Lautstärketasten drei Sekunden lang gedrückt halten, um eine Bedienungshilfe zu starten."</string>
     <string name="accessibility_shortcut_multiple_service_warning_title" msgid="3135860819356676426">"Verknüpfung für Bedienungshilfen aktivieren?"</string>
-    <string name="accessibility_shortcut_multiple_service_warning" msgid="3740723309483706911">"Wenn du beide Lautstärketasten einige Sekunden lang gedrückt hältst, aktivierst du die Bedienungshilfen. Dadurch kann sich die Funktionsweise deines Geräts ändern.\n\nAktuelle Funktionen:\n<xliff:g id="SERVICE">%1$s</xliff:g>\nDu kannst ausgewählte Funktionen unter \"Einstellungen\" &gt; \"Bedienungshilfen\" ändern."</string>
+    <string name="accessibility_shortcut_multiple_service_warning" msgid="3740723309483706911">Wenn du beide Lautstärketasten einige Sekunden lang gedrückt hältst, aktivierst du die Bedienungshilfen. Dadurch kann sich die Funktionsweise deines Geräts ändern.
+\n
+\nAktuelle Funktionen:
+\n<xliff:g id="service" example="TalkBack">%1$s</xliff:g>
+\nDu kannst ausgewählte Funktionen unter „Einstellungen“ &gt; „Bedienungshilfen“ ändern.</string>
     <string name="accessibility_shortcut_multiple_service_list" msgid="2128323171922023762">" • <xliff:g id="SERVICE">%1$s</xliff:g>\n"</string>
     <string name="accessibility_shortcut_single_service_warning_title" msgid="1909518473488345266">"Verknüpfung für <xliff:g id="SERVICE">%1$s</xliff:g> aktivieren?"</string>
-    <string name="accessibility_shortcut_single_service_warning" msgid="6363127705112844257">"Wenn du beide Lautstärketasten einige Sekunden lang gedrückt hältst, aktivierst du die Bedienungshilfe \"<xliff:g id="SERVICE">%1$s</xliff:g>\". Dadurch kann sich die Funktionsweise deines Geräts ändern.\n\nUnter \"Einstellungen &gt; \"Bedienungshilfen\" kannst du dieser Verknüpfung eine andere Funktion zuweisen."</string>
+    <string name="accessibility_shortcut_single_service_warning" msgid="6363127705112844257">Wenn du beide Lautstärketasten einige Sekunden lang gedrückt hältst, aktivierst du die Bedienungshilfe <xliff:g id="service" example="TalkBack">%1$s</xliff:g>. Dadurch kann sich die Funktionsweise deines Geräts ändern.
+\n
+\nUnter „Einstellungen“ &gt; „Bedienungshilfen“ kannst du dieser Verknüpfung eine andere Funktion zuweisen.</string>
     <string name="accessibility_shortcut_on" msgid="5463618449556111344">"Aktivieren"</string>
     <string name="accessibility_shortcut_off" msgid="3651336255403648739">"Nicht aktivieren"</string>
     <string name="accessibility_shortcut_menu_item_status_on" msgid="6608392117189732543">"AN"</string>
     <string name="accessibility_shortcut_menu_item_status_off" msgid="5531598275559472393">"AUS"</string>
-    <string name="accessibility_enable_service_title" msgid="3931558336268541484">"<xliff:g id="SERVICE">%1$s</xliff:g> die vollständige Kontrolle über dein Gerät geben?"</string>
-    <string name="accessibility_enable_service_encryption_warning" msgid="8603532708618236909">"Wenn du <xliff:g id="SERVICE">%1$s</xliff:g> aktivierst, verwendet dein Gerät nicht die Displaysperre, um die Datenverschlüsselung zu verbessern."</string>
+    <string name="accessibility_enable_service_title" msgid="3931558336268541484"><xliff:g id="service" example="TalkBack">%1$s</xliff:g> die vollständige Kontrolle über dein Gerät gewähren\?</string>
+    <string name="accessibility_enable_service_encryption_warning" msgid="8603532708618236909">Wenn du <xliff:g id="service" example="TalkBack">%1$s</xliff:g> aktivierst, verwendet dein Gerät nicht die Displaysperre, um die Datenverschlüsselung zu verbessern. </string>
     <string name="accessibility_service_warning_description" msgid="291674995220940133">"Die vollständige Kontrolle sollte nur für Apps aktiviert werden, die dir Zugang zu App-Funktionen erleichtern. Das ist in der Regel nur ein kleiner Teil der Apps."</string>
     <string name="accessibility_service_screen_control_title" msgid="190017412626919776">"Bildschirm aufrufen und steuern"</string>
     <string name="accessibility_service_screen_control_description" msgid="6946315917771791525">"Die Funktion kann alle Inhalte auf dem Bildschirm lesen und diese Inhalte über andere Apps anzeigen."</string>
@@ -1718,7 +1724,7 @@
     <string name="accessibility_select_shortcut_menu_title" msgid="6002726538854613272">"Zum Auswählen der gewünschten Funktion tippen:"</string>
     <string name="accessibility_edit_shortcut_menu_button_title" msgid="239446795930436325">"Funktionen auswählen, die du mit der Schaltfläche \"Bedienungshilfen\" verwenden möchtest"</string>
     <string name="accessibility_edit_shortcut_menu_volume_title" msgid="1077294237378645981">"Funktionen für Verknüpfung mit Lautstärketaste auswählen"</string>
-    <string name="accessibility_uncheck_legacy_item_warning" msgid="8047830891064817447">"<xliff:g id="SERVICE_NAME">%s</xliff:g> wurde deaktiviert"</string>
+    <string name="accessibility_uncheck_legacy_item_warning" msgid="8047830891064817447"> <xliff:g id="service_name" example="TalkBack">%s</xliff:g> wurde deaktiviert</string>
     <string name="edit_accessibility_shortcut_menu_button" msgid="8885752738733772935">"Verknüpfungen bearbeiten"</string>
     <string name="done_accessibility_shortcut_menu_button" msgid="3668407723770815708">"Fertig"</string>
     <string name="disable_accessibility_shortcut" msgid="5806091378745232383">"Verknüpfung deaktivieren"</string>
@@ -1727,7 +1733,7 @@
     <string name="color_correction_feature_name" msgid="3655077237805422597">"Farbkorrektur"</string>
     <string name="one_handed_mode_feature_name" msgid="2334330034828094891">"Einhandmodus"</string>
     <string name="reduce_bright_colors_feature_name" msgid="3222994553174604132">"Extradunkel"</string>
-    <string name="accessibility_shortcut_enabling_service" msgid="5473495203759847687">"Lautstärketasten wurden gedrückt gehalten. <xliff:g id="SERVICE_NAME">%1$s</xliff:g> ist aktiviert."</string>
+    <string name="accessibility_shortcut_enabling_service" msgid="5473495203759847687">Lautstärketasten wurden gedrückt gehalten. <xliff:g id="service_name" example="TalkBack">%1$s</xliff:g> ist aktiviert.</string>
     <string name="accessibility_shortcut_disabling_service" msgid="8675244165062700619">Lautstärketasten wurden gedrückt gehalten. <xliff:g id="service_name" example="TalkBack">%1$s</xliff:g> ist deaktiviert.</string>
     <string name="accessibility_shortcut_spoken_feedback" msgid="4228997042855695090">Halten Sie beide Lautstärketasten drei Sekunden lang gedrückt, um <xliff:g id="service_name" example="TalkBack">%1$s</xliff:g> zu verwenden</string>
     <string name="accessibility_button_prompt_text" msgid="8343213623338605305">"Wähle eine Funktion aus, die verwendet wird, wenn du auf die Schaltfläche \"Bedienungshilfen\" tippst:"</string>
@@ -1778,18 +1784,18 @@
     <string name="mediasize_iso_c8" msgid="1949330679635319183">"ISO C8"</string>
     <string name="mediasize_iso_c9" msgid="3716843356839880581">"ISO C9"</string>
     <string name="mediasize_iso_c10" msgid="2113667674722450076">"ISO C10"</string>
-    <string name="mediasize_na_letter" msgid="1947253006814499213">"Letter"</string>
-    <string name="mediasize_na_gvrnmt_letter" msgid="4056220626420245955">"Government Letter"</string>
+    <string name="mediasize_na_letter" msgid="1947253006814499213">Letter</string>
+    <string name="mediasize_na_gvrnmt_letter" msgid="4056220626420245955">Government Letter</string>
     <string name="mediasize_na_legal" msgid="8356233803828931150">"Legal"</string>
-    <string name="mediasize_na_junior_legal" msgid="3398084874757748531">"Junior Legal"</string>
-    <string name="mediasize_na_ledger" msgid="1819497882853940248">"Ledger"</string>
+    <string name="mediasize_na_junior_legal" msgid="3398084874757748531">Junior Legal</string>
+    <string name="mediasize_na_ledger" msgid="1819497882853940248">Ledger</string>
     <string name="mediasize_na_tabloid" msgid="6792611672983574375">"Tabloid"</string>
-    <string name="mediasize_na_index_3x5" msgid="990821038991491710">"Index Card 3x5"</string>
-    <string name="mediasize_na_index_4x6" msgid="4414381976602032401">"Index Card 4x6"</string>
-    <string name="mediasize_na_index_5x8" msgid="4499341583361946948">"Index Card 5x8"</string>
-    <string name="mediasize_na_monarch" msgid="4396943937986136896">"Monarch"</string>
-    <string name="mediasize_na_quarto" msgid="2119101847712239885">"Quarto"</string>
-    <string name="mediasize_na_foolscap" msgid="5011612828564394648">"Foolscap"</string>
+    <string name="mediasize_na_index_3x5" msgid="990821038991491710">Index Card 3x5</string>
+    <string name="mediasize_na_index_4x6" msgid="4414381976602032401">Index Card 4x6</string>
+    <string name="mediasize_na_index_5x8" msgid="4499341583361946948">Index Card 5x8</string>
+    <string name="mediasize_na_monarch" msgid="4396943937986136896">Monarch</string>
+    <string name="mediasize_na_quarto" msgid="2119101847712239885">Quarto</string>
+    <string name="mediasize_na_foolscap" msgid="5011612828564394648">Foolscap</string>
     <string name="mediasize_na_ansi_c" msgid="3104916921818289618">"ANSI C"</string>
     <string name="mediasize_na_ansi_d" msgid="254005964819282724">"ANSI D"</string>
     <string name="mediasize_na_ansi_e" msgid="4424174989686785675">"ANSI E"</string>
@@ -1816,7 +1822,7 @@
     <string name="mediasize_chinese_prc_16k" msgid="7471455177845043180">"PRC 16K"</string>
     <string name="mediasize_chinese_om_pa_kai" msgid="6305242012782587594">"Pa Kai"</string>
     <string name="mediasize_chinese_om_dai_pa_kai" msgid="8133982147973309032">"Dai Pa Kai"</string>
-    <string name="mediasize_chinese_om_jurro_ku_kai" msgid="5888548906612445289">"Jurro Ku Kai"</string>
+    <string name="mediasize_chinese_om_jurro_ku_kai" msgid="5888548906612445289">Jurro Ku Kai</string>
     <string name="mediasize_japanese_jis_b10" msgid="6761433476186549691">"JIS B10"</string>
     <string name="mediasize_japanese_jis_b9" msgid="6011047111717561836">"JIS B9"</string>
     <string name="mediasize_japanese_jis_b8" msgid="1541865115368043069">"JIS B8"</string>
@@ -1828,15 +1834,15 @@
     <string name="mediasize_japanese_jis_b2" msgid="5151340021154579154">"JIS B2"</string>
     <string name="mediasize_japanese_jis_b1" msgid="2709589944170908250">"JIS B1"</string>
     <string name="mediasize_japanese_jis_b0" msgid="1209735840926222618">"JIS B0"</string>
-    <string name="mediasize_japanese_jis_exec" msgid="2137738196058117115">"JIS Exec"</string>
-    <string name="mediasize_japanese_chou4" msgid="2533204016634398713">"Chou4"</string>
-    <string name="mediasize_japanese_chou3" msgid="5976745918096025459">"Chou3"</string>
-    <string name="mediasize_japanese_chou2" msgid="6841260581434101675">"Chou2"</string>
-    <string name="mediasize_japanese_hagaki" msgid="2112968853810337326">"Hagaki"</string>
-    <string name="mediasize_japanese_oufuku" msgid="1575013107082530108">"Oufuku"</string>
-    <string name="mediasize_japanese_kahu" msgid="7290232592648122042">"Kahu"</string>
-    <string name="mediasize_japanese_kaku2" msgid="7477551750461028312">"Kaku2"</string>
-    <string name="mediasize_japanese_you4" msgid="5552111912684384833">"You4"</string>
+    <string name="mediasize_japanese_jis_exec" msgid="2137738196058117115">JIS Exec</string>
+    <string name="mediasize_japanese_chou4" msgid="2533204016634398713">Chou4</string>
+    <string name="mediasize_japanese_chou3" msgid="5976745918096025459">Chou3</string>
+    <string name="mediasize_japanese_chou2" msgid="6841260581434101675">Chou2</string>
+    <string name="mediasize_japanese_hagaki" msgid="2112968853810337326">Hagaki</string>
+    <string name="mediasize_japanese_oufuku" msgid="1575013107082530108">Oufuku</string>
+    <string name="mediasize_japanese_kahu" msgid="7290232592648122042">Kahu</string>
+    <string name="mediasize_japanese_kaku2" msgid="7477551750461028312">Kaku2</string>
+    <string name="mediasize_japanese_you4" msgid="5552111912684384833">You4</string>
     <string name="mediasize_japanese_l" msgid="1326765321473431817">"L"</string>
     <string name="mediasize_unknown_portrait" msgid="3817016220446495613">"Unbekannt – Hochformat"</string>
     <string name="mediasize_unknown_landscape" msgid="1584741567225095325">"Unbekannt – Querformat"</string>
@@ -1989,7 +1995,7 @@
     <string name="work_mode_off_message" msgid="7319580997683623309">"Du erhältst Zugriff auf deine geschäftlichen Apps und Benachrichtigungen"</string>
     <string name="work_mode_turn_on" msgid="3662561662475962285">"Aktivieren"</string>
     <string name="app_blocked_title" msgid="7353262160455028160">"App ist nicht verfügbar"</string>
-    <string name="app_blocked_message" msgid="542972921087873023">"<xliff:g id="APP_NAME">%1$s</xliff:g> ist derzeit nicht verfügbar."</string>
+    <string name="app_blocked_message" msgid="542972921087873023"> <xliff:g id="app_name" example="Gmail">%1$s</xliff:g> ist derzeit nicht verfügbar. </string>
     <string name="deprecated_target_sdk_message" msgid="5203207875657579953">"Diese App wurde für eine ältere Android-Version entwickelt und funktioniert möglicherweise nicht mehr richtig. Prüfe, ob Updates verfügbar sind oder kontaktiere den Entwickler."</string>
     <string name="deprecated_target_sdk_app_store" msgid="8456784048558808909">"Auf Updates prüfen"</string>
     <string name="new_sms_notification_title" msgid="6528758221319927107">"Du hast neue Nachrichten"</string>
@@ -2000,9 +2006,9 @@
     <string name="usb_mtp_launch_notification_title" msgid="774319638256707227">"Verbunden mit <xliff:g id="PRODUCT_NAME">%1$s</xliff:g>"</string>
     <string name="usb_mtp_launch_notification_description" msgid="6942535713629852684">"Zum Ansehen der Dateien tippen"</string>
     <string name="pin_target" msgid="8036028973110156895">"Markieren"</string>
-    <string name="pin_specific_target" msgid="7824671240625957415">"<xliff:g id="LABEL">%1$s</xliff:g> anpinnen"</string>
+    <string name="pin_specific_target" msgid="7824671240625957415"><xliff:g id="label" example="Tweet">%1$s</xliff:g> anheften</string>
     <string name="unpin_target" msgid="3963318576590204447">"Markierung entfernen"</string>
-    <string name="unpin_specific_target" msgid="3859828252160908146">"<xliff:g id="LABEL">%1$s</xliff:g> loslösen"</string>
+    <string name="unpin_specific_target" msgid="3859828252160908146"><xliff:g id="label" example="Tweet">%1$s</xliff:g>loslösen</string>
     <string name="app_info" msgid="6113278084877079851">"App-Informationen"</string>
     <string name="negative_duration" msgid="1938335096972945232">−<xliff:g id="time" example="1:14">%1$s</xliff:g></string>
     <string name="demo_starting_message" msgid="6577581216125805905">"Demo wird gestartet…"</string>
@@ -2155,12 +2161,12 @@
     <string name="accessibility_system_action_hardware_a11y_shortcut_label" msgid="5764644187715255107">"Kurzbefehl für Bedienungshilfen"</string>
     <string name="accessibility_system_action_dismiss_notification_shade" msgid="8931637495533770352">"Benachrichtigungsleiste schließen"</string>
     <string name="accessibility_freeform_caption" msgid="8377519323496290122">"Untertitelleiste von <xliff:g id="APP_NAME">%1$s</xliff:g>."</string>
-    <string name="as_app_forced_to_restricted_bucket" msgid="8233871289353898964">"<xliff:g id="PACKAGE_NAME">%1$s</xliff:g> wurde in den BESCHRÄNKT-Bucket gelegt"</string>
-    <string name="conversation_single_line_name_display" msgid="8958948312915255999">"<xliff:g id="SENDER_NAME">%1$s</xliff:g>:"</string>
+    <string name="as_app_forced_to_restricted_bucket" msgid="8233871289353898964"> <xliff:g id="package_name" example="com.android.example">%1$s</xliff:g> wurde in den BESCHRÄNKTEN Bereich verlegt</string>
+    <string name="conversation_single_line_name_display" msgid="8958948312915255999"><xliff:g id="sender_name" example="Sara">%1$s</xliff:g>:</string>
     <string name="conversation_single_line_image_placeholder" msgid="6983271082911936900">"hat ein Bild gesendet"</string>
     <string name="conversation_title_fallback_one_to_one" msgid="1980753619726908614">"Unterhaltung"</string>
     <string name="conversation_title_fallback_group_chat" msgid="456073374993104303">"Gruppenunterhaltung"</string>
-    <string name="unread_convo_overflow" msgid="920517615597353833">"<xliff:g id="MAX_UNREAD_COUNT">%1$d</xliff:g>+"</string>
+    <string name="unread_convo_overflow" msgid="920517615597353833"><xliff:g id="max_unread_count" example="99">%1$d</xliff:g>+</string>
     <string name="resolver_personal_tab" msgid="2051260504014442073">"Privat"</string>
     <string name="resolver_work_tab" msgid="2690019516263167035">"Geschäftlich"</string>
     <string name="resolver_personal_tab_accessibility" msgid="5739524949153091224">"Private Ansicht"</string>
@@ -2301,12 +2307,12 @@
     <string name="view_and_control_notification_content" msgid="8003766498562604034">"<xliff:g id="SERVICE_NAME">%s</xliff:g> kann deinen Bildschirm sehen und steuern. Zum Prüfen tippen."</string>
     <string name="ui_translation_accessibility_translated_text" msgid="3197547218178944544">"„<xliff:g id="MESSAGE">%1$s</xliff:g>“ wurde übersetzt."</string>
     <string name="ui_translation_accessibility_translation_finished" msgid="3057830947610088465">"Nachricht wurde von <xliff:g id="FROM_LANGUAGE">%1$s</xliff:g> auf <xliff:g id="TO_LANGUAGE">%2$s</xliff:g> übersetzt."</string>
-    <string name="permgrouplab_fake_package_signature">Spoof-Paket-Signatur</string>
+    <string name="permgrouplab_fake_package_signature">Paketsignatur-Täuschung</string>
     <string name="crossSimFormat_spn"><xliff:g id="spn" example="Operator">%s</xliff:g></string>
     <string name="wfcSpnFormat_spn"><xliff:g id="spn" example="Operator">%s</xliff:g></string>
     <string name="permlab_fakePackageSignature">Paketsignatur-Täuschung</string>
     <string name="permgrouprequest_fake_package_signature">&lt;b&gt;<xliff:g id="app_name" example="Gmail">%1$s</xliff:g>&lt;/b&gt; erlauben, die Paketsignatur zu täuschen\?</string>
-    <string name="permgroupdesc_fake_package_signature">Täuschung der Paketsignatur erlauben</string>
+    <string name="permgroupdesc_fake_package_signature">Paketsignatur-Täuschung zulassen</string>
     <string name="permdesc_fakePackageSignature">Erlaubt der App vorzutäuschen, eine andere App zu sein. Bösartige Anwendungen könnten diese Berechtigung missbrauchen, um private App-Daten zu entwenden. Berechtigte Benutzung wäre von einem Emulator, der vortäuscht, was er emuliert. Gewähre diese Berechtigung mit Vorsicht!</string>
     <string name="network_available_sign_in_detailed"><xliff:g id="network_ssid">%1$s</xliff:g></string>
 </resources>
