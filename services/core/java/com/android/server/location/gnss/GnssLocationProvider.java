@@ -1601,6 +1601,13 @@ public class GnssLocationProvider extends AbstractLocationProvider implements
         int type = AGPS_SETID_TYPE_NONE;
         String setId = null;
 
+        // Unless we are in an emergency, do not provide sensitive subscriber information
+        // to SUPL servers.
+        if (!mNIHandler.getInEmergency()) {
+            mGnssNative.setAgpsSetId(type, "");
+            return;
+        }
+
         int ddSubId = SubscriptionManager.getDefaultDataSubscriptionId();
         if (SubscriptionManager.isValidSubscriptionId(ddSubId)) {
             phone = phone.createForSubscriptionId(ddSubId);
