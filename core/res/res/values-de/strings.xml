@@ -93,7 +93,7 @@
     <string name="notification_channel_wfc" msgid="9048240466765169038">"WLAN-Telefonie"</string>
     <string name="notification_channel_sim" msgid="5098802350325677490">"Status der SIM-Karte"</string>
     <string name="notification_channel_sim_high_prio" msgid="642361929452850928">"Benachrichtigungen mit hoher Priorität von der SIM-Karte"</string>
-    <string name="peerTtyModeFull" msgid="337553730440832160">"Peer hat TTY-Modus \"Vollständig\" angefordert."</string>
+    <string name="peerTtyModeFull" msgid="337553730440832160">Peer hat TTY-Modus „Vollständig“ angefordert</string>
     <string name="peerTtyModeHco" msgid="5626377160840915617">"Peer hat TTY-Modus \"HCO\" angefordert."</string>
     <string name="peerTtyModeVco" msgid="572208600818270944">"Peer hat TTY-Modus \"VC\" angefordert."</string>
     <string name="peerTtyModeOff" msgid="2420380956369226583">"Peer hat TTY-Modus \"Aus\" angefordert."</string>
@@ -1703,8 +1703,9 @@
 \nAktuelle Funktionen:
 \n<xliff:g id="service" example="TalkBack">%1$s</xliff:g>
 \nDu kannst ausgewählte Funktionen unter „Einstellungen“ &gt; „Bedienungshilfen“ ändern.</string>
-    <string name="accessibility_shortcut_multiple_service_list" msgid="2128323171922023762">" • <xliff:g id="SERVICE">%1$s</xliff:g>\n"</string>
-    <string name="accessibility_shortcut_single_service_warning_title" msgid="1909518473488345266">"Verknüpfung für <xliff:g id="SERVICE">%1$s</xliff:g> aktivieren?"</string>
+    <string name="accessibility_shortcut_multiple_service_list" msgid="2128323171922023762"> • <xliff:g id="service" example="TalkBack">%1$s</xliff:g>
+\n</string>
+    <string name="accessibility_shortcut_single_service_warning_title" msgid="1909518473488345266">Verknüpfung für <xliff:g id="service" example="TalkBack">%1$s</xliff:g> aktivieren\?</string>
     <string name="accessibility_shortcut_single_service_warning" msgid="6363127705112844257">Wenn du beide Lautstärketasten einige Sekunden lang gedrückt hältst, aktivierst du die Bedienungshilfe <xliff:g id="service" example="TalkBack">%1$s</xliff:g>. Dadurch kann sich die Funktionsweise deines Geräts ändern.
 \n
 \nUnter „Einstellungen“ &gt; „Bedienungshilfen“ kannst du dieser Verknüpfung eine andere Funktion zuweisen.</string>
@@ -1924,7 +1925,7 @@
         <item quantity="other">Für %d h</item>
         <item quantity="one">Für 1 h</item>
     </plurals>
-    <string name="zen_mode_until_next_day" msgid="1403042784161725038">"Bis <xliff:g id="FORMATTEDTIME">%1$s</xliff:g>"</string>
+    <string name="zen_mode_until_next_day" msgid="1403042784161725038">Bis <xliff:g id="formattedTime" example="Tue, 10 PM">%1$s</xliff:g></string>
     <string name="zen_mode_until" msgid="2250286190237669079">Bis <xliff:g id="formattedTime" example="10:00 PM">%1$s</xliff:g></string>
     <string name="zen_mode_alarm" msgid="7046911727540499275">Bis <xliff:g id="formattedTime" example="10:00 PM">%1$s</xliff:g> (nächste Weckzeit)</string>
     <string name="zen_mode_forever" msgid="740585666364912448">"Bis zur Deaktivierung"</string>
@@ -2180,8 +2181,8 @@
     <string name="resolver_switch_on_work" msgid="463709043650610420">"Zum Aktivieren tippen"</string>
     <string name="resolver_no_work_apps_available" msgid="3298291360133337270">"Keine geschäftlichen Apps"</string>
     <string name="resolver_no_personal_apps_available" msgid="6284837227019594881">"Keine privaten Apps"</string>
-    <string name="miniresolver_open_in_personal" msgid="2937599899213467617">"In <xliff:g id="APP">%s</xliff:g> im privaten Profil öffnen?"</string>
-    <string name="miniresolver_open_in_work" msgid="152208044699347924">"In <xliff:g id="APP">%s</xliff:g> im Arbeitsprofil öffnen?"</string>
+    <string name="miniresolver_open_in_personal" msgid="2937599899213467617">In <xliff:g id="app" example="YouTube">%s</xliff:g> im privaten Profil öffnen\?</string>
+    <string name="miniresolver_open_in_work" msgid="152208044699347924">In <xliff:g id="app" example="YouTube">%s</xliff:g> im Arbeitsprofil öffnen\?</string>
     <string name="miniresolver_use_personal_browser" msgid="776072682871133308">"Privaten Browser verwenden"</string>
     <string name="miniresolver_use_work_browser" msgid="543575306251952994">"Arbeitsbrowser verwenden"</string>
     <string name="PERSOSUBSTATE_SIM_NETWORK_ENTRY" msgid="8050953231914637819">"Entsperr-PIN für netzgebundenes Gerät"</string>
@@ -2298,15 +2299,15 @@
     <string name="dismiss_action" msgid="1728820550388704784">"Schließen"</string>
     <string name="sensor_privacy_start_use_mic_notification_content_title" msgid="2420858361276370367">"Blockierung des Gerätemikrofons aufheben"</string>
     <string name="sensor_privacy_start_use_camera_notification_content_title" msgid="7287720213963466672">"Blockierung der Gerätekamera aufheben"</string>
-    <string name="sensor_privacy_start_use_notification_content_text" msgid="7595608891015777346">"Für &lt;b&gt;<xliff:g id="APP">%s</xliff:g>&lt;/b&gt; und alle Apps und Dienste"</string>
+    <string name="sensor_privacy_start_use_notification_content_text" msgid="7595608891015777346">Für &lt;b&gt;<xliff:g id="app" example="Gmail">%s</xliff:g>&lt;/b&gt; und alle Apps und Dienste</string>
     <string name="sensor_privacy_start_use_dialog_turn_on_button" msgid="7089318886628390827">"Blockierung aufheben"</string>
     <string name="sensor_privacy_notification_channel_label" msgid="936036783155261349">"Datenschutz für Sensoren"</string>
     <string name="splash_screen_view_icon_description" msgid="180638751260598187">"App-Symbol"</string>
     <string name="splash_screen_view_branding_description" msgid="7911129347402728216">"App-Branding-Hintergrundbild"</string>
     <string name="view_and_control_notification_title" msgid="4300765399209912240">"Zugriffseinstellungen prüfen"</string>
-    <string name="view_and_control_notification_content" msgid="8003766498562604034">"<xliff:g id="SERVICE_NAME">%s</xliff:g> kann deinen Bildschirm sehen und steuern. Zum Prüfen tippen."</string>
-    <string name="ui_translation_accessibility_translated_text" msgid="3197547218178944544">"„<xliff:g id="MESSAGE">%1$s</xliff:g>“ wurde übersetzt."</string>
-    <string name="ui_translation_accessibility_translation_finished" msgid="3057830947610088465">"Nachricht wurde von <xliff:g id="FROM_LANGUAGE">%1$s</xliff:g> auf <xliff:g id="TO_LANGUAGE">%2$s</xliff:g> übersetzt."</string>
+    <string name="view_and_control_notification_content" msgid="8003766498562604034"><xliff:g id="service_name" example="TalkBack">%s</xliff:g> kann deinen Bildschirm sehen und steuern. Zum Überprüfen tippen.</string>
+    <string name="ui_translation_accessibility_translated_text" msgid="3197547218178944544"><xliff:g id="message" example="Hello">%1$s</xliff:g> übersetzt.</string>
+    <string name="ui_translation_accessibility_translation_finished" msgid="3057830947610088465">Nachricht wurde von <xliff:g id="from_language" example="English">%1$s</xliff:g> in <xliff:g id="to_language" example="French">%2$s</xliff:g> übersetzt.</string>
     <string name="permgrouplab_fake_package_signature">Paketsignatur-Täuschung</string>
     <string name="crossSimFormat_spn"><xliff:g id="spn" example="Operator">%s</xliff:g></string>
     <string name="wfcSpnFormat_spn"><xliff:g id="spn" example="Operator">%s</xliff:g></string>
@@ -2315,4 +2316,53 @@
     <string name="permgroupdesc_fake_package_signature">Paketsignatur-Täuschung zulassen</string>
     <string name="permdesc_fakePackageSignature">Erlaubt der App vorzutäuschen, eine andere App zu sein. Bösartige Anwendungen könnten diese Berechtigung missbrauchen, um private App-Daten zu entwenden. Berechtigte Benutzung wäre von einem Emulator, der vortäuscht, was er emuliert. Gewähre diese Berechtigung mit Vorsicht!</string>
     <string name="network_available_sign_in_detailed"><xliff:g id="network_ssid">%1$s</xliff:g></string>
+    <string name="notification_inbox_ellipsis">…</string>
+    <string name="date_picker_day_typeface">sans-serif-medium</string>
+    <string name="date_picker_day_of_week_typeface">sans-serif-medium</string>
+    <string name="date_picker_month_typeface">sans-serif-medium</string>
+    <string name="sans_serif">sans-serif</string>
+    <string name="radial_numbers_typeface">sans-serif</string>
+    <string name="time_placeholder">--</string>
+    <string name="alternate_eri_file">/data/eri.xml</string>
+    <string name="autofill_phone_suffix_separator_re">^-$</string>
+    <string name="autofill_phone_prefix_separator_re">^-$|^\\)$</string>
+    <string name="autofill_area_code_notext_re">^\\($</string>
+    <string name="autofill_country_code_re">country.*code|ccode|_cc</string>
+    <string name="autofill_fax_re">fax<!-- fr-FR -->|télécopie|telecopie<!-- ja-JP -->|ファックス<!-- ru -->|факс<!-- zh-CN -->|传真<!-- zh-TW -->|傳真</string>
+    <string name="autofill_card_ignored_re">^card</string>
+    <string name="autofill_expiration_date_re">exp|^/|year<!-- de-DE -->|ablaufdatum|gueltig|gültig|yahr<!-- es -->|fecha<!-- it-IT -->|scadenza<!-- ja-JP -->|有効期限<!-- pt-BR, pt-PT -->|validade<!-- ru -->|Срок действия карты<!-- zh-CN -->|年|有效期</string>
+    <string name="autofill_expiration_month_re">expir|exp.*month|exp.*date|ccmonth<!-- de-DE -->|gueltig|gültig|monat<!-- es -->|fecha<!-- fr-FR -->|date.*exp<!-- it-IT -->|scadenza<!-- ja-JP -->|有効期限<!-- pt-BR, pt-PT -->|validade<!-- ru -->|Срок действия карты<!-- zh-CN -->|月</string>
+    <string name="autofill_card_number_re">number|card.\?#|card.\?no|ccnum<!-- de-DE -->|nummer<!-- es -->|credito|numero|número<!-- fr-FR -->|numéro<!-- ja-JP -->|カード番号<!-- ru -->|Номер.*карты<!-- zh-CN -->|信用卡号|信用卡号码<!-- zh-TW -->|信用卡卡號</string>
+    <string name="autofill_card_cvc_re">verification|card identification|cvn|security code|cvv code|cvc</string>
+    <string name="autofill_name_on_card_contextual_re">name</string>
+    <string name="autofill_name_on_card_re">card.\?holder|name.\?on.\?card|ccname|owner<!-- de-DE -->|karteninhaber<!-- es -->|nombre.*tarjeta<!-- fr-FR -->|nom.*carte<!-- it-IT -->|nome.*cart<!-- ja-JP -->|名前<!-- ru -->|Имя.*карты<!-- zh-CN -->|信用卡开户名|开户名|持卡人姓名<!-- zh-TW -->|持卡人姓名</string>
+    <string name="autofill_phone_extension_re">ext<!-- pt-BR, pt-PT -->|ramal</string>
+    <string name="autofill_phone_suffix_re">suffix</string>
+    <string name="autofill_phone_prefix_re">prefix<!-- fr-FR -->|preselection<!-- pt-BR, pt-PT -->|ddd</string>
+    <string name="autofill_area_code_re">area.*code|acode|area</string>
+    <string name="autofill_phone_re">phone<!-- de-DE -->|telefonnummer<!-- es -->|telefono|teléfono<!-- fr-FR -->|telfixe<!-- ja-JP -->|電話<!-- pt-BR, pt-PT -->|telefone|telemovel<!-- ru -->|телефон<!-- zh-CN -->|电话</string>
+    <string name="autofill_last_name_re">last.*name|lname|surname|last$<!-- de-DE -->|nachname<!-- es -->|apellidos<!-- fr-FR -->|famille|^nom<!-- it-IT -->|cognome<!-- ja-JP -->|姓<!-- pt-BR, pt-PT -->|morada|apelidos|surename|sobrenome<!-- ru -->|Фамилия</string>
+    <string name="autofill_middle_name_re">middle.*name|mname|middle$<!-- es -->|apellido.\?materno|lastlastname</string>
+    <string name="autofill_middle_initial_re">middle.*initial|m\\.i\\.|mi$</string>
+    <string name="autofill_first_name_re">irst.*name|initials|fname|first$<!-- de-DE -->|vorname<!-- es -->|nombre<!-- fr-FR -->|forename|prénom|prenom<!-- ja-JP -->|名<!-- pt-BR, pt-PT -->|nome<!-- ru -->|Имя</string>
+    <string name="autofill_name_specific_re">^name<!-- fr-FR -->|^nom<!-- pt-BR, pt-PT -->|^nome</string>
+    <string name="autofill_name_re">^name|full.\?name|your.\?name|customer.\?name|firstandlastname<!-- es -->|nombre.*y.*apellidos<!-- fr-FR -->|^nom<!-- ja-JP -->|お名前|氏名<!-- pt-BR, pt-PT -->|^nome<!-- zh-CN -->|姓名</string>
+    <string name="autofill_username_re">user.\?name|user.\?id<!-- de-DE -->|vollständiger.\?name<!-- zh-CN -->|用户名</string>
+    <string name="autofill_email_re">e.\?mail<!-- ja-JP -->|メールアドレス<!-- ru -->|Электронной.\?Почты<!-- zh-CN -->|邮件|邮箱<!-- zh-TW -->|電郵地址</string>
+    <string name="autofill_shipping_designator_re">ship</string>
+    <string name="autofill_billing_designator_re">bill</string>
+    <string name="autofill_address_type_use_my_re">use my</string>
+    <string name="autofill_address_type_same_as_re">same as</string>
+    <string name="autofill_state_re">state|county|region|province<!-- de-DE -->|land<!-- en-UK -->|county|principality<!-- ja-JP -->|都道府県<!-- pt-BR, pt-PT -->|estado|provincia<!-- ru -->|область<!-- zh-CN -->|省<!-- zh-TW -->|地區</string>
+    <string name="autofill_city_re">city|town<!-- de-DE -->|ort|stadt<!-- en-AU -->|suburb<!-- es -->|ciudad|provincia|localidad|poblacion<!-- fr-FR -->|ville|commune<!-- it-IT -->|localita<!-- ja-JP -->|市区町村<!-- pt-BR, pt-PT -->|cidade<!-- ru -->|Город<!-- zh-CN -->|市<!-- zh-TW -->|分區</string>
+    <string name="autofill_zip_4_re">zip|^-$|post2<!-- pt-BR, pt-PT -->|codpos2</string>
+    <string name="autofill_zip_code_re">zip|postal|post code|pcode|^1z$<!-- de-DE -->|postleitzahl<!-- es -->|cp<!-- fr-FR -->|cdp<!-- it-IT -->|cap<!-- ja-JP -->|郵便番号<!-- pt-BR, pt-PT -->|codigo|codpos|cep<!-- ru -->|Почтовый.\?Индекс<!--zh-CN -->|邮政编码|邮编<!-- zh-TW -->|郵遞區號</string>
+    <string name="autofill_country_re">country|location<!-- ja-JP -->|国<!-- zh-CN -->|国家</string>
+    <string name="autofill_address_line_3_re">address.\?line3|address3|addr3|street|line3<!-- es -->|municipio<!-- fr-FR -->|batiment|residence<!-- it-IT -->|indirizzo3</string>
+    <string name="autofill_address_line_2_re">address.\?line2|address2|addr2|street|suite|unit<!-- de-DE -->|adresszusatz|ergänzende.\?angaben<!-- es -->|direccion2|colonia|adicional<!-- fr-FR -->|addresssuppl|complementnom|appartement<!-- it-IT -->|indirizzo2<!-- ja-JP -->|住所2</string>
+    <string name="autofill_address_line_1_label_re">address<!-- fr-FR -->|adresse<!-- it-IT -->|indirizzo<!-- ja-JP -->|住所<!-- zh-CN -->|地址</string>
+    <string name="autofill_address_line_1_re">address.\?line|address1|addr1|street<!-- de-DE -->|strasse|straße|hausnummer|housenumber<!-- en-GB -->|house.\?name<!-- es -->|direccion|dirección<!-- fr-FR -->|adresse<!-- it-IT -->|indirizzo<!-- ja-JP -->|住所1<!-- pt-BR, pt-PT -->|morada|endereço<!-- ru -->|Адрес<!-- zh-CN -->|地址</string>
+    <string name="autofill_company_re">company|business|organization|organisation|department<!-- de-DE -->|firma|firmenname<!-- es -->|empresa<!-- fr-FR -->|societe|société<!-- it-IT -->|ragione.\?sociale<!-- ja-JP -->|会社<!-- ru -->|название.\?компании<!-- zh-CN -->|单位|公司</string>
+    <string name="autofill_region_ignored_re">province|region|other<!-- es -->|provincia<!-- pt-BR, pt-PT -->|bairro|suburb</string>
+    <string name="autofill_attention_ignored_re">attention|attn</string>
 </resources>
