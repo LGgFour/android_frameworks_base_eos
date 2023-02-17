@@ -1175,7 +1175,7 @@
     <string name="low_internal_storage_view_text_no_boot" msgid="7368968163411251788">"No hay espacio suficiente para el sistema. Comprueba que haya 250 MB libres y reinicia el dispositivo."</string>
     <string name="app_running_notification_title" msgid="8985999749231486569">"<xliff:g id="APP_NAME">%1$s</xliff:g> se está ejecutando"</string>
     <string name="app_running_notification_text" msgid="5120815883400228566">"Toca para obtener más información o para detener la aplicación."</string>
-    <string name="ok" msgid="2646370155170753815">"Aceptar"</string>
+    <string name="ok" msgid="2646370155170753815">Ok</string>
     <string name="cancel" msgid="6908697720451760115">"Cancelar"</string>
     <string name="yes" msgid="9069828999585032361">"Aceptar"</string>
     <string name="no" msgid="5122037903299899715">"Cancelar"</string>
@@ -1524,7 +1524,7 @@
     </plurals>
     <string name="action_mode_done" msgid="2536182504764803222">"Hecho"</string>
     <string name="progress_erasing" msgid="6891435992721028004">"Borrando almacenamiento compartido…"</string>
-    <string name="share" msgid="4157615043345227321">"Compartir"</string>
+    <string name="share" msgid="4157615043345227321">Compartir</string>
     <string name="find" msgid="5015737188624767706">"Buscar"</string>
     <string name="websearch" msgid="5624340204512793290">"Búsqueda web"</string>
     <string name="find_next" msgid="5341217051549648153">"Buscar siguiente"</string>
