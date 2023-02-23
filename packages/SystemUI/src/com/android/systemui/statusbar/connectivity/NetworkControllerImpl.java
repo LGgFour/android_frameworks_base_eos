@@ -747,20 +747,23 @@ public class NetworkControllerImpl extends BroadcastReceiver
             mobileSignalController.notifyListeners(cb);
         }
         if (mMobileSignalControllers.size() == 2) {
-            boolean volte1 = mMobileSignalControllers.valueAt(0).isVolteAvailable();
-            boolean volte2 = mMobileSignalControllers.valueAt(1).isVolteAvailable();
-            cb.setImsIcon(new ImsIconState((volte1 || volte2),
-                    getVolteResId(volte1, volte2),
+            boolean volte = mMobileSignalControllers.valueAt(0).isVolteAvailable()
+                    || mMobileSignalControllers.valueAt(1).isVolteAvailable();
+            cb.setImsIcon(new ImsIconState(volte,
+                    volte,
+                    volte ? getVolteResId() : 0,
                     mContext.getString(com.android.internal.R.string.status_bar_ims)
             ));
         } else if (mMobileSignalControllers.size() == 1) {
             boolean volte = mMobileSignalControllers.valueAt(0).isVolteAvailable();
             cb.setImsIcon(new ImsIconState(volte,
-                    volte ? R.drawable.stat_sys_volte : 0,
+                    volte,
+                    volte ? getVolteResId() : 0,
                     mContext.getString(com.android.internal.R.string.status_bar_ims)
             ));
         } else {
             cb.setImsIcon(new ImsIconState(false,
+                    false,
                     0,
                     mContext.getString(com.android.internal.R.string.status_bar_ims)
             ));
@@ -770,35 +773,37 @@ public class NetworkControllerImpl extends BroadcastReceiver
 
     public void updateImsIcon() {
         if (mMobileSignalControllers.size() == 2) {
-            boolean volte1 = mMobileSignalControllers.valueAt(0).isVolteAvailable();
-            boolean volte2 = mMobileSignalControllers.valueAt(1).isVolteAvailable();
-            mCallbackHandler.setImsIcon(new ImsIconState((volte1 || volte2),
-                    getVolteResId(volte1, volte2),
+            boolean volte = mMobileSignalControllers.valueAt(0).isVolteAvailable()
+                    || mMobileSignalControllers.valueAt(1).isVolteAvailable();
+            mCallbackHandler.setImsIcon(new ImsIconState(volte,
+                    volte,
+                    volte ? getVolteResId() : 0,
                     mContext.getString(com.android.internal.R.string.status_bar_ims)
             ));
         } else if (mMobileSignalControllers.size() == 1) {
             boolean volte = mMobileSignalControllers.valueAt(0).isVolteAvailable();
             mCallbackHandler.setImsIcon(new ImsIconState(volte,
-                    volte ? R.drawable.stat_sys_volte : 0,
+                    volte,
+                    volte ? getVolteResId() : 0,
                     mContext.getString(com.android.internal.R.string.status_bar_ims)
             ));
         } else {
             mCallbackHandler.setImsIcon(new ImsIconState(false,
+                    false,
                     0,
                     mContext.getString(com.android.internal.R.string.status_bar_ims)
             ));
         }
     }
 
-    private int getVolteResId(boolean volte1, boolean volte2) {
-        if (volte1 && volte2) {
-            return R.drawable.stat_sys_volte_slot12;
-        } else if (volte1) {
-            return mSwap ? R.drawable.stat_sys_volte_slot2 : R.drawable.stat_sys_volte_slot1;
-        } else if (volte2) {
-            return mSwap ? R.drawable.stat_sys_volte_slot1 : R.drawable.stat_sys_volte_slot2;
+    private int getVolteResId() {
+        int resId = R.drawable.ic_volte;
+
+        if (mConfig.show4gForLte) {
+            resId = R.drawable.ic_volte_4g;
         }
-        return 0;
+
+        return resId;
     }
 
     @Override
