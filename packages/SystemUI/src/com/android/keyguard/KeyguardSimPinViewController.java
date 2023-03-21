@@ -314,16 +314,16 @@ public class KeyguardSimPinViewController
         TypedArray array = mView.getContext().obtainStyledAttributes(
                 new int[] { android.R.attr.textColor });
         int color = array.getColor(0, Color.WHITE);
+        SubscriptionInfo info = mKeyguardUpdateMonitor.getSubscriptionInfoForSubId(mSubId);
+        if (info != null) {
+            color = info.getIconTint();
+        }
         array.recycle();
         if (count < 2) {
             msg = rez.getString(R.string.kg_sim_pin_instructions);
         } else {
-            SubscriptionInfo info = mKeyguardUpdateMonitor.getSubscriptionInfoForSubId(mSubId);
             CharSequence displayName = info != null ? info.getDisplayName() : ""; // don't crash
             msg = rez.getString(R.string.kg_sim_pin_instructions_multi, displayName);
-            if (info != null) {
-                color = info.getIconTint();
-            }
         }
         if (isEsimLocked) {
             msg = rez.getString(R.string.kg_sim_lock_esim_instructions, msg);
