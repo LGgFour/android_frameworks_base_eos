@@ -8863,6 +8863,12 @@ public final class Settings {
         public static final String SENTRY_USERID = "sentry_userid";
 
         /**
+         * License ID for /e/ OS updates
+         * @hide
+         */
+        public static final String E_LICENSE_ID = "e_license_id";
+
+        /**
          * The default NFC payment component
          * @hide
          */
