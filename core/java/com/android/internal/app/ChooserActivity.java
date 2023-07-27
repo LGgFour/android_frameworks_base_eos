@@ -1179,6 +1179,19 @@ public class ChooserActivity extends ResolverActivity implements
         final Intent resolveIntent = new Intent(originalIntent);
         resolveIntent.setComponent(cn);
         resolveIntent.setAction(Intent.ACTION_EDIT);
+        String originalAction = originalIntent.getAction();
+        if (Intent.ACTION_SEND.equals(originalAction)) {
+            if (resolveIntent.getData() == null) {
+                Uri uri = resolveIntent.getParcelableExtra(Intent.EXTRA_STREAM);
+                if (uri != null) {
+                    String mimeType = getContentResolver().getType(uri);
+                    resolveIntent.setDataAndType(uri, mimeType);
+                }
+            }
+        } else {
+            Log.e(TAG, originalAction + " is not supported.");
+            return null;
+        }
         final ResolveInfo ri = getPackageManager().resolveActivity(
                 resolveIntent, PackageManager.GET_META_DATA);
         if (ri == null || ri.activityInfo == null) {
@@ -1397,16 +1410,13 @@ public class ChooserActivity extends ResolverActivity implements
 
         final ViewGroup actionRow =
                 (ViewGroup) contentPreviewLayout.findViewById(R.id.chooser_action_row);
-        String action = targetIntent.getAction();
-
         //TODO: addActionButton(actionRow, createCopyButton());
         addActionButton(actionRow, createNearbyButton(targetIntent));
-        if (!Intent.ACTION_SEND_MULTIPLE.equals(action)) {
-            addActionButton(actionRow, createEditButton(targetIntent));
-        }
+        addActionButton(actionRow, createEditButton(targetIntent));
 
         mPreviewCoord = new ContentPreviewCoordinator(contentPreviewLayout, false);
 
+        String action = targetIntent.getAction();
         if (Intent.ACTION_SEND.equals(action)) {
             Uri uri = targetIntent.getParcelableExtra(Intent.EXTRA_STREAM);
             if (!validForContentPreview(uri)) {
