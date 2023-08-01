@@ -27,6 +27,9 @@ public final class SafetyNetHooks {
 
     private static final String TAG = "SafetyNetHooks";
     private static final String GMS_PACKAGE_NAME = "com.google.android.gms";
+    private static final String SPOOFED_MODEL = "Pixel 2";
+    private static final String SPOOFED_DEVICE_PRODUCT = "walleye";
+    private static final String SPOOFED_FINGERPRINT = "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys";
 
     private static void setBuildField(String key, String value) {
         try {
@@ -41,7 +44,10 @@ public final class SafetyNetHooks {
 
     public static void init(Application app) {
         if (GMS_PACKAGE_NAME.equals(app.getPackageName())) {
-            setBuildField("MODEL", Build.MODEL + " ");
+            setBuildField("MODEL", SPOOFED_MODEL);
+            setBuildField("DEVICE", SPOOFED_DEVICE_PRODUCT);
+            setBuildField("PRODUCT", SPOOFED_DEVICE_PRODUCT);
+            setBuildField("FINGERPRINT", SPOOFED_FINGERPRINT);
         }
     }
 }
