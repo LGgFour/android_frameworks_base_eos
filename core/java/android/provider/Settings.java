@@ -9255,7 +9255,7 @@ public final class Settings {
          * License ID for /e/ OS updates
          * @hide
          */
-        public static final String E_LICENSE_ID = "e_license_id";
+        public static final String OTA_ANON_HASH = "ota_anon_hash";
 
         /**
          * Whether complications are enabled to be shown over the screensaver by the user.
