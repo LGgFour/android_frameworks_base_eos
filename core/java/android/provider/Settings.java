@@ -7991,7 +7991,7 @@ public final class Settings {
          * License ID for /e/ OS updates
          * @hide
          */
-        public static final String E_LICENSE_ID = "e_license_id";
+        public static final String OTA_ANON_HASH = "ota_anon_hash";
 
         /**
          * The default NFC payment component
