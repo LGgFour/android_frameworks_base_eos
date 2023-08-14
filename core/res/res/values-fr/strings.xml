@@ -2304,6 +2304,5 @@
     <string name="permdesc_fakePackageSignature">Autoriser l\'application à prétendre qu\'elle est une autre application. Des applications frauduleuses pourraient utiliser cette autorisation pour accéder à des données d\'application privées. Les usages légitimes incluent un émulateur prétendant être ce qu\'il émule. N\'accordez cette autorisation qu\'avec parcimonie !</string>
     <string name="crossSimFormat_spn"><xliff:g id="spn" example="Operator">%s</xliff:g></string>
     <string name="network_available_sign_in_detailed"><xliff:g id="network_ssid">%1$s</xliff:g></string>
-    <string name="notification_inbox_ellipsis">…</string>
     <string name="wfcSpnFormat_spn"><xliff:g id="spn" example="Operator">%s</xliff:g></string>
 </resources>
