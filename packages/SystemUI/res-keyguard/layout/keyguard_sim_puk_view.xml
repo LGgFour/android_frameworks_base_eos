@@ -50,8 +50,8 @@
 
             <ImageView
                 android:id="@+id/keyguard_sim"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/ic_lockscreen_sim"
                 app:tint="@color/background_protected" />
