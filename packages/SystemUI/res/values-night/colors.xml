@@ -112,4 +112,9 @@
     <color name="udfps_enroll_progress">#7DA7F1</color>
     <color name="udfps_enroll_progress_help">#607DA7F1</color>
     <color name="udfps_enroll_progress_help_with_talkback">#FFEE675C</color>
+
+    <color name="privacy_chip_icon">@*android:color/background_floating_material_dark</color>
+    <color name="privacy_dialog_bg">@*android:color/background_floating_material_dark</color>
+    <color name="privacy_dialog_text">@*android:color/bright_foreground_holo_dark</color>
+    <color name="privacy_dialog_chevron">@*android:color/dim_foreground_holo_dark</color>
 </resources>

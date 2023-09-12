@@ -71,6 +71,8 @@ class OngoingPrivacyChip @JvmOverloads constructor(
     private fun updateView(builder: PrivacyChipBuilder) {
         fun setIcons(chipBuilder: PrivacyChipBuilder, iconsContainer: ViewGroup) {
             iconsContainer.removeAllViews()
+            iconColor = context.getColor(R.color.privacy_chip_icon)
+            iconsContainer.background = context.getDrawable(R.drawable.statusbar_privacy_chip_bg)
             chipBuilder.generateIcons().forEachIndexed { i, it ->
                 it.mutate()
                 it.setTint(iconColor)
@@ -107,11 +109,9 @@ class OngoingPrivacyChip @JvmOverloads constructor(
                 .getDimensionPixelSize(R.dimen.ongoing_appops_chip_icon_margin)
         iconSize = context.resources
                 .getDimensionPixelSize(R.dimen.ongoing_appops_chip_icon_size)
-        iconColor = Utils.getColorAttrDefaultColor(context, com.android.internal.R.attr.colorBackground)
 
         val padding = context.resources
                 .getDimensionPixelSize(R.dimen.ongoing_appops_chip_side_padding)
         iconsContainer.setPaddingRelative(padding, 0, padding, 0)
-        iconsContainer.background = context.getDrawable(R.drawable.statusbar_privacy_chip_bg)
     }
 }

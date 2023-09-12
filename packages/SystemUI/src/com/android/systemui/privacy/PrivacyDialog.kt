@@ -52,9 +52,7 @@ class PrivacyDialog(
     private val dismissListeners = mutableListOf<WeakReference<OnDialogDismissed>>()
     private val dismissed = AtomicBoolean(false)
 
-    private val iconColorSolid = Utils.getColorAttrDefaultColor(
-            this.context, com.android.internal.R.attr.colorPrimary
-    )
+    private val iconColorSolid = context.getColor(R.color.privacy_chip_icon)
     private val enterpriseText = " ${context.getString(R.string.ongoing_privacy_dialog_enterprise)}"
     private val phonecall = context.getString(R.string.ongoing_privacy_dialog_phonecall)
 
