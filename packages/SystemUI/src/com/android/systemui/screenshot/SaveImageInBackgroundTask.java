@@ -191,7 +191,7 @@ class SaveImageInBackgroundTask extends AsyncTask<String, Void, Void> {
             mImageData.quickShareAction = createQuickShareAction(
                     mQuickShareData.quickShareAction, mScreenshotId, uri, mImageTime, image,
                     user);
-            mImageData.subject = getSubjectString();
+            mImageData.subject = getSubjectString(mImageTime);
 
             mParams.mActionsReadyListener.onActionsReady(mImageData);
             if (DEBUG_CALLBACK) {
@@ -314,7 +314,7 @@ class SaveImageInBackgroundTask extends AsyncTask<String, Void, Void> {
                     new String[]{ClipDescription.MIMETYPE_TEXT_PLAIN}),
                     new ClipData.Item(uri));
             sharingIntent.setClipData(clipdata);
-            sharingIntent.putExtra(Intent.EXTRA_SUBJECT, getSubjectString());
+            sharingIntent.putExtra(Intent.EXTRA_SUBJECT, getSubjectString(mImageTime));
             sharingIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
                     .addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
 
@@ -524,9 +524,7 @@ class SaveImageInBackgroundTask extends AsyncTask<String, Void, Void> {
         Intent fillIn = new Intent();
         fillIn.setType("image/png");
         fillIn.putExtra(Intent.EXTRA_STREAM, uri);
-        String subjectDate = DateFormat.getDateTimeInstance().format(new Date(imageTime));
-        String subject = String.format(SCREENSHOT_SHARE_SUBJECT_TEMPLATE, subjectDate);
-        fillIn.putExtra(Intent.EXTRA_SUBJECT, subject);
+        fillIn.putExtra(Intent.EXTRA_SUBJECT, getSubjectString(imageTime));
         // Include URI in ClipData also, so that grantPermission picks it up.
         // We don't use setData here because some apps interpret this as "to:".
         ClipData clipData = new ClipData(
@@ -566,8 +564,8 @@ class SaveImageInBackgroundTask extends AsyncTask<String, Void, Void> {
         return null;
     }
 
-    private String getSubjectString() {
-        String subjectDate = DateFormat.getDateTimeInstance().format(new Date(mImageTime));
+    private static String getSubjectString(long imageTime) {
+        String subjectDate = DateFormat.getDateTimeInstance().format(new Date(imageTime));
         return String.format(SCREENSHOT_SHARE_SUBJECT_TEMPLATE, subjectDate);
     }
 }
