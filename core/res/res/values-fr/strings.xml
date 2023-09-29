@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- 
 /* //device/apps/common/assets/res/any/strings.xml
 **
@@ -16,10 +16,7 @@
 ** See the License for the specific language governing permissions and
 ** limitations under the License.
 */
- -->
-
-<resources xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+ --><resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="byteShort" msgid="202579285008794431">"octet(s)"</string>
     <string name="kilobyteShort" msgid="2214285521564195803">"Ko"</string>
     <string name="megabyteShort" msgid="6649361267635823443">"Mo"</string>
@@ -51,8 +48,8 @@
     <string name="needPuk2" msgid="7032612093451537186">"Saisissez la clé PUK2 pour débloquer la carte SIM."</string>
     <string name="enablePin" msgid="2543771964137091212">"Échec de l\'opération. Veuillez activer le verrouillage de la carte SIM/RUIM."</string>
     <plurals name="pinpuk_attempts" formatted="false" msgid="1619867269012213584">
-      <item quantity="one">Il vous reste <xliff:g id="NUMBER_1">%d</xliff:g> tentative avant que votre carte SIM ne soit verrouillée.</item>
-      <item quantity="other">Il vous reste <xliff:g id="NUMBER_1">%d</xliff:g> tentatives avant que votre carte SIM ne soit verrouillée.</item>
+        <item quantity="one">Il vous reste <xliff:g id="NUMBER_1">%d</xliff:g> tentative avant que votre carte SIM ne soit verrouillée.</item>
+        <item quantity="other">Il vous reste <xliff:g id="NUMBER_1">%d</xliff:g> tentatives avant que votre carte SIM ne soit verrouillée.</item>
     </plurals>
     <string name="imei" msgid="2157082351232630390">"Code IMEI"</string>
     <string name="meid" msgid="3291227361605924674">"Code MEID"</string>
@@ -123,14 +120,14 @@
     <string name="roamingText12" msgid="673537506362152640">"Bannière d\'itinérance désactivée"</string>
     <string name="roamingTextSearching" msgid="5323235489657753486">"Recherche des services disponibles"</string>
     <string name="wfcRegErrorTitle" msgid="3193072971584858020">"Impossible de configurer les appels Wi‑Fi"</string>
-  <string-array name="wfcOperatorErrorAlertMessages">
-    <item msgid="468830943567116703">"Pour passer des appels et envoyer des messages via le Wi-Fi, demandez d\'abord à votre opérateur de configurer ce service. Ensuite, réactivez les appels Wi-Fi dans les paramètres. (Code d\'erreur : <xliff:g id="CODE">%1$s</xliff:g>)"</item>
-  </string-array>
-  <string-array name="wfcOperatorErrorNotificationMessages">
-    <item msgid="4795145070505729156">"Problème lors de l\'enregistrement des appels Wi‑Fi avec votre opérateur : <xliff:g id="CODE">%1$s</xliff:g>"</item>
-  </string-array>
+    <string-array name="wfcOperatorErrorAlertMessages">
+        <item msgid="468830943567116703">"Pour passer des appels et envoyer des messages via le Wi-Fi, demandez d\'abord à votre opérateur de configurer ce service. Ensuite, réactivez les appels Wi-Fi dans les paramètres. (Code d\'erreur : <xliff:g id="CODE">%1$s</xliff:g>)"</item>
+    </string-array>
+    <string-array name="wfcOperatorErrorNotificationMessages">
+        <item msgid="4795145070505729156">"Problème lors de l\'enregistrement des appels Wi‑Fi avec votre opérateur : <xliff:g id="CODE">%1$s</xliff:g>"</item>
+    </string-array>
     <!-- no translation found for wfcSpnFormat_spn (2982505428519096311) -->
-    <skip />
+    <skip/>
     <string name="wfcSpnFormat_spn_wifi_calling" msgid="3165949348000906194">"Appels Wi-Fi <xliff:g id="SPN">%s</xliff:g>"</string>
     <string name="wfcSpnFormat_spn_wifi_calling_vo_hyphen" msgid="3836827895369365298">"Appels Wi-Fi <xliff:g id="SPN">%s</xliff:g>"</string>
     <string name="wfcSpnFormat_wlan_call" msgid="4895315549916165700">"Appel WLAN"</string>
@@ -147,7 +144,7 @@
     <string name="wfc_mode_cellular_preferred_summary" msgid="4958965609212575619">"Appel via le réseau mobile"</string>
     <string name="wfc_mode_wifi_only_summary" msgid="104951993894678665">"Wi-Fi uniquement"</string>
     <!-- no translation found for crossSimFormat_spn (9125246077491634262) -->
-    <skip />
+    <skip/>
     <string name="crossSimFormat_spn_cross_sim_calling" msgid="5620807020002879057">"Appels de secours via <xliff:g id="SPN">%s</xliff:g>"</string>
     <string name="cfTemplateNotForwarded" msgid="862202427794270501">"<xliff:g id="BEARER_SERVICE_CODE">{0}</xliff:g> : non transféré"</string>
     <string name="cfTemplateForwarded" msgid="9132506315842157860">"<xliff:g id="BEARER_SERVICE_CODE">{0}</xliff:g> : <xliff:g id="DIALING_NUMBER">{1}</xliff:g>"</string>
@@ -181,8 +178,8 @@
     <string name="low_memory" product="tv" msgid="6663680413790323318">"L\'espace de stockage de l\'appareil Android TV est saturé. Supprimez certains fichiers pour libérer de l\'espace."</string>
     <string name="low_memory" product="default" msgid="2539532364144025569">"La mémoire du téléphone est pleine. Veuillez supprimer des fichiers pour libérer de l\'espace."</string>
     <plurals name="ssl_ca_cert_warning" formatted="false" msgid="2288194355006173029">
-      <item quantity="one">Autorité de certification installée</item>
-      <item quantity="other">Autorités de certification installées</item>
+        <item quantity="one">Autorité de certification installée</item>
+        <item quantity="other">Autorités de certification installées</item>
     </plurals>
     <string name="ssl_ca_cert_noti_by_unknown" msgid="4961102218216815242">"Par un tiers inconnu"</string>
     <string name="ssl_ca_cert_noti_by_administrator" msgid="4564941950768783879">"Par l\'administrateur de votre profil professionnel"</string>
@@ -257,8 +254,8 @@
     <string name="bugreport_option_full_title" msgid="7681035745950045690">"Rapport complet"</string>
     <string name="bugreport_option_full_summary" msgid="1975130009258435885">"Utilisez cette option pour qu\'il y ait le moins d\'interférences système possible lorsque votre appareil ne répond pas ou qu\'il est trop lent, ou lorsque vous avez besoin de toutes les sections du rapport de bug. Aucune capture d\'écran supplémentaire ne peut être prise, et vous ne pouvez saisir aucune autre information."</string>
     <plurals name="bugreport_countdown" formatted="false" msgid="3906120379260059206">
-      <item quantity="one">Capture d\'écran pour le rapport de bug dans <xliff:g id="NUMBER_1">%d</xliff:g> seconde</item>
-      <item quantity="other">Capture d\'écran pour le rapport de bug dans <xliff:g id="NUMBER_1">%d</xliff:g> secondes</item>
+        <item quantity="one">Capture d\'écran pour le rapport de bug dans <xliff:g id="NUMBER_1">%d</xliff:g> seconde</item>
+        <item quantity="other">Capture d\'écran pour le rapport de bug dans <xliff:g id="NUMBER_1">%d</xliff:g> secondes</item>
     </plurals>
     <string name="bugreport_screenshot_success_toast" msgid="7986095104151473745">"Capture d\'écran avec rapport de bug effectuée"</string>
     <string name="bugreport_screenshot_failure_toast" msgid="6736320861311294294">"Échec de la capture d\'écran avec le rapport de bug"</string>
@@ -585,7 +582,7 @@
     <string name="fingerprint_acquired_too_bright" msgid="3863560181670915607">"Trop de lumière"</string>
     <string name="fingerprint_acquired_try_adjusting" msgid="3667006071003809364">"Essayez de repositionner le doigt"</string>
     <string name="fingerprint_acquired_immobile" msgid="1621891895241888048">"Changez légèrement de position chaque fois"</string>
-  <string-array name="fingerprint_acquired_vendor">
+    <string-array name="fingerprint_acquired_vendor">
   </string-array>
     <string name="fingerprint_authenticated" msgid="2024862866860283100">"Empreinte digitale authentifiée"</string>
     <string name="face_authenticated_no_confirmation_required" msgid="8867889115112348167">"Visage authentifié"</string>
@@ -607,7 +604,7 @@
     <string name="fingerprint_or_screen_lock_app_setting_name" msgid="3501743523487644907">"Utiliser votre empreinte digitale ou le verrouillage de l\'écran"</string>
     <string name="fingerprint_dialog_default_subtitle" msgid="3879832845486835905">"Utilisez votre empreinte digitale pour continuer"</string>
     <string name="fingerprint_or_screen_lock_dialog_default_subtitle" msgid="5195808203117992200">"Utilisez votre empreinte digitale ou le verrouillage de l\'écran pour continuer"</string>
-  <string-array name="fingerprint_error_vendor">
+    <string-array name="fingerprint_error_vendor">
   </string-array>
     <string name="fingerprint_error_vendor_unknown" msgid="4170002184907291065">"Un problème est survenu. Réessayez."</string>
     <string name="fingerprint_icon_content_description" msgid="4741068463175388817">"Icône d\'empreinte digitale"</string>
@@ -642,7 +639,7 @@
     <string name="face_acquired_roll_too_extreme" msgid="1442830503572636825">"Tournez un peu moins la tête."</string>
     <string name="face_acquired_obscured" msgid="4917643294953326639">"Retirez tout ce qui cache votre visage."</string>
     <string name="face_acquired_sensor_dirty" msgid="8968391891086721678">"Nettoyez la partie supérieure de l\'écran, y compris la barre noire"</string>
-  <string-array name="face_acquired_vendor">
+    <string-array name="face_acquired_vendor">
   </string-array>
     <string name="face_error_hw_not_available" msgid="5085202213036026288">"Imposs. valider visage. Matériel non disponible."</string>
     <string name="face_error_timeout" msgid="2598544068593889762">"Réessayez d\'utiliser le déverrouillage facial"</string>
@@ -661,7 +658,7 @@
     <string name="face_or_screen_lock_app_setting_name" msgid="1603149075605709106">"Utiliser déverrouillage par authent. faciale ou verrouillage écran"</string>
     <string name="face_dialog_default_subtitle" msgid="6620492813371195429">"Utilisez la reconnaissance faciale pour continuer"</string>
     <string name="face_or_screen_lock_dialog_default_subtitle" msgid="5006381531158341844">"Utilisez la reconnaissance faciale ou le verrouillage de l\'écran pour continuer"</string>
-  <string-array name="face_error_vendor">
+    <string-array name="face_error_vendor">
   </string-array>
     <string name="face_error_vendor_unknown" msgid="7387005932083302070">"Un problème est survenu. Réessayez."</string>
     <string name="face_icon_content_description" msgid="465030547475916280">"Icône visage"</string>
@@ -761,49 +758,49 @@
     <string name="policydesc_disableCamera" msgid="3204405908799676104">"Empêcher l\'utilisation de tous les appareils photos"</string>
     <string name="policylab_disableKeyguardFeatures" msgid="5071855750149949741">"Désactiver des options de verrouillage de l\'écran"</string>
     <string name="policydesc_disableKeyguardFeatures" msgid="6641673177041195957">"Empêcher l\'utilisation de certaines fonctionnalités du verrouillage de l\'écran"</string>
-  <string-array name="phoneTypes">
-    <item msgid="8996339953292723951">"Domicile"</item>
-    <item msgid="7740243458912727194">"Mobile"</item>
-    <item msgid="8526146065496663766">"Bureau"</item>
-    <item msgid="8150904584178569699">"Fax travail"</item>
-    <item msgid="4537253139152229577">"Fax domicile"</item>
-    <item msgid="6751245029698664340">"Bipeur"</item>
-    <item msgid="1692790665884224905">"Autre"</item>
-    <item msgid="6216981255272016212">"Personnalisé"</item>
-  </string-array>
-  <string-array name="emailAddressTypes">
-    <item msgid="7786349763648997741">"Domicile"</item>
-    <item msgid="435564470865989199">"Bureau"</item>
-    <item msgid="4199433197875490373">"Autre"</item>
-    <item msgid="3233938986670468328">"Personnalisée"</item>
-  </string-array>
-  <string-array name="postalAddressTypes">
-    <item msgid="3861463339764243038">"Domicile"</item>
-    <item msgid="5472578890164979109">"Bureau"</item>
-    <item msgid="5718921296646594739">"Autre"</item>
-    <item msgid="5523122236731783179">"Personnalisée"</item>
-  </string-array>
-  <string-array name="imAddressTypes">
-    <item msgid="588088543406993772">"Domicile"</item>
-    <item msgid="5503060422020476757">"Bureau"</item>
-    <item msgid="2530391194653760297">"Autre"</item>
-    <item msgid="7640927178025203330">"Personnalisé"</item>
-  </string-array>
-  <string-array name="organizationTypes">
-    <item msgid="6144047813304847762">"Bureau"</item>
-    <item msgid="7402720230065674193">"Autre"</item>
-    <item msgid="808230403067569648">"Personnalisée"</item>
-  </string-array>
-  <string-array name="imProtocols">
-    <item msgid="7535761744432206400">"AIM"</item>
-    <item msgid="2236558491789293993">"Windows Live"</item>
-    <item msgid="4925858989398000295">"Yahoo"</item>
-    <item msgid="5203383604393320577">"Skype"</item>
-    <item msgid="6142060795155127001">"QQ"</item>
-    <item msgid="8831467252725610081">"Google Talk"</item>
-    <item msgid="4717545739447438044">"ICQ"</item>
-    <item msgid="8293711853624033835">"Jabber"</item>
-  </string-array>
+    <string-array name="phoneTypes">
+        <item msgid="8996339953292723951">"Domicile"</item>
+        <item msgid="7740243458912727194">"Mobile"</item>
+        <item msgid="8526146065496663766">"Bureau"</item>
+        <item msgid="8150904584178569699">"Fax travail"</item>
+        <item msgid="4537253139152229577">"Fax domicile"</item>
+        <item msgid="6751245029698664340">"Bipeur"</item>
+        <item msgid="1692790665884224905">"Autre"</item>
+        <item msgid="6216981255272016212">"Personnalisé"</item>
+    </string-array>
+    <string-array name="emailAddressTypes">
+        <item msgid="7786349763648997741">"Domicile"</item>
+        <item msgid="435564470865989199">"Bureau"</item>
+        <item msgid="4199433197875490373">"Autre"</item>
+        <item msgid="3233938986670468328">"Personnalisée"</item>
+    </string-array>
+    <string-array name="postalAddressTypes">
+        <item msgid="3861463339764243038">"Domicile"</item>
+        <item msgid="5472578890164979109">"Bureau"</item>
+        <item msgid="5718921296646594739">"Autre"</item>
+        <item msgid="5523122236731783179">"Personnalisée"</item>
+    </string-array>
+    <string-array name="imAddressTypes">
+        <item msgid="588088543406993772">"Domicile"</item>
+        <item msgid="5503060422020476757">"Bureau"</item>
+        <item msgid="2530391194653760297">"Autre"</item>
+        <item msgid="7640927178025203330">"Personnalisé"</item>
+    </string-array>
+    <string-array name="organizationTypes">
+        <item msgid="6144047813304847762">"Bureau"</item>
+        <item msgid="7402720230065674193">"Autre"</item>
+        <item msgid="808230403067569648">"Personnalisée"</item>
+    </string-array>
+    <string-array name="imProtocols">
+        <item msgid="7535761744432206400">"AIM"</item>
+        <item msgid="2236558491789293993">"Windows Live"</item>
+        <item msgid="4925858989398000295">"Yahoo"</item>
+        <item msgid="5203383604393320577">"Skype"</item>
+        <item msgid="6142060795155127001">"QQ"</item>
+        <item msgid="8831467252725610081">"Google Talk"</item>
+        <item msgid="4717545739447438044">"ICQ"</item>
+        <item msgid="8293711853624033835">"Jabber"</item>
+    </string-array>
     <string name="phoneTypeCustom" msgid="5120365721260686814">"Personnalisé"</string>
     <string name="phoneTypeHome" msgid="3880132427643623588">"Domicile"</string>
     <string name="phoneTypeMobile" msgid="1178852541462086735">"Mobile"</string>
@@ -1059,8 +1056,8 @@
     <string name="oneMonthDurationPast" msgid="4538030857114635777">"Il y a 1 mois"</string>
     <string name="beforeOneMonthDurationPast" msgid="8315149541372065392">"Il y a plus d\'un mois"</string>
     <plurals name="last_num_days" formatted="false" msgid="687443109145393632">
-      <item quantity="one">Le dernier jour (<xliff:g id="COUNT_1">%d</xliff:g>)</item>
-      <item quantity="other">Les <xliff:g id="COUNT_1">%d</xliff:g> derniers jours</item>
+        <item quantity="one">Le dernier jour (<xliff:g id="COUNT_1">%d</xliff:g>)</item>
+        <item quantity="other">Les <xliff:g id="COUNT_1">%d</xliff:g> derniers jours</item>
     </plurals>
     <string name="last_month" msgid="1528906781083518683">"Le mois dernier"</string>
     <string name="older" msgid="1645159827884647400">"Préc."</string>
@@ -1081,68 +1078,68 @@
     <string name="years" msgid="5797714729103773425">"années"</string>
     <string name="now_string_shortest" msgid="3684914126941650330">"maintenant"</string>
     <plurals name="duration_minutes_shortest" formatted="false" msgid="7519574894537185135">
-      <item quantity="one"><xliff:g id="COUNT_1">%d</xliff:g> m</item>
-      <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> m</item>
+        <item quantity="one"><xliff:g id="COUNT_1">%d</xliff:g> m</item>
+        <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> m</item>
     </plurals>
     <plurals name="duration_hours_shortest" formatted="false" msgid="2838655994500499651">
-      <item quantity="one"><xliff:g id="COUNT_1">%d</xliff:g> h</item>
-      <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> h</item>
+        <item quantity="one"><xliff:g id="COUNT_1">%d</xliff:g> h</item>
+        <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> h</item>
     </plurals>
     <plurals name="duration_days_shortest" formatted="false" msgid="3686058472983158496">
-      <item quantity="one"><xliff:g id="COUNT_1">%d</xliff:g> j</item>
-      <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> j</item>
+        <item quantity="one"><xliff:g id="COUNT_1">%d</xliff:g> j</item>
+        <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> j</item>
     </plurals>
     <plurals name="duration_years_shortest" formatted="false" msgid="8299112348723640338">
-      <item quantity="one"><xliff:g id="COUNT_1">%d</xliff:g> a</item>
-      <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> a</item>
+        <item quantity="one"><xliff:g id="COUNT_1">%d</xliff:g> a</item>
+        <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> a</item>
     </plurals>
     <plurals name="duration_minutes_shortest_future" formatted="false" msgid="849196137176399440">
-      <item quantity="one">dans <xliff:g id="COUNT_1">%d</xliff:g> m</item>
-      <item quantity="other">dans <xliff:g id="COUNT_1">%d</xliff:g> m</item>
+        <item quantity="one">dans <xliff:g id="COUNT_1">%d</xliff:g> m</item>
+        <item quantity="other">dans <xliff:g id="COUNT_1">%d</xliff:g> m</item>
     </plurals>
     <plurals name="duration_hours_shortest_future" formatted="false" msgid="5386373597343170388">
-      <item quantity="one">dans <xliff:g id="COUNT_1">%d</xliff:g> h</item>
-      <item quantity="other">dans <xliff:g id="COUNT_1">%d</xliff:g> h</item>
+        <item quantity="one">dans <xliff:g id="COUNT_1">%d</xliff:g> h</item>
+        <item quantity="other">dans <xliff:g id="COUNT_1">%d</xliff:g> h</item>
     </plurals>
     <plurals name="duration_days_shortest_future" formatted="false" msgid="814754627092787227">
-      <item quantity="one">dans <xliff:g id="COUNT_1">%d</xliff:g> j</item>
-      <item quantity="other">dans <xliff:g id="COUNT_1">%d</xliff:g> j</item>
+        <item quantity="one">dans <xliff:g id="COUNT_1">%d</xliff:g> j</item>
+        <item quantity="other">dans <xliff:g id="COUNT_1">%d</xliff:g> j</item>
     </plurals>
     <plurals name="duration_years_shortest_future" formatted="false" msgid="7683731800140202145">
-      <item quantity="one">dans <xliff:g id="COUNT_1">%d</xliff:g> a</item>
-      <item quantity="other">dans <xliff:g id="COUNT_1">%d</xliff:g> a</item>
+        <item quantity="one">dans <xliff:g id="COUNT_1">%d</xliff:g> a</item>
+        <item quantity="other">dans <xliff:g id="COUNT_1">%d</xliff:g> a</item>
     </plurals>
     <plurals name="duration_minutes_relative" formatted="false" msgid="6569851308583028344">
-      <item quantity="one">Il y a <xliff:g id="COUNT_1">%d</xliff:g> minute</item>
-      <item quantity="other">Il y a <xliff:g id="COUNT_1">%d</xliff:g> minutes</item>
+        <item quantity="one">Il y a <xliff:g id="COUNT_1">%d</xliff:g> minute</item>
+        <item quantity="other">Il y a <xliff:g id="COUNT_1">%d</xliff:g> minutes</item>
     </plurals>
     <plurals name="duration_hours_relative" formatted="false" msgid="420434788589102019">
-      <item quantity="one">il y a <xliff:g id="COUNT_1">%d</xliff:g> heure</item>
-      <item quantity="other">il y a <xliff:g id="COUNT_1">%d</xliff:g> heures</item>
+        <item quantity="one">il y a <xliff:g id="COUNT_1">%d</xliff:g> heure</item>
+        <item quantity="other">il y a <xliff:g id="COUNT_1">%d</xliff:g> heures</item>
     </plurals>
     <plurals name="duration_days_relative" formatted="false" msgid="6056425878237482431">
-      <item quantity="one">il y a <xliff:g id="COUNT_1">%d</xliff:g> jour</item>
-      <item quantity="other">il y a <xliff:g id="COUNT_1">%d</xliff:g> jours</item>
+        <item quantity="one">il y a <xliff:g id="COUNT_1">%d</xliff:g> jour</item>
+        <item quantity="other">il y a <xliff:g id="COUNT_1">%d</xliff:g> jours</item>
     </plurals>
     <plurals name="duration_years_relative" formatted="false" msgid="2179998228861172159">
-      <item quantity="one">il y a <xliff:g id="COUNT_1">%d</xliff:g> an</item>
-      <item quantity="other">il y a <xliff:g id="COUNT_1">%d</xliff:g> ans</item>
+        <item quantity="one">il y a <xliff:g id="COUNT_1">%d</xliff:g> an</item>
+        <item quantity="other">il y a <xliff:g id="COUNT_1">%d</xliff:g> ans</item>
     </plurals>
     <plurals name="duration_minutes_relative_future" formatted="false" msgid="5759885720917567723">
-      <item quantity="one">dans <xliff:g id="COUNT_1">%d</xliff:g> minute</item>
-      <item quantity="other">dans <xliff:g id="COUNT_1">%d</xliff:g> minutes</item>
+        <item quantity="one">dans <xliff:g id="COUNT_1">%d</xliff:g> minute</item>
+        <item quantity="other">dans <xliff:g id="COUNT_1">%d</xliff:g> minutes</item>
     </plurals>
     <plurals name="duration_hours_relative_future" formatted="false" msgid="8963511608507707959">
-      <item quantity="one">dans <xliff:g id="COUNT_1">%d</xliff:g> heure</item>
-      <item quantity="other">dans <xliff:g id="COUNT_1">%d</xliff:g> heures</item>
+        <item quantity="one">dans <xliff:g id="COUNT_1">%d</xliff:g> heure</item>
+        <item quantity="other">dans <xliff:g id="COUNT_1">%d</xliff:g> heures</item>
     </plurals>
     <plurals name="duration_days_relative_future" formatted="false" msgid="1964709470979250702">
-      <item quantity="one">dans <xliff:g id="COUNT_1">%d</xliff:g> jour</item>
-      <item quantity="other">dans <xliff:g id="COUNT_1">%d</xliff:g> jours</item>
+        <item quantity="one">dans <xliff:g id="COUNT_1">%d</xliff:g> jour</item>
+        <item quantity="other">dans <xliff:g id="COUNT_1">%d</xliff:g> jours</item>
     </plurals>
     <plurals name="duration_years_relative_future" formatted="false" msgid="3985129025134896371">
-      <item quantity="one">dans <xliff:g id="COUNT_1">%d</xliff:g> an</item>
-      <item quantity="other">dans <xliff:g id="COUNT_1">%d</xliff:g> ans</item>
+        <item quantity="one">dans <xliff:g id="COUNT_1">%d</xliff:g> an</item>
+        <item quantity="other">dans <xliff:g id="COUNT_1">%d</xliff:g> ans</item>
     </plurals>
     <string name="VideoView_error_title" msgid="5750686717225068016">"Problème vidéo"</string>
     <string name="VideoView_error_text_invalid_progressive_playback" msgid="3782449246085134720">"Impossible de lire cette vidéo en streaming sur cet appareil."</string>
@@ -1232,7 +1229,6 @@
     <string name="aerr_mute" msgid="2304972923480211376">"Ignorer jusqu\'au redémarrage de l\'appareil"</string>
     <string name="aerr_wait" msgid="3198677780474548217">"Attendre"</string>
     <string name="aerr_close_app" msgid="8318883106083050970">"Fermer l\'application"</string>
-    <string name="anr_title" msgid="7290329487067300120"></string>
     <string name="anr_activity_application" msgid="8121716632960340680">"<xliff:g id="APPLICATION">%2$s</xliff:g> ne répond pas."</string>
     <string name="anr_activity_process" msgid="3477362583767128667">"L\'activité \"<xliff:g id="ACTIVITY">%1$s</xliff:g>\" ne répond pas."</string>
     <string name="anr_application_process" msgid="4978772139461676184">"<xliff:g id="APPLICATION">%1$s</xliff:g> ne répond pas."</string>
@@ -1311,7 +1307,7 @@
     <string name="wifi_available_sign_in" msgid="381054692557675237">"Connectez-vous au réseau Wi-Fi"</string>
     <string name="network_available_sign_in" msgid="1520342291829283114">"Se connecter au réseau"</string>
     <!-- no translation found for network_available_sign_in_detailed (7520423801613396556) -->
-    <skip />
+    <skip/>
     <string name="wifi_no_internet" msgid="1386911698276448061">"Aucune connexion à Internet pour <xliff:g id="NETWORK_SSID">%1$s</xliff:g>"</string>
     <string name="wifi_no_internet_detailed" msgid="634938444133558942">"Appuyez ici pour afficher des options."</string>
     <string name="mobile_no_internet" msgid="4014455157529909781">"Le réseau mobile ne dispose d\'aucun accès à Internet"</string>
@@ -1322,13 +1318,13 @@
     <string name="network_switch_metered" msgid="1531869544142283384">"Nouveau réseau : <xliff:g id="NETWORK_TYPE">%1$s</xliff:g>"</string>
     <string name="network_switch_metered_detail" msgid="1358296010128405906">"L\'appareil utilise <xliff:g id="NEW_NETWORK">%1$s</xliff:g> lorsque <xliff:g id="PREVIOUS_NETWORK">%2$s</xliff:g> n\'a pas de connexion Internet. Des frais peuvent s\'appliquer."</string>
     <string name="network_switch_metered_toast" msgid="501662047275723743">"Ancien réseau : <xliff:g id="PREVIOUS_NETWORK">%1$s</xliff:g>. Nouveau réseau : <xliff:g id="NEW_NETWORK">%2$s</xliff:g>"</string>
-  <string-array name="network_switch_type_name">
-    <item msgid="2255670471736226365">"données mobiles"</item>
-    <item msgid="5520925862115353992">"Wi-Fi"</item>
-    <item msgid="1055487873974272842">"Bluetooth"</item>
-    <item msgid="1616528372438698248">"Ethernet"</item>
-    <item msgid="9177085807664964627">"VPN"</item>
-  </string-array>
+    <string-array name="network_switch_type_name">
+        <item msgid="2255670471736226365">"données mobiles"</item>
+        <item msgid="5520925862115353992">"Wi-Fi"</item>
+        <item msgid="1055487873974272842">"Bluetooth"</item>
+        <item msgid="1616528372438698248">"Ethernet"</item>
+        <item msgid="9177085807664964627">"VPN"</item>
+    </string-array>
     <string name="network_switch_type_name_unknown" msgid="3665696841646851068">"type de réseau inconnu"</string>
     <string name="accept" msgid="5447154347815825107">"Accepter"</string>
     <string name="decline" msgid="6490507610282145874">"Refuser"</string>
@@ -1523,8 +1519,8 @@
     <string name="no_matches" msgid="6472699895759164599">"Aucune correspondance"</string>
     <string name="find_on_page" msgid="5400537367077438198">"Rechercher sur la page"</string>
     <plurals name="matches_found" formatted="false" msgid="1101758718194295554">
-      <item quantity="one"><xliff:g id="INDEX">%d</xliff:g> sur <xliff:g id="TOTAL">%d</xliff:g></item>
-      <item quantity="other"><xliff:g id="INDEX">%d</xliff:g> sur <xliff:g id="TOTAL">%d</xliff:g></item>
+        <item quantity="one"><xliff:g id="INDEX">%d</xliff:g> sur <xliff:g id="TOTAL">%d</xliff:g></item>
+        <item quantity="other"><xliff:g id="INDEX">%d</xliff:g> sur <xliff:g id="TOTAL">%d</xliff:g></item>
     </plurals>
     <string name="action_mode_done" msgid="2536182504764803222">"OK"</string>
     <string name="progress_erasing" msgid="6891435992721028004">"Suppression de l\'espace de stockage partagé…"</string>
@@ -1656,8 +1652,8 @@
     <string name="kg_wrong_password" msgid="2384677900494439426">"Mot de passe incorrect."</string>
     <string name="kg_wrong_pin" msgid="3680925703673166482">"Code PIN incorrect."</string>
     <plurals name="kg_too_many_failed_attempts_countdown" formatted="false" msgid="236717428673283568">
-      <item quantity="one">Réessayez dans <xliff:g id="NUMBER">%d</xliff:g> seconde.</item>
-      <item quantity="other">Réessayez dans <xliff:g id="NUMBER">%d</xliff:g> secondes.</item>
+        <item quantity="one">Réessayez dans <xliff:g id="NUMBER">%d</xliff:g> seconde.</item>
+        <item quantity="other">Réessayez dans <xliff:g id="NUMBER">%d</xliff:g> secondes.</item>
     </plurals>
     <string name="kg_pattern_instructions" msgid="8366024510502517748">"Dessinez votre schéma."</string>
     <string name="kg_sim_pin_instructions" msgid="6479401489471690359">"Saisissez le code PIN de la carte SIM."</string>
@@ -1856,8 +1852,8 @@
     <string name="restr_pin_error_doesnt_match" msgid="7063392698489280556">"Les codes PIN ne correspondent pas. Veuillez réessayer."</string>
     <string name="restr_pin_error_too_short" msgid="1547007808237941065">"Le code PIN est trop court. Il doit comporter au moins 4 chiffres."</string>
     <plurals name="restr_pin_countdown" formatted="false" msgid="4427486903285216153">
-      <item quantity="one">Réessayer dans <xliff:g id="COUNT">%d</xliff:g> seconde</item>
-      <item quantity="other">Réessayer dans <xliff:g id="COUNT">%d</xliff:g> secondes</item>
+        <item quantity="one">Réessayer dans <xliff:g id="COUNT">%d</xliff:g> seconde</item>
+        <item quantity="other">Réessayer dans <xliff:g id="COUNT">%d</xliff:g> secondes</item>
     </plurals>
     <string name="restr_pin_try_later" msgid="5897719962541636727">"Veuillez réessayer ultérieurement."</string>
     <string name="immersive_cling_title" msgid="2307034298721541791">"Affichage en plein écran"</string>
@@ -1887,36 +1883,36 @@
     <string name="data_saver_enable_title" msgid="7080620065745260137">"Activer l\'Économiseur de données ?"</string>
     <string name="data_saver_enable_button" msgid="4399405762586419726">"Activer"</string>
     <plurals name="zen_mode_duration_minutes_summary" formatted="false" msgid="2877101784123058273">
-      <item quantity="one">Pendant %1$d minute (jusqu\'à <xliff:g id="FORMATTEDTIME_1">%2$s</xliff:g>)</item>
-      <item quantity="other">Pendant %1$d minutes (jusqu\'à <xliff:g id="FORMATTEDTIME_1">%2$s</xliff:g>)</item>
+        <item quantity="one">Pendant %1$d minute (jusqu\'à <xliff:g id="FORMATTEDTIME_1">%2$s</xliff:g>)</item>
+        <item quantity="other">Pendant %1$d minutes (jusqu\'à <xliff:g id="FORMATTEDTIME_1">%2$s</xliff:g>)</item>
     </plurals>
     <plurals name="zen_mode_duration_minutes_summary_short" formatted="false" msgid="4230730310318858312">
-      <item quantity="one">Pendant %1$d min (jusqu\'à <xliff:g id="FORMATTEDTIME_1">%2$s</xliff:g>)</item>
-      <item quantity="other">Pendant %1$d min (jusqu\'à <xliff:g id="FORMATTEDTIME_1">%2$s</xliff:g>)</item>
+        <item quantity="one">Pendant %1$d min (jusqu\'à <xliff:g id="FORMATTEDTIME_1">%2$s</xliff:g>)</item>
+        <item quantity="other">Pendant %1$d min (jusqu\'à <xliff:g id="FORMATTEDTIME_1">%2$s</xliff:g>)</item>
     </plurals>
     <plurals name="zen_mode_duration_hours_summary" formatted="false" msgid="7725354244196466758">
-      <item quantity="one">Pendant %1$d heure (jusqu\'à <xliff:g id="FORMATTEDTIME_1">%2$s</xliff:g>)</item>
-      <item quantity="other">Pendant %1$d heures (jusqu\'à <xliff:g id="FORMATTEDTIME_1">%2$s</xliff:g>)</item>
+        <item quantity="one">Pendant %1$d heure (jusqu\'à <xliff:g id="FORMATTEDTIME_1">%2$s</xliff:g>)</item>
+        <item quantity="other">Pendant %1$d heures (jusqu\'à <xliff:g id="FORMATTEDTIME_1">%2$s</xliff:g>)</item>
     </plurals>
     <plurals name="zen_mode_duration_hours_summary_short" formatted="false" msgid="588719069121765642">
-      <item quantity="one">Pendant %1$d h (jusqu\'à <xliff:g id="FORMATTEDTIME_1">%2$s</xliff:g>)</item>
-      <item quantity="other">Pendant %1$d h (jusqu\'à <xliff:g id="FORMATTEDTIME_1">%2$s</xliff:g>)</item>
+        <item quantity="one">Pendant %1$d h (jusqu\'à <xliff:g id="FORMATTEDTIME_1">%2$s</xliff:g>)</item>
+        <item quantity="other">Pendant %1$d h (jusqu\'à <xliff:g id="FORMATTEDTIME_1">%2$s</xliff:g>)</item>
     </plurals>
     <plurals name="zen_mode_duration_minutes" formatted="false" msgid="1148568456958944998">
-      <item quantity="one">Pendant %d minute</item>
-      <item quantity="other">Pendant %d minutes</item>
+        <item quantity="one">Pendant %d minute</item>
+        <item quantity="other">Pendant %d minutes</item>
     </plurals>
     <plurals name="zen_mode_duration_minutes_short" formatted="false" msgid="2742377799995454859">
-      <item quantity="one">Pendant %d min</item>
-      <item quantity="other">Pendant %d min</item>
+        <item quantity="one">Pendant %d min</item>
+        <item quantity="other">Pendant %d min</item>
     </plurals>
     <plurals name="zen_mode_duration_hours" formatted="false" msgid="525401855645490022">
-      <item quantity="one">Pendant %d heure</item>
-      <item quantity="other">Pendant %d heures</item>
+        <item quantity="one">Pendant %d heure</item>
+        <item quantity="other">Pendant %d heures</item>
     </plurals>
     <plurals name="zen_mode_duration_hours_short" formatted="false" msgid="7644653189680911640">
-      <item quantity="one">Pendant %d h</item>
-      <item quantity="other">Pendant %d h</item>
+        <item quantity="one">Pendant %d h</item>
+        <item quantity="other">Pendant %d h</item>
     </plurals>
     <string name="zen_mode_until_next_day" msgid="1403042784161725038">"Jusqu\'à <xliff:g id="FORMATTEDTIME">%1$s</xliff:g>"</string>
     <string name="zen_mode_until" msgid="2250286190237669079">"Jusqu\'à <xliff:g id="FORMATTEDTIME">%1$s</xliff:g>"</string>
@@ -1965,8 +1961,8 @@
     <string name="call_notification_ongoing_text" msgid="3880832933933020875">"Appel en cours"</string>
     <string name="call_notification_screening_text" msgid="8396931408268940208">"Filtrage d\'un appel entrant"</string>
     <plurals name="selected_count" formatted="false" msgid="3946212171128200491">
-      <item quantity="one"><xliff:g id="COUNT_1">%1$d</xliff:g> élément sélectionné</item>
-      <item quantity="other"><xliff:g id="COUNT_1">%1$d</xliff:g> éléments sélectionnés</item>
+        <item quantity="one"><xliff:g id="COUNT_1">%1$d</xliff:g> élément sélectionné</item>
+        <item quantity="other"><xliff:g id="COUNT_1">%1$d</xliff:g> éléments sélectionnés</item>
     </plurals>
     <string name="default_notification_channel_label" msgid="3697928973567217330">"Sans catégorie"</string>
     <string name="importance_from_user" msgid="2782756722448800447">"Vous définissez l\'importance de ces notifications."</string>
@@ -2033,8 +2029,8 @@
     <string name="autofill_error_cannot_autofill" msgid="6528827648643138596">"Le contenu ne peut pas être saisi automatiquement"</string>
     <string name="autofill_picker_no_suggestions" msgid="1076022650427481509">"Aucune suggestion de saisie automatique"</string>
     <plurals name="autofill_picker_some_suggestions" formatted="false" msgid="6651883186966959978">
-      <item quantity="one"><xliff:g id="COUNT">%1$s</xliff:g> suggestion de saisie automatique</item>
-      <item quantity="other"><xliff:g id="COUNT">%1$s</xliff:g> suggestions de saisie automatique</item>
+        <item quantity="one"><xliff:g id="COUNT">%1$s</xliff:g> suggestion de saisie automatique</item>
+        <item quantity="other"><xliff:g id="COUNT">%1$s</xliff:g> suggestions de saisie automatique</item>
     </plurals>
     <string name="autofill_save_title" msgid="7719802414283739775">"Enregistrer dans "<b>"<xliff:g id="LABEL">%1$s</xliff:g>"</b>" ?"</string>
     <string name="autofill_save_title_with_type" msgid="3002460014579799605">"Enregistrer la <xliff:g id="TYPE">%1$s</xliff:g> dans "<b>"<xliff:g id="LABEL">%2$s</xliff:g>"</b>" ?"</string>
@@ -2063,7 +2059,6 @@
     <string name="etws_primary_default_message_earthquake_and_tsunami" msgid="4888224011071875068">"Restez calme et cherchez un abri à proximité."</string>
     <string name="etws_primary_default_message_test" msgid="4583367373909549421">"Test de messages d\'urgence"</string>
     <string name="notification_reply_button_accessibility" msgid="5235776156579456126">"Répondre"</string>
-    <string name="etws_primary_default_message_others" msgid="7958161706019130739"></string>
     <string name="mmcc_authentication_reject" msgid="4891965994643876369">"Carte SIM non autorisée pour les commandes vocales"</string>
     <string name="mmcc_imsi_unknown_in_hlr" msgid="227760698553988751">"Carte SIM non provisionnée pour les commandes vocales"</string>
     <string name="mmcc_illegal_ms" msgid="7509650265233909445">"Carte SIM non autorisée pour les commandes vocales"</string>
@@ -2137,8 +2132,8 @@
     <string name="bluetooth_airplane_mode_toast" msgid="2066399056595768554">"Le Bluetooth restera activé en mode Avion"</string>
     <string name="car_loading_profile" msgid="8219978381196748070">"Chargement…"</string>
     <plurals name="file_count" formatted="false" msgid="7063513834724389247">
-      <item quantity="one"><xliff:g id="FILE_NAME_2">%s</xliff:g> + <xliff:g id="COUNT_3">%d</xliff:g> fichier</item>
-      <item quantity="other"><xliff:g id="FILE_NAME_2">%s</xliff:g> + <xliff:g id="COUNT_3">%d</xliff:g> fichiers</item>
+        <item quantity="one"><xliff:g id="FILE_NAME_2">%s</xliff:g> + <xliff:g id="COUNT_3">%d</xliff:g> fichier</item>
+        <item quantity="other"><xliff:g id="FILE_NAME_2">%s</xliff:g> + <xliff:g id="COUNT_3">%d</xliff:g> fichiers</item>
     </plurals>
     <string name="chooser_no_direct_share_targets" msgid="1511722103987329028">"Aucune recommandation de personnes avec lesquelles effectuer un partage"</string>
     <string name="chooser_all_apps_button_label" msgid="3230427756238666328">"Liste des applications"</string>
@@ -2287,10 +2282,6 @@
     <string name="PERSOSUBSTATE_SIM_ICCID_SUCCESS" msgid="8058678548991999545">"Déblocage ICCID effectué."</string>
     <string name="PERSOSUBSTATE_SIM_IMPI_SUCCESS" msgid="2545608067978550571">"Déblocage IMPI effectué."</string>
     <string name="PERSOSUBSTATE_SIM_NS_SP_SUCCESS" msgid="4352382949744625007">"Déblocage du sous-réseau du fournisseur de services effectué."</string>
-    <string name="config_pdp_reject_dialog_title" msgid="4072057179246785727"></string>
-    <string name="config_pdp_reject_user_authentication_failed" msgid="4531693033885744689"></string>
-    <string name="config_pdp_reject_service_not_subscribed" msgid="8190338397128671588"></string>
-    <string name="config_pdp_reject_multi_conn_to_same_pdn_not_allowed" msgid="6024904218067254186"></string>
     <string name="window_magnification_prompt_title" msgid="2876703640772778215">"Nouveaux paramètres d\'agrandissement"</string>
     <string name="window_magnification_prompt_content" msgid="8159173903032344891">"Vous pouvez désormais agrandir une partie de l\'écran"</string>
     <string name="turn_on_magnification_settings_action" msgid="8521433346684847700">"Activer dans les paramètres"</string>
