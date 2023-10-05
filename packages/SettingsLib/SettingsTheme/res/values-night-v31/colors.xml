@@ -52,5 +52,6 @@
 
     <color name="settingslib_colorSurface">@color/settingslib_surface_dark</color>
 
+    <color name="settingslib_spinner_title_color">@*android:color/bright_foreground_holo_dark</color>
     <color name="settingslib_spinner_dropdown_color">@*android:color/bright_foreground_holo_dark</color>
 </resources>
