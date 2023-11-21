@@ -180,6 +180,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.IPackageManager;
 import android.content.pm.PackageInfo;
@@ -1156,7 +1157,7 @@ public class NetworkPolicyManagerService extends INetworkPolicyManager.Stub {
             final int uid = intent.getIntExtra(EXTRA_UID, -1);
             if (uid == -1) return;
 
-            if (intent.getBooleanExtra(EXTRA_REPLACING, false)) {
+            if (intent.getBooleanExtra(EXTRA_REPLACING, false) && !doesUidMatchPackages(uid)) {
                 if (LOGV) Slog.v(TAG, "ACTION_PACKAGE_ADDED Not new app, skip it uid=" + uid);
                 return;
             }
@@ -1322,6 +1323,47 @@ public class NetworkPolicyManagerService extends INetworkPolicyManager.Stub {
             mContext.unregisterReceiver(this);
         }
     };
+
+    private boolean doesUidMatchPackages(int uid) {
+        final String packageName = getPackageForUid(uid);
+        if (packageName == null || !isSystemApp(uid)) return false;
+
+        final Context deviceContext = mContext.createDeviceProtectedStorageContext();
+        final File prefsFile = new File(new File(Environment.getDataSystemDirectory(),
+                "shared_prefs"), "network_policy_whitelist_config.xml");
+        SharedPreferences mSharedPreferences =
+                deviceContext.getSharedPreferences(prefsFile, Context.MODE_PRIVATE);
+
+        String[] packagePairs = mContext.getResources().getStringArray(
+                com.android.internal.R.array.config_network_policy_manager_replacing_packages);
+
+        for (String packageToMatch : packagePairs) {
+            if (packageToMatch == null
+                || mSharedPreferences.getBoolean(packageToMatch, false)) continue;
+
+            if (packageName.equals(packageToMatch)) {
+                if (LOGD) Log.d(TAG, "UID match found packageName: " + packageName);
+                mSharedPreferences.edit().putBoolean(packageToMatch, true).apply();
+                return !hasInternetPermissionUL(uid);
+            }
+        }
+
+        if (LOGD) Log.d(TAG, "UID matches not found for packageName: " + packageName);
+        return false;
+    }
+
+    private boolean isSystemApp(int uid) {
+        final String packageName = getPackageForUid(uid);
+        if (packageName == null) return false;
+        final ApplicationInfo appInfo;
+        try {
+            appInfo = mContext.getPackageManager().getApplicationInfo(packageName,
+                    PackageManager.MATCH_UNINSTALLED_PACKAGES);
+        } catch (PackageManager.NameNotFoundException ignored) {
+            return false;
+        }
+        return appInfo.isSystemApp();
+    }
 
     private static boolean updateCapabilityChange(SparseBooleanArray lastValues, boolean newValue,
             Network network) {
