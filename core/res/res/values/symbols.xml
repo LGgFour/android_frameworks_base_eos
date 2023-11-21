@@ -4900,6 +4900,7 @@
   <java-symbol type="drawable" name="ic_swap_horiz" />
   <java-symbol type="array" name="config_deviceStatesAvailableForAppRequests" />
   <java-symbol type="array" name="config_serviceStateLocationAllowedPackages" />
+  <java-symbol type="array" name="config_network_policy_manager_replacing_packages" />
   <java-symbol type="integer" name="config_deviceStateRearDisplay"/>
   <java-symbol type="bool" name="config_independentLockscreenLiveWallpaper"/>
 
