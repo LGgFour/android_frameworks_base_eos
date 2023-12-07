@@ -376,6 +376,9 @@ public class NetworkPolicyManagerService extends INetworkPolicyManager.Stub {
     private static final int VERSION_SUPPORTED_CARRIER_USAGE = 13;
     private static final int VERSION_LATEST = VERSION_SUPPORTED_CARRIER_USAGE;
 
+    private static final int E_VERSION_INIT = 1;
+    private static final int E_VERSION_LATEST = 2;
+
     @VisibleForTesting
     public static final int TYPE_WARNING = SystemMessage.NOTE_NET_WARNING;
     @VisibleForTesting
@@ -396,6 +399,7 @@ public class NetworkPolicyManagerService extends INetworkPolicyManager.Stub {
     private static final String TAG_XML_UTILS_INT_ARRAY = "int-array";
 
     private static final String ATTR_VERSION = "version";
+    private static final String ATTR_E_VERSION = "eVersion";
     private static final String ATTR_RESTRICT_BACKGROUND = "restrictBackground";
     private static final String ATTR_NETWORK_TEMPLATE = "networkTemplate";
     private static final String ATTR_SUBSCRIBER_ID = "subscriberId";
@@ -2482,6 +2486,26 @@ public class NetworkPolicyManagerService extends INetworkPolicyManager.Stub {
         }
     }
 
+    private void allowOnRestrictedNetworks(List<String> packageNames) {
+        Set<Integer> uids =
+                ConnectivitySettingsManager.getUidsAllowedOnRestrictedNetworks(mContext);
+        for (UserInfo userInfo : UserManager.get(mContext).getUsers()) {
+            for (final String packageName : packageNames) {
+                final int uid = getUidForPackage(packageName, userInfo.id);
+                if (uid == -1) {
+                    continue;
+                }
+                Log.i(TAG, "allowOnRestrictedNetworks: enable network access for: "
+                        + packageName);
+                uids.add(uid);
+                mInternetPermissionMap.delete(uid);
+                updateRestrictionRulesForUidUL(uid);
+            }
+        }
+
+        ConnectivitySettingsManager.setUidsAllowedOnRestrictedNetworks(mContext, uids);
+    }
+
     @GuardedBy({"mUidRulesFirstLock", "mNetworkPoliciesSecondLock"})
     private void readPolicyAL() {
         if (LOGV) Slog.v(TAG, "readPolicyAL()");
@@ -2519,6 +2543,7 @@ public class NetworkPolicyManagerService extends INetworkPolicyManager.Stub {
 
         int type;
         int version = VERSION_INIT;
+        int eVersion = E_VERSION_INIT;
         boolean insideAllowlist = false;
         while ((type = in.next()) != END_DOCUMENT) {
             final String tag = in.getName();
@@ -2526,6 +2551,7 @@ public class NetworkPolicyManagerService extends INetworkPolicyManager.Stub {
                 if (TAG_POLICY_LIST.equals(tag)) {
                     final boolean oldValue = mRestrictBackground;
                     version = readIntAttribute(in, ATTR_VERSION);
+                    eVersion = readIntAttribute(in, ATTR_E_VERSION, eVersion);
                     mLoadedRestrictBackground = (version >= VERSION_ADDED_RESTRICT_BACKGROUND)
                             && readBooleanAttribute(in, ATTR_RESTRICT_BACKGROUND);
                 } else if (TAG_NETWORK_POLICY.equals(tag)) {
@@ -2725,6 +2751,29 @@ public class NetworkPolicyManagerService extends INetworkPolicyManager.Stub {
                 Slog.w(TAG, "unable to update policy on UID " + uid);
             }
         }
+
+        Log.i(TAG, "Current eVersion: " + eVersion);
+        if (eVersion < E_VERSION_LATEST) {
+            List<String> packageNames = new ArrayList<>();
+
+            switch (eVersion) {
+                case 1:
+                    packageNames.add("com.android.vending");
+                    packageNames.add("foundation.e.blissweather");
+                    // Fall-through intended
+                case 2:
+                case 3:
+                    // packageNames.add("com.android.example");
+                    // Add new packages here for future use cases.
+                    break; // Break to end the block after adding eVersion 2 or 3
+                default:
+                    break;
+            }
+
+            if (!packageNames.isEmpty()) {
+                allowOnRestrictedNetworks(packageNames);
+            }
+        }
     }
 
     /**
@@ -2889,6 +2938,7 @@ public class NetworkPolicyManagerService extends INetworkPolicyManager.Stub {
     private void writeUidIndependentAttributes(TypedXmlSerializer out) throws IOException {
         out.startTag(null, TAG_POLICY_LIST);
         writeIntAttribute(out, ATTR_VERSION, VERSION_LATEST);
+        writeIntAttribute(out, ATTR_E_VERSION, E_VERSION_LATEST);
         writeBooleanAttribute(out, ATTR_RESTRICT_BACKGROUND, mRestrictBackground);
 
         // write all known network policies
