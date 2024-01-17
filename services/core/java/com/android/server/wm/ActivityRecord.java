@@ -5672,7 +5672,7 @@ final class ActivityRecord extends WindowToken implements WindowManagerService.A
                mPowerManagerInternal = LocalServices.getService(PowerManagerInternal.class);
             }
             if (mPowerManagerInternal != null) {
-                mPowerManagerInternal.setPowerExtBoost(PowerExtBoosts.ACTIVITY_SWITCH.name(), 2000);
+                mPowerManagerInternal.setPowerExtBoost(PowerExtBoosts.ACTIVITY_SWITCH.name(), Resources.getSystem().getInteger(org.lineageos.platform.internal.R.integer.power_ext_process_create_duration));
             } else {
                 Slog.v(TAG, "Failed to sendPowerHint for ACTIVITY_SWITCH");
             }

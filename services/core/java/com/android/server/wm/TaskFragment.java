@@ -82,6 +82,7 @@ import android.app.servertransaction.PauseActivityItem;
 import android.app.servertransaction.ResumeActivityItem;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.os.IBinder;
@@ -101,6 +102,7 @@ import android.window.TaskFragmentOrganizerToken;
 
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.internal.protolog.common.ProtoLog;
+import com.android.internal.R;
 import com.android.internal.util.function.pooled.PooledLambda;
 import com.android.internal.util.function.pooled.PooledPredicate;
 import com.android.server.am.HostingRecord;
@@ -1260,7 +1262,7 @@ class TaskFragment extends WindowContainer<WindowContainer> {
             !getDisplayContent().getDisplayPolicy().isKeyguardShowing()) {
             if (lastActivity != null && next != null && lastActivity.packageName != next.packageName) {
                 mAtmService.mWindowManager.mPowerManagerInternal.setPowerExtBoost(
-                    PowerExtBoosts.PACKAGE_SWITCH.name(), 4000);
+                    PowerExtBoosts.PACKAGE_SWITCH.name(), Resources.getSystem().getInteger(org.lineageos.platform.internal.R.integer.power_ext_package_switch_duration));
             }
         }
 

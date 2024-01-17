@@ -76,6 +76,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.res.Resources;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.IPackageManager;
 import android.content.pm.PackageManager;
@@ -124,6 +125,7 @@ import com.android.internal.annotations.GuardedBy;
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.internal.app.ProcessMap;
 import com.android.internal.os.Zygote;
+import com.android.internal.R;
 import com.android.internal.util.ArrayUtils;
 import com.android.internal.util.FrameworkStatsLog;
 import com.android.internal.util.MemInfoReader;
@@ -1666,7 +1668,7 @@ public final class ProcessList {
         checkSlow(startUptime, "startProcess: done updating cpu stats");
 
         if (mService.mLocalPowerManager != null && hostingRecord.getType().contains("activity") == true) {
-            mService.mLocalPowerManager.setPowerExtBoost(PowerExtBoosts.PROCESS_CREATE.name(), 4000);
+            mService.mLocalPowerManager.setPowerExtBoost(PowerExtBoosts.PROCESS_CREATE.name(), Resources.getSystem().getInteger(org.lineageos.platform.internal.R.integer.power_ext_activity_switch_duration));
         }
 
         try {
