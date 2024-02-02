@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright ECORP SAS 2024
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="16"
+    android:viewportHeight="13"
+    android:tint="#FFFFFF">
+    <group android:scaleX="0.6725146"
+        android:scaleY="0.54641813"
+        android:translateX="2.619883"
+        android:translateY="2.9482822">
+        <path
+            android:pathData="M2.251,8.999L6.057,8.559L7.877,10.379C9.921,9.339 11.597,7.67 12.637,5.619L10.81,3.792L11.25,0H15.23C15.649,7.352 9.603,13.398 2.251,12.979V8.999Z"
+            android:fillColor="#ffffff"/>
+        <path
+            android:pathData="M3.147,3.831V4.451H1.297V3.831H3.147ZM1.493,0V4.451H0.75V0H1.493Z"
+            android:fillColor="#ffffff"/>
+        <path
+            android:pathData="M4.629,0V4.451H3.889V0H4.629ZM5.763,0V0.624H2.768V0H5.763Z"
+            android:fillColor="#ffffff"/>
+        <path
+            android:pathData="M8.83,3.831V4.451H6.898V3.831H8.83ZM7.093,0V4.451H6.35V0H7.093ZM8.57,1.853V2.464H6.898V1.853H8.57ZM8.811,0V0.624H6.898V0H8.811Z"
+            android:fillColor="#ffffff"/>
+    </group>
+</vector>
