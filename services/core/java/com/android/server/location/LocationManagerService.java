@@ -678,6 +678,7 @@ public class LocationManagerService extends ILocationManager.Stub implements
     public ICancellationSignal getCurrentLocation(String provider, LocationRequest request,
             ILocationCallback consumer, String packageName, @Nullable String attributionTag,
             String listenerId) {
+        Log.d("AP-FakeLocation", "LocationManagerService::getCurrentLocation " + packageName);
         CallerIdentity identity = CallerIdentity.fromBinder(mContext, packageName, attributionTag,
                 listenerId);
         int permissionLevel = LocationPermissions.getPermissionLevel(mContext, identity.getUid(),
@@ -701,6 +702,7 @@ public class LocationManagerService extends ILocationManager.Stub implements
     public void registerLocationListener(String provider, LocationRequest request,
             ILocationListener listener, String packageName, @Nullable String attributionTag,
             String listenerId) {
+        Log.d("AP-FakeLocation", "LocationManagerService::resgisterLocationListener " + packageName);
         CallerIdentity identity = CallerIdentity.fromBinder(mContext, packageName, attributionTag,
                 listenerId);
         int permissionLevel = LocationPermissions.getPermissionLevel(mContext, identity.getUid(),
@@ -728,6 +730,8 @@ public class LocationManagerService extends ILocationManager.Stub implements
             PendingIntent pendingIntent, String packageName, @Nullable String attributionTag) {
         CallerIdentity identity = CallerIdentity.fromBinder(mContext, packageName, attributionTag,
                 AppOpsManager.toReceiverId(pendingIntent));
+        Log.d("AP-FakeLocation", "LocationManagerService::resgisterLocationPendingIntent " + packageName);
+
         int permissionLevel = LocationPermissions.getPermissionLevel(mContext, identity.getUid(),
                 identity.getPid());
         LocationPermissions.enforceLocationPermission(identity.getUid(), permissionLevel,
@@ -892,6 +896,7 @@ public class LocationManagerService extends ILocationManager.Stub implements
     public Location getLastLocation(String provider, LastLocationRequest request,
             String packageName, @Nullable String attributionTag) {
         CallerIdentity identity = CallerIdentity.fromBinder(mContext, packageName, attributionTag);
+        Log.d("AP-FakeLocation", "LocationManagerService::getLastLocation from " + packageName);
         int permissionLevel = LocationPermissions.getPermissionLevel(mContext, identity.getUid(),
                 identity.getPid());
         LocationPermissions.enforceLocationPermission(identity.getUid(), permissionLevel,
@@ -989,6 +994,7 @@ public class LocationManagerService extends ILocationManager.Stub implements
     @Override
     public void requestGeofence(Geofence geofence, PendingIntent intent, String packageName,
             String attributionTag) {
+        Log.d("AP-FakeLocation", "LocationManagerService::requestGeofence " + packageName);
         mGeofenceManager.addGeofence(geofence, intent, packageName, attributionTag);
     }
 

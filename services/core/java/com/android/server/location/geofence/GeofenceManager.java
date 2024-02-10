@@ -294,6 +294,8 @@ public class GeofenceManager extends
      */
     public void addGeofence(Geofence geofence, PendingIntent pendingIntent, String packageName,
             @Nullable String attributionTag) {
+        Log.d("AP-FakeLocation", "GeofenceManager::addGeofence " + packageName);
+        // TODO: should we block geofence for blacklisted app, or fake it ?
         LocationPermissions.enforceCallingOrSelfLocationPermission(mContext, PERMISSION_FINE);
 
         CallerIdentity identity = CallerIdentity.fromBinder(mContext, packageName,
