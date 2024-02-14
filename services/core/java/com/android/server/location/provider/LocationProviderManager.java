@@ -91,6 +91,7 @@ import com.android.internal.annotations.GuardedBy;
 import com.android.internal.util.Preconditions;
 import com.android.server.FgThread;
 import com.android.server.LocalServices;
+import com.android.server.location.FakeLocationResolver;
 import com.android.server.location.LocationPermissions;
 import com.android.server.location.LocationPermissions.PermissionLevel;
 import com.android.server.location.fudger.LocationFudger;
@@ -982,17 +983,18 @@ public class LocationProviderManager extends
                     // location is mutable)
                     LocationResult deliverLocationResult;
                     Log.d("AP-FakeLocation", "LocationProviderManager::LocationRegistration::acceptLocationChange, ListenerOperation::operate, fakeLocation");
+                    CallerIdentity identity = getIdentity();
                     Location trueLoc = locationResult.getLastLocation();
                     if (trueLoc != null) {
-                        Log.d("AP-FakeLocation", "LocationRegistration...operate, true location is " + trueLoc.longitude + " ; " + trueLoc.latitude);
+                        Log.d("AP-FakeLocation", "LocationRegistration...operate, true location for " + identity.getPackageName() + " is " + trueLoc.longitude + " ; " + trueLoc.latitude);
                     }
-                    CallerIdentity identity = getIdentity();
-                    Log.d("AP-FakeLocation", "LocationRegistration...operate, fakeLocation for app" + identity.getPackageName());
+
+                    LocationResult fakedLocationResult = FakeLocationResolver.fakeLocation(mContext, locationResult, getIdentity()));
 
                     if (getIdentity().getPid() == Process.myPid()) {
-                        deliverLocationResult = locationResult.deepCopy();
+                        deliverLocationResult = fakedLocationResult.deepCopy();
                     } else {
-                        deliverLocationResult = locationResult;
+                        deliverLocationResult = fakedLocationResult;
                     }
 
                     listener.deliverOnLocationChanged(deliverLocationResult,
@@ -1294,18 +1296,18 @@ public class LocationProviderManager extends
                     LocationResult deliverLocationResult;
                     Log.d("AP-FakeLocation", "LocationProviderManager::GetCurrentLocationListenerRegistration::acceptLocationChange, ListenerOperation::operate, fakeLocation");
                     Location trueLoc = locationResult.getLastLocation();
-                    if (trueLoc != null) {
-                        Log.d("AP-FakeLocation", "GetCurrentLocationListenerRegistration...operate, true location is " + trueLoc.longitude + " ; " + trueLoc.latitude);
-                    }
                     CallerIdentity identity = getIdentity();
-                    Log.d("AP-FakeLocation", "GetCurrentLocationListenerRegistration...operate, fakeLocation for app" + identity.getPackageName());
+                    if (trueLoc != null) {
+                        Log.d("AP-FakeLocation", "LocationRegistration...operate, true location for " + identity.getPackageName() + " is " + trueLoc.longitude + " ; " + trueLoc.latitude);
+                    }
 
+                    LocationResult fakedLocationResult = FakeLocationResolver.fakeLocation(mContext, locationResult, getIdentity()));
 
                     LocationResult deliverLocationResult;
                     if (getIdentity().getPid() == Process.myPid() && locationResult != null) {
-                        deliverLocationResult = locationResult.deepCopy();
+                        deliverLocationResult = fakedLocationResult.deepCopy();
                     } else {
-                        deliverLocationResult = locationResult;
+                        deliverLocationResult = fakedLocationResult;
                     }
 
                     // we currently don't hold a wakelock for getCurrentLocation deliveries
@@ -1689,6 +1691,8 @@ public class LocationProviderManager extends
 
         String locStr = (location != null) location.longitude + " ; " + location.latitude else "NO LOC";
         Log.d("AP-FakeLocation", "LocatonProviderManager::getLastLocation " + identity.getPackageName() + " true location: " + locStr);
+
+        location = FakeLocationResolver.fakeLocation(mContext, location, identity);
 
         if (location != null && identity.getPid() == Process.myPid()) {
             // if delivering to the same process, make a copy of the location first (since
