@@ -5,3 +5,6 @@ include:
   - project: 'e/templates'
     ref: master
     file: '/gitlab-ci/.gitlab-ci-import-updates-from-upstream.yml'
+  - project: 'e/templates'
+    ref: master
+    file: '/gitlab-ci/.gitlab-ci-auto-merge-main.yml'
