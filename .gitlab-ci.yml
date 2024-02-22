@@ -1,6 +1,6 @@
 stages:
   - update-from-upstream
-
+  - auto-merge-main
 include:
   - project: 'e/templates'
     ref: master
