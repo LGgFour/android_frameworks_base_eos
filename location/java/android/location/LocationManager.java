@@ -63,6 +63,7 @@ import android.os.Process;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.UserHandle;
+import android.util.Log;
 
 import com.android.internal.annotations.GuardedBy;
 import com.android.internal.listeners.ListenerExecutor;
@@ -823,7 +824,7 @@ public class LocationManager {
         Preconditions.checkArgument(lastLocationRequest != null,
                 "invalid null last location request");
 
-        Log.d("AP-FakeLocation", "LocationManager::getLastKnownLocation")
+        Log.d("AP-FakeLocation", "LocationManager::getLastKnownLocation");
         try {
             return mService.getLastLocation(provider, lastLocationRequest,
                     mContext.getPackageName(), mContext.getAttributionTag());
@@ -1482,7 +1483,7 @@ public class LocationManager {
             @NonNull LocationRequest locationRequest,
             @NonNull @CallbackExecutor Executor executor,
             @NonNull LocationListener listener) {
-        Log.d("AP-FakeLocation", "LocationManager::requestLocationIpdates")
+        Log.d("AP-FakeLocation", "LocationManager::requestLocationIpdates");
         Preconditions.checkArgument(provider != null, "invalid null provider");
         Preconditions.checkArgument(locationRequest != null, "invalid null location request");
 
@@ -1532,7 +1533,7 @@ public class LocationManager {
     public void requestLocationUpdates(@NonNull String provider,
             @NonNull LocationRequest locationRequest,
             @NonNull PendingIntent pendingIntent) {
-        Log.d("AP-FakeLocation", "LocatonManager::requestLocationUpdates (pendingIntent)")
+        Log.d("AP-FakeLocation", "LocatonManager::requestLocationUpdates (pendingIntent)");
         Preconditions.checkArgument(provider != null, "invalid null provider");
         Preconditions.checkArgument(locationRequest != null, "invalid null location request");
         Preconditions.checkArgument(pendingIntent != null, "invalid null pending intent");

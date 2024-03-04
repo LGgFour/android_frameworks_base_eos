@@ -17,8 +17,6 @@
 
 package com.android.server.location;
 
-package foundation.e.privacymodules.fakelocationdemo.aosp;
-
 import android.content.Context;
 import android.location.Location;
 import android.location.LocationResult;
@@ -31,7 +29,6 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class FakeLocationResolver {
     private static final String FAKE_LOCATIONS_URI = "content://foundation.e.advancedprivacy.fakelocations";
 
@@ -43,7 +40,7 @@ public class FakeLocationResolver {
         int uid = identity.getUid();
         String packageName = identity.getPackageName();
 
-        if (context == null || packageName == null || uid < 0) {
+        if (baseLocations == null || context == null || packageName == null || uid < 0) {
             Log.w("AP-FakeLocation", "FakeLocationResolver::fakeLocations invalid parameters");
             return baseLocations;
         }
@@ -58,7 +55,7 @@ public class FakeLocationResolver {
         int uid = identity.getUid();
         String packageName = identity.getPackageName();
 
-        if (context == null || packageName == null || uid < 0) {
+        if (baseLocation == null || context == null || packageName == null || uid < 0) {
             Log.w("AP-FakeLocation", "FakeLocationResolver::fakeLocation invalid parameters");
             return baseLocation;
         }
