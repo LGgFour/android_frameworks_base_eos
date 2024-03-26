@@ -177,9 +177,9 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.IPackageManager;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.PackageManagerInternal;
@@ -377,6 +377,9 @@ public class NetworkPolicyManagerService extends INetworkPolicyManager.Stub {
     private static final int LINEAGE_VERSION_REINSTATED_POLICY_REJECT_ALL = 2;
     private static final int LINEAGE_VERSION_LATEST = LINEAGE_VERSION_REINSTATED_POLICY_REJECT_ALL;
 
+    private static final int E_VERSION_INIT = 1;
+    private static final int E_VERSION_LATEST = 2;
+
     @VisibleForTesting
     public static final int TYPE_WARNING = SystemMessage.NOTE_NET_WARNING;
     @VisibleForTesting
@@ -397,6 +400,7 @@ public class NetworkPolicyManagerService extends INetworkPolicyManager.Stub {
 
     private static final String ATTR_VERSION = "version";
     private static final String ATTR_LINEAGE_VERSION = "lineageVersion";
+    private static final String ATTR_E_VERSION = "eVersion";
     private static final String ATTR_RESTRICT_BACKGROUND = "restrictBackground";
     private static final String ATTR_NETWORK_TEMPLATE = "networkTemplate";
     private static final String ATTR_SUBSCRIBER_ID = "subscriberId";
@@ -1287,7 +1291,7 @@ public class NetworkPolicyManagerService extends INetworkPolicyManager.Stub {
             final int uid = intent.getIntExtra(EXTRA_UID, -1);
             if (uid == -1) return;
 
-            if (intent.getBooleanExtra(EXTRA_REPLACING, false) && !doesUidMatchPackages(uid)) {
+            if (intent.getBooleanExtra(EXTRA_REPLACING, false)) {
                 if (LOGV) Slog.v(TAG, "ACTION_PACKAGE_ADDED Not new app, skip it uid=" + uid);
                 return;
             }
@@ -1436,34 +1440,6 @@ public class NetworkPolicyManagerService extends INetworkPolicyManager.Stub {
             mContext.unregisterReceiver(this);
         }
     };
-
-    private boolean doesUidMatchPackages(int uid) {
-        final String packageName = getPackageForUid(uid);
-        if (packageName == null || !isSystemApp(uid)) return false;
-
-        final Context deviceContext = mContext.createDeviceProtectedStorageContext();
-        final File prefsFile = new File(new File(Environment.getDataSystemDirectory(),
-                "shared_prefs"), "network_policy_whitelist_config.xml");
-        SharedPreferences mSharedPreferences =
-                deviceContext.getSharedPreferences(prefsFile, Context.MODE_PRIVATE);
-
-        String[] packagePairs = mContext.getResources().getStringArray(
-                com.android.internal.R.array.config_network_policy_manager_replacing_packages);
-
-        for (String packageToMatch : packagePairs) {
-            if (packageToMatch == null
-                || mSharedPreferences.getBoolean(packageToMatch, false)) continue;
-
-            if (packageName.equals(packageToMatch)) {
-                if (LOGD) Log.d(TAG, "UID match found packageName: " + packageName);
-                mSharedPreferences.edit().putBoolean(packageToMatch, true).apply();
-                return !hasInternetPermissionUL(uid);
-            }
-        }
-
-        if (LOGD) Log.d(TAG, "UID matches not found for packageName: " + packageName);
-        return false;
-    }
 
     private static boolean updateCapabilityChange(SparseBooleanArray lastValues, boolean newValue,
             Network network) {
@@ -2714,6 +2690,26 @@ public class NetworkPolicyManagerService extends INetworkPolicyManager.Stub {
         }
     }
 
+    private void allowNetworkAccessForPackages(final List<String> packageNames) {
+        final Set<Integer> uidsToAllow = new ArraySet<>();
+        for (UserInfo userInfo : UserManager.get(mContext).getUsers()) {
+            for (final String allowedPackageName : packageNames) {
+                final int uid = getUidForPackage(allowedPackageName, userInfo.id);
+                if (uid == -1) {
+                    Log.w(TAG, "allowNetworkAccessForPackages: Did not find expected package "
+                            + allowedPackageName + " for user " + userInfo.id);
+                    continue;
+                }
+                Log.i(TAG, "allowNetworkAccessForPackages: Will ensure network access for "
+                        + allowedPackageName + " (uid " + uid + ")");
+                uidsToAllow.add(uid);
+            }
+        }
+
+        // Remove POLICY_REJECT_ALL from UIDs that are now allowed to use networks.
+        setPolicyForUids(uidsToAllow, POLICY_REJECT_ALL, false /* enabled */);
+    }
+
     @GuardedBy({"mUidRulesFirstLock", "mNetworkPoliciesSecondLock"})
     private void readPolicyAL() {
         if (LOGV) Slog.v(TAG, "readPolicyAL()");
@@ -2749,6 +2745,7 @@ public class NetworkPolicyManagerService extends INetworkPolicyManager.Stub {
         int type;
         int version = VERSION_INIT;
         int lineageVersion = LINEAGE_VERSION_INIT;
+        int eVersion = E_VERSION_INIT;
         boolean insideAllowlist = false;
         while ((type = in.next()) != END_DOCUMENT) {
             final String tag = in.getName();
@@ -2757,6 +2754,7 @@ public class NetworkPolicyManagerService extends INetworkPolicyManager.Stub {
                     final boolean oldValue = mRestrictBackground;
                     version = readIntAttribute(in, ATTR_VERSION);
                     lineageVersion = readIntAttribute(in, ATTR_LINEAGE_VERSION, lineageVersion);
+                    eVersion = readIntAttribute(in, ATTR_E_VERSION, eVersion);
                     mLoadedRestrictBackground = (version >= VERSION_ADDED_RESTRICT_BACKGROUND)
                             && readBooleanAttribute(in, ATTR_RESTRICT_BACKGROUND);
                 } else if (TAG_NETWORK_POLICY.equals(tag)) {
@@ -2922,6 +2920,29 @@ public class NetworkPolicyManagerService extends INetworkPolicyManager.Stub {
                 && isMigratingFromAtLeastAndroid12) {
             migrateToPolicyRejectAll();
         }
+
+        Log.i(TAG, "Current eVersion: " + eVersion);
+        if (eVersion < E_VERSION_LATEST) {
+            List<String> packageNames = new ArrayList<>();
+
+            switch (eVersion) {
+                case 1:
+                    packageNames.add("com.android.vending");
+                    packageNames.add("foundation.e.blissweather");
+                    // Fall-through intended
+                case 2:
+                case 3:
+                    // packageNames.add("com.android.example");
+                    // Add new packages here for future use cases.
+                    break; // Break to end the block after adding eVersion 2 or 3
+                default:
+                    break;
+            }
+
+            if (!packageNames.isEmpty()) {
+                allowNetworkAccessForPackages(packageNames);
+            }
+        }
     }
 
     /**
@@ -3071,6 +3092,7 @@ public class NetworkPolicyManagerService extends INetworkPolicyManager.Stub {
         out.startTag(null, TAG_POLICY_LIST);
         writeIntAttribute(out, ATTR_VERSION, VERSION_LATEST);
         writeIntAttribute(out, ATTR_LINEAGE_VERSION, LINEAGE_VERSION_LATEST);
+        writeIntAttribute(out, ATTR_E_VERSION, E_VERSION_LATEST);
         writeBooleanAttribute(out, ATTR_RESTRICT_BACKGROUND, mRestrictBackground);
 
         // write all known network policies
