@@ -2500,7 +2500,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             }
 
             mTorchLongPressPowerEnabled = LineageSettings.System.getIntForUser(
-                    resolver, LineageSettings.System.TORCH_LONG_PRESS_POWER_GESTURE, 0,
+                    resolver, LineageSettings.System.TORCH_LONG_PRESS_POWER_GESTURE, 1,
                     UserHandle.USER_CURRENT) == 1;
             mTorchTimeout = LineageSettings.System.getIntForUser(
                     resolver, LineageSettings.System.TORCH_LONG_PRESS_POWER_TIMEOUT, 0,
