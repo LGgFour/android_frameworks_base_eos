@@ -424,11 +424,7 @@ public class MobileSignalController extends SignalController<MobileState, Mobile
         int resId = 0;
 
         if (isVolteAvailable()) {
-            if (mConfig.show4gForLte) {
-                resId = R.drawable.ic_volte_4g;
-            } else {
-                resId = R.drawable.ic_volte;
-            }
+            resId = R.drawable.ic_volte;
         }
         return resId;
     }
