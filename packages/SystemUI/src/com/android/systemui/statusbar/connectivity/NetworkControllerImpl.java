@@ -140,8 +140,6 @@ public class NetworkControllerImpl extends BroadcastReceiver
     private final LogBuffer mLogBuffer;
     private final MobileSignalControllerFactory mMobileFactory;
 
-    private boolean mSwap = false;
-
     private TelephonyCallback.ActiveDataSubscriptionIdListener mPhoneStateListener;
     private int mActiveMobileDataSubscription = INVALID_SUBSCRIPTION_ID;
 
@@ -746,64 +744,7 @@ public class NetworkControllerImpl extends BroadcastReceiver
             MobileSignalController mobileSignalController = mMobileSignalControllers.valueAt(i);
             mobileSignalController.notifyListeners(cb);
         }
-        if (mMobileSignalControllers.size() == 2) {
-            boolean volte = mMobileSignalControllers.valueAt(0).isVolteAvailable()
-                    || mMobileSignalControllers.valueAt(1).isVolteAvailable();
-            cb.setImsIcon(new ImsIconState(volte,
-                    volte,
-                    volte ? getVolteResId() : 0,
-                    mContext.getString(com.android.internal.R.string.status_bar_ims)
-            ));
-        } else if (mMobileSignalControllers.size() == 1) {
-            boolean volte = mMobileSignalControllers.valueAt(0).isVolteAvailable();
-            cb.setImsIcon(new ImsIconState(volte,
-                    volte,
-                    volte ? getVolteResId() : 0,
-                    mContext.getString(com.android.internal.R.string.status_bar_ims)
-            ));
-        } else {
-            cb.setImsIcon(new ImsIconState(false,
-                    false,
-                    0,
-                    mContext.getString(com.android.internal.R.string.status_bar_ims)
-            ));
-        }
         mCallbackHandler.setListening(cb, true);
-    }
-
-    public void updateImsIcon() {
-        if (mMobileSignalControllers.size() == 2) {
-            boolean volte = mMobileSignalControllers.valueAt(0).isVolteAvailable()
-                    || mMobileSignalControllers.valueAt(1).isVolteAvailable();
-            mCallbackHandler.setImsIcon(new ImsIconState(volte,
-                    volte,
-                    volte ? getVolteResId() : 0,
-                    mContext.getString(com.android.internal.R.string.status_bar_ims)
-            ));
-        } else if (mMobileSignalControllers.size() == 1) {
-            boolean volte = mMobileSignalControllers.valueAt(0).isVolteAvailable();
-            mCallbackHandler.setImsIcon(new ImsIconState(volte,
-                    volte,
-                    volte ? getVolteResId() : 0,
-                    mContext.getString(com.android.internal.R.string.status_bar_ims)
-            ));
-        } else {
-            mCallbackHandler.setImsIcon(new ImsIconState(false,
-                    false,
-                    0,
-                    mContext.getString(com.android.internal.R.string.status_bar_ims)
-            ));
-        }
-    }
-
-    private int getVolteResId() {
-        int resId = R.drawable.ic_volte;
-
-        if (mConfig.show4gForLte) {
-            resId = R.drawable.ic_volte_4g;
-        }
-
-        return resId;
     }
 
     @Override
@@ -936,7 +877,6 @@ public class NetworkControllerImpl extends BroadcastReceiver
 
     private void updateMobileControllers() {
         if (!mListening) {
-            updateImsIcon();
             return;
         }
         doUpdateMobileControllers();
@@ -981,7 +921,6 @@ public class NetworkControllerImpl extends BroadcastReceiver
             // Such as on boot, don't need any controllers, because there are no sims,
             // but we still need to update the no sim state.
             updateNoSims();
-            updateImsIcon();
             return;
         }
         synchronized (mLock) {
@@ -989,7 +928,6 @@ public class NetworkControllerImpl extends BroadcastReceiver
         }
         updateNoSims();
         recalculateEmergency();
-        updateImsIcon();
     }
 
     @VisibleForTesting
@@ -1015,14 +953,6 @@ public class NetworkControllerImpl extends BroadcastReceiver
         return false;
     }
 
-    private boolean isSwap(final @Nullable List<SubscriptionInfo> list) {
-        if (list != null && list.size() == 2) {
-            if (list.get(0).getSubscriptionId() > list.get(1).getSubscriptionId())
-                return true;
-        }
-        return false;
-    }
-
     @GuardedBy("mLock")
     @VisibleForTesting
     void setCurrentSubscriptionsLocked(List<SubscriptionInfo> subscriptions) {
@@ -1034,7 +964,6 @@ public class NetworkControllerImpl extends BroadcastReceiver
                         : lhs.getSimSlotIndex() - rhs.getSimSlotIndex();
             }
         });
-        mSwap = isSwap(subscriptions);
         Log.i(
                 TAG,
                 String.format(
@@ -1164,7 +1093,6 @@ public class NetworkControllerImpl extends BroadcastReceiver
         }
         mWifiSignalController.notifyListeners();
         mEthernetSignalController.notifyListeners();
-        updateImsIcon();
     }
 
     /**
@@ -1226,7 +1154,6 @@ public class NetworkControllerImpl extends BroadcastReceiver
                 && !mConnectedTransports.get(NetworkCapabilities.TRANSPORT_ETHERNET);
         mCallbackHandler.setConnectivityStatus(mNoDefaultNetwork, !mInetCondition,
                 mNoNetworksAvailable);
-        updateImsIcon();
     }
 
     /**
