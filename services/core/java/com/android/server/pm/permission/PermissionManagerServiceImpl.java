@@ -154,6 +154,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -239,6 +240,25 @@ public class PermissionManagerServiceImpl implements PermissionManagerServiceInt
         NOTIFICATION_PERMISSIONS.add(Manifest.permission.POST_NOTIFICATIONS);
     }
 
+    private static final String PACKAGE_ANDROID_AUTO = "com.google.android.projection.gearhead";
+    private static final String SIGNATURE_ANDROID_AUTO = "FDB00C43DBDE8B51CB312AA81D3B5FA17713ADB94B28F598D77F8EB89DACEEDF";
+    private static final Set<String> ANDROID_AUTO_CERTS = new HashSet(Arrays.asList(SIGNATURE_ANDROID_AUTO));
+    private static final ArrayList<String> PERMISSIONS_ANDROID_AUTO = new ArrayList<String>(
+            Arrays.asList(
+                    Manifest.permission.INTERNAL_SYSTEM_WINDOW,
+                    Manifest.permission.MANAGE_COMPANION_DEVICES,
+                    Manifest.permission.MANAGE_USB,
+                    Manifest.permission.MODIFY_AUDIO_ROUTING,
+                    Manifest.permission.READ_PHONE_STATE,
+                    Manifest.permission.READ_PRIVILEGED_PHONE_STATE,
+                    Manifest.permission.REQUEST_COMPANION_SELF_MANAGED,
+                    Manifest.permission.BLUETOOTH_PRIVILEGED,
+                    Manifest.permission.LOCAL_MAC_ADDRESS,
+                    Manifest.permission.CONTROL_INCALL_EXPERIENCE,
+                    Manifest.permission.COMPANION_APPROVE_WIFI_CONNECTIONS,
+                    Manifest.permission.START_ACTIVITIES_FROM_BACKGROUND
+            )
+    );
     /** Set of source package names for Privileged Permission Allowlist */
     private final ArraySet<String> mPrivilegedPermissionAllowlistSourcePackageNames =
             new ArraySet<>();
@@ -960,6 +980,12 @@ public class PermissionManagerServiceImpl implements PermissionManagerServiceInt
                 Slog.e(TAG, "Missing permissions state for " + pkg.getPackageName() + " and user "
                         + userId);
                 return PackageManager.PERMISSION_DENIED;
+            }
+
+            if (PACKAGE_ANDROID_AUTO.equals(pkg.getPackageName()) &&
+                   pkg.getSigningDetails().hasAncestorOrSelfWithDigest(ANDROID_AUTO_CERTS) &&
+                   PERMISSIONS_ANDROID_AUTO.contains(permissionName)) {
+                return PackageManager.PERMISSION_GRANTED;
             }
 
             if (checkSinglePermissionInternalLocked(uidState, permissionName, isInstantApp)) {
