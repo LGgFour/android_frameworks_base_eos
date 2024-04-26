@@ -594,6 +594,11 @@ final class DefaultPermissionGrantPolicy {
                         DownloadManager.ACTION_VIEW_DOWNLOADS, userId),
                 userId, STORAGE_PERMISSIONS);
 
+        // /e/ Drive
+        grantSystemFixedPermissionsToSystemPackage(pm,
+                "foundation.e.drive", userId,
+                STORAGE_PERMISSIONS);
+
         // Storage provider
         grantSystemFixedPermissionsToSystemPackage(pm,
                 getDefaultProviderAuthorityPackage("com.android.externalstorage.documents", userId),
