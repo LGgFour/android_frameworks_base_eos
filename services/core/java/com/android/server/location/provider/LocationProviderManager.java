@@ -91,6 +91,7 @@ import com.android.internal.annotations.GuardedBy;
 import com.android.internal.util.Preconditions;
 import com.android.server.FgThread;
 import com.android.server.LocalServices;
+import com.android.server.location.FakeLocationResolver;
 import com.android.server.location.LocationPermissions;
 import com.android.server.location.LocationPermissions.PermissionLevel;
 import com.android.server.location.fudger.LocationFudger;
@@ -199,6 +200,12 @@ public class LocationProviderManager extends
         @Override
         public void deliverOnLocationChanged(LocationResult locationResult,
                 @Nullable IRemoteCallback onCompleteCallback) throws RemoteException {
+
+            if (locationResult != null) {
+                Location trueLoc = locationResult.getLastLocation();
+                String locStr = (trueLoc != null) ? trueLoc.getLongitude() + " ; " + trueLoc.getLatitude() : "loc NULL";
+                Log.d("AP-FakeLocation", "LocationProviderManager::LocationListenerTransport::deliverOnLocationChanged : " + locStr);
+            }
             mListener.onLocationChanged(locationResult.asList(), onCompleteCallback);
         }
 
@@ -229,6 +236,12 @@ public class LocationProviderManager extends
         public void deliverOnLocationChanged(LocationResult locationResult,
                 @Nullable IRemoteCallback onCompleteCallback)
                 throws PendingIntent.CanceledException {
+            if (locationResult != null) {
+                Location trueLoc = locationResult.getLastLocation();
+                String locStr = (trueLoc != null) ? trueLoc.getLongitude() + " ; " + trueLoc.getLatitude() : "loc NULL";
+                Log.d("AP-FakeLocation", "LocationProviderManager::LocationLPendingIntentTransport::deliverOnLocationChanged : " + locStr);
+            }
+
             BroadcastOptions options = BroadcastOptions.makeBasic();
             options.setDontSendToRestrictedApps(true);
             // allows apps to start a fg service in response to a location PI
@@ -310,6 +323,12 @@ public class LocationProviderManager extends
         public void deliverOnLocationChanged(@Nullable LocationResult locationResult,
                 @Nullable IRemoteCallback onCompleteCallback)
                 throws RemoteException {
+            if (locationResult != null) {
+                Location trueLoc = locationResult.getLastLocation();
+                String locStr = (trueLoc != null) ? trueLoc.getLongitude() + " ; " + trueLoc.getLatitude() : "loc NULL";
+                Log.d("AP-FakeLocation", "LocationProviderManager::GetCurrentLocationTransport::deliverOnLocationChanged : " + locStr);
+            }
+
             // ILocationCallback doesn't currently support completion callbacks
             Preconditions.checkState(onCompleteCallback == null);
             if (locationResult != null) {
@@ -968,10 +987,19 @@ public class LocationProviderManager extends
                     // if delivering to the same process, make a copy of the location first (since
                     // location is mutable)
                     LocationResult deliverLocationResult;
+                    Log.d("AP-FakeLocation", "LocationProviderManager::LocationRegistration::acceptLocationChange, ListenerOperation::operate, fakeLocation");
+                    CallerIdentity identity = getIdentity();
+                    Location trueLoc = locationResult.getLastLocation();
+                    if (trueLoc != null) {
+                        Log.d("AP-FakeLocation", "LocationRegistration...operate, true location for " + identity.getPackageName() + " is " + trueLoc.getLongitude() + " ; " + trueLoc.getLatitude());
+                    }
+
+                    LocationResult fakedLocationResult = FakeLocationResolver.fakeLocations(mContext, locationResult, getIdentity());
+
                     if (getIdentity().getPid() == Process.myPid()) {
-                        deliverLocationResult = locationResult.deepCopy();
+                        deliverLocationResult = fakedLocationResult.deepCopy();
                     } else {
-                        deliverLocationResult = locationResult;
+                        deliverLocationResult = fakedLocationResult;
                     }
 
                     listener.deliverOnLocationChanged(deliverLocationResult,
@@ -1270,11 +1298,22 @@ public class LocationProviderManager extends
                 public void operate(LocationTransport listener) throws Exception {
                     // if delivering to the same process, make a copy of the location first (since
                     // location is mutable)
+                    if (locationResult != null) {
+                        Log.d("AP-FakeLocation", "LocationProviderManager::GetCurrentLocationListenerRegistration::acceptLocationChange, ListenerOperation::operate, fakeLocation");
+                        Location trueLoc = locationResult.getLastLocation();
+                        CallerIdentity identity = getIdentity();
+                        if (trueLoc != null) {
+                            Log.d("AP-FakeLocation", "LocationRegistration...operate, true location for " + identity.getPackageName() + " is " + trueLoc.getLongitude() + " ; " + trueLoc.getLatitude());
+                        }
+                    }
+
+                    LocationResult fakedLocationResult = FakeLocationResolver.fakeLocations(mContext, locationResult, getIdentity());
+
                     LocationResult deliverLocationResult;
-                    if (getIdentity().getPid() == Process.myPid() && locationResult != null) {
-                        deliverLocationResult = locationResult.deepCopy();
+                    if (getIdentity().getPid() == Process.myPid() && fakedLocationResult != null) {
+                        deliverLocationResult = fakedLocationResult.deepCopy();
                     } else {
-                        deliverLocationResult = locationResult;
+                        deliverLocationResult = fakedLocationResult;
                     }
 
                     // we currently don't hold a wakelock for getCurrentLocation deliveries
@@ -1656,6 +1695,11 @@ public class LocationProviderManager extends
                         Long.MAX_VALUE),
                 permissionLevel);
 
+        String locStr = (location != null) ? location.getLongitude() + " ; " + location.getLatitude() : "NO LOC";
+        Log.d("AP-FakeLocation", "LocatonProviderManager::getLastLocation " + identity.getPackageName() + " true location: " + locStr);
+
+        location = FakeLocationResolver.fakeLocation(mContext, location, identity);
+
         if (location != null && identity.getPid() == Process.myPid()) {
             // if delivering to the same process, make a copy of the location first (since
             // location is mutable)
@@ -1761,6 +1805,7 @@ public class LocationProviderManager extends
                     .build();
         }
 
+        Log.d("AP-FakeLocation", "LocationProviderManager::getCurrentLocation from " + identity.getPackageName());
         GetCurrentLocationListenerRegistration registration =
                 new GetCurrentLocationListenerRegistration(
                         request,
@@ -1804,6 +1849,9 @@ public class LocationProviderManager extends
 
     public void registerLocationRequest(LocationRequest request, CallerIdentity identity,
             @PermissionLevel int permissionLevel, ILocationListener listener) {
+
+        Log.d("AP-FakeLocation", "LocatonProviderManager::registerLocationRequest " + identity.getPackageName());
+
         LocationListenerRegistration registration = new LocationListenerRegistration(
                 request,
                 identity,
@@ -1823,6 +1871,8 @@ public class LocationProviderManager extends
 
     public void registerLocationRequest(LocationRequest request, CallerIdentity callerIdentity,
             @PermissionLevel int permissionLevel, PendingIntent pendingIntent) {
+        Log.d("AP-FakeLocation", "LocatonProviderManager::registerLocationRequest (pendingIntent) " + callerIdentity.getPackageName());
+
         LocationPendingIntentRegistration registration = new LocationPendingIntentRegistration(
                 request,
                 callerIdentity,
@@ -2450,6 +2500,7 @@ public class LocationProviderManager extends
 
         // attempt listener delivery
         deliverToListeners(registration -> {
+            Log.d("AP-FakeLocation", "LocationProviderManager::onReportLocation, deliverToListener " + filtered);
             return registration.acceptLocationChange(filtered);
         });
 

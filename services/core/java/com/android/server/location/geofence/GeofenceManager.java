@@ -39,9 +39,11 @@ import android.os.SystemClock;
 import android.os.WorkSource;
 import android.stats.location.LocationStatsEnums;
 import android.util.ArraySet;
+import android.util.Log;
 
 import com.android.internal.annotations.GuardedBy;
 import com.android.server.PendingIntentUtils;
+import com.android.server.location.FakeLocationResolver;
 import com.android.server.location.LocationPermissions;
 import com.android.server.location.injector.Injector;
 import com.android.server.location.injector.LocationPermissionsHelper;
@@ -51,6 +53,7 @@ import com.android.server.location.injector.UserInfoHelper;
 import com.android.server.location.injector.UserInfoHelper.UserListener;
 import com.android.server.location.listeners.ListenerMultiplexer;
 import com.android.server.location.listeners.PendingIntentListenerRegistration;
+
 
 import java.util.Collection;
 import java.util.Objects;
@@ -294,10 +297,18 @@ public class GeofenceManager extends
      */
     public void addGeofence(Geofence geofence, PendingIntent pendingIntent, String packageName,
             @Nullable String attributionTag) {
+        Log.d("AP-FakeLocation", "GeofenceManager::addGeofence " + packageName);
+
         LocationPermissions.enforceCallingOrSelfLocationPermission(mContext, PERMISSION_FINE);
 
         CallerIdentity identity = CallerIdentity.fromBinder(mContext, packageName,
                 attributionTag, AppOpsManager.toReceiverId(pendingIntent));
+
+        if (FakeLocationResolver.hasFakeLocation(mContext, identity)) {
+            Log.d("AP-FakeLocation", "GeofenceManager::addGeofence drop geofence registration for " + packageName);
+            return;
+        }
+
 
         final long ident = Binder.clearCallingIdentity();
         try {

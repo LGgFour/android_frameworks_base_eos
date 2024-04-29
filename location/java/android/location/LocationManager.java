@@ -63,6 +63,7 @@ import android.os.Process;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.UserHandle;
+import android.util.Log;
 
 import com.android.internal.annotations.GuardedBy;
 import com.android.internal.listeners.ListenerExecutor;
@@ -823,6 +824,7 @@ public class LocationManager {
         Preconditions.checkArgument(lastLocationRequest != null,
                 "invalid null last location request");
 
+        Log.d("AP-FakeLocation", "LocationManager::getLastKnownLocation");
         try {
             return mService.getLastLocation(provider, lastLocationRequest,
                     mContext.getPackageName(), mContext.getAttributionTag());
@@ -932,6 +934,7 @@ public class LocationManager {
             @NonNull LocationRequest locationRequest,
             @Nullable CancellationSignal cancellationSignal,
             @NonNull @CallbackExecutor Executor executor, @NonNull Consumer<Location> consumer) {
+        Log.d("AP-FakeLocation", "LocationManager::getCurrentLocation");
         Preconditions.checkArgument(provider != null, "invalid null provider");
         Preconditions.checkArgument(locationRequest != null, "invalid null location request");
 
@@ -1480,6 +1483,7 @@ public class LocationManager {
             @NonNull LocationRequest locationRequest,
             @NonNull @CallbackExecutor Executor executor,
             @NonNull LocationListener listener) {
+        Log.d("AP-FakeLocation", "LocationManager::requestLocationIpdates");
         Preconditions.checkArgument(provider != null, "invalid null provider");
         Preconditions.checkArgument(locationRequest != null, "invalid null location request");
 
@@ -1529,6 +1533,7 @@ public class LocationManager {
     public void requestLocationUpdates(@NonNull String provider,
             @NonNull LocationRequest locationRequest,
             @NonNull PendingIntent pendingIntent) {
+        Log.d("AP-FakeLocation", "LocatonManager::requestLocationUpdates (pendingIntent)");
         Preconditions.checkArgument(provider != null, "invalid null provider");
         Preconditions.checkArgument(locationRequest != null, "invalid null location request");
         Preconditions.checkArgument(pendingIntent != null, "invalid null pending intent");
@@ -1601,6 +1606,7 @@ public class LocationManager {
     @SuppressLint("SamShouldBeLast")
     public void requestFlush(@NonNull String provider, @NonNull LocationListener listener,
             @SuppressLint("ListenerLast") int requestCode) {
+        //TODO: should we chek this ?
         Preconditions.checkArgument(provider != null, "invalid null provider");
         Preconditions.checkArgument(listener != null, "invalid null listener");
 
@@ -2183,6 +2189,7 @@ public class LocationManager {
     @RequiresPermission(anyOf = {ACCESS_COARSE_LOCATION, ACCESS_FINE_LOCATION})
     public void addProximityAlert(double latitude, double longitude, float radius, long expiration,
             @NonNull PendingIntent pendingIntent) {
+        Log.d("AP-FakeLocation", "LocationManger::addProximityAlert");
         Preconditions.checkArgument(pendingIntent != null, "invalid null pending intent");
 
         if (Compatibility.isChangeEnabled(BLOCK_UNTARGETED_PENDING_INTENTS)) {
@@ -2496,6 +2503,7 @@ public class LocationManager {
     @RequiresPermission(ACCESS_FINE_LOCATION)
     public boolean addNmeaListener(
             @NonNull OnNmeaMessageListener listener, @Nullable Handler handler) {
+        // TODO: should we handle this ?
         if (handler == null) {
             handler = new Handler();
         }
@@ -2519,6 +2527,7 @@ public class LocationManager {
     public boolean addNmeaListener(
             @NonNull @CallbackExecutor Executor executor,
             @NonNull OnNmeaMessageListener listener) {
+        // TODO: should we handle this ?
         GnssLazyLoader.sGnssNmeaListeners.addListener(listener,
                 new GnssNmeaTransport(executor, mContext, listener));
         return true;
@@ -2619,6 +2628,7 @@ public class LocationManager {
     public boolean registerGnssMeasurementsCallback(
             @NonNull @CallbackExecutor Executor executor,
             @NonNull GnssMeasurementsEvent.Callback callback) {
+        // TODO: should we handle this !!?
         return registerGnssMeasurementsCallback(new GnssMeasurementRequest.Builder().build(),
                 executor, callback);
     }
@@ -2803,7 +2813,7 @@ public class LocationManager {
         if (handler == null) {
             handler = new Handler();
         }
-
+        // TODO : should we handle this !!
         return registerGnssNavigationMessageCallback(new HandlerExecutor(handler), callback);
     }
 
