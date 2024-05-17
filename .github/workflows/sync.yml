@@ -1,0 +1,23 @@
+name: "Sync"
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '39 11 * * *'  # adjust if needed
+
+# Sets permissions of the GITHUB_TOKEN to allow pushing via github token
+permissions:
+  contents: write # allow git push
+
+jobs:
+  call-org-workflow:
+    name: "Calling AXP workflow"
+    uses: AXP-OS/.github/.github/workflows/sync_upstream.yml@main
+    with:
+        remote-server: gitlab.e.foundation
+        remote-repo: e/os/android_frameworks_base # <- remote repo name (e.g. LineageOS/foo)
+        remote-branch:  v1-pie # <- remote branch name
+        local-repo: ${{ github.repository_owner }}/${{ github.event.repository.name }}
+        local-branch: "v1-pie"
+        dryrun: false  # <- set to false after a test run
+    secrets: inherit
